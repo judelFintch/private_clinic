@@ -14831,7 +14831,13 @@ a.badge-dark:focus, a.badge-dark.focus {
   background-color: #852525;
   border-color: #852525;
 }
-
+.bar
+{
+  width:100%;
+  height : 1px;
+  background : #d4d3da;
+  content : '';
+}
 .list-group-item-light {
   color: #818182;
   background-color: #fdfdfe;
