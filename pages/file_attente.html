@@ -160,6 +160,21 @@
                 <span class="menu-title">Dashboard</span>
               </a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-file" aria-expanded="false" aria-controls="ui-file">
+                  <i class="icon-clipboard menu-icon"></i>
+                  <span class="menu-title">File d'attente</span>
+                  <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="ui-file">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Ajouter</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="./file_attente.html">File</a></li>
+                  </ul>
+                </div>
+              </li>
+
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-chambre" aria-expanded="false" aria-controls="ui-chambre">
                 <i class="icon-clipboard menu-icon"></i>
@@ -233,7 +248,7 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-rdv" aria-expanded="false" aria-controls="ui-rdv">
                 <i class="icon-ribbon menu-icon"></i>
-                <span class="menu-title">Rendew-vous</span>
+                <span class="menu-title">Rendez-vous</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-rdv">
@@ -256,74 +271,122 @@
                   <div class="card-body">
                     
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Nouvelle hospitalisation</h4>
+                        <h4 class="card-title">Liste hospitalisation</h4>
                         <div class="d-flex">
-                            <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
+                            <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
                         </div>
                     </div>
-                    <form class="forms-sample row">
-                        <div class="col-md-12 d-flex">
-                            <h2 class="h4">General</h2>
-                        </div>
-                        <div class="col-md-12 mb-4 mt-1">
-                            <div class="bar"></div>
-                        </div>
-                        <div class="col-md-4">
-                            
-                            <div class="form-group">
-                                <label >Patient</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Nom du patient">
-                            </div>
-                            <div class="form-group">
-                                <label >Date hospitalisation</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Nom du patient">
-                            </div>
-                            <div class="form-group">
-                                <label >Hospitalisé par</label>
-                                <select class="js-example-basic-single w-100">
-                                    <option >George</option>
-                                    <option >Felix</option>
-                                    <option>Enock</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label >Medecin traitant</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Post_Nom du patient">
-                            </div>
-                            <div class="form-group">
-                                <label >Date hospitalisation</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Post_Nom du patient">
-                            </div>
-                            <div class="form-group">
-                                <label >Date accord</label>
-                                <input type="text" class="form-control form-control-sm" placeholder="Post_Nom du patient">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label >Motif hospitalisation</label>
-                                <select class="js-example-basic-multiple w-100" multiple="multiple">
-                                    <option value="AL">Diabete</option>
-                                    <option value="WY">Trouble bipo</option>
-                                    <option value="AM">Amnesie</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label >Medecin traitant</label>
-                                <select class="js-example-basic-single w-100">
-                                    <option >George</option>
-                                    <option >Felix</option>
-                                    <option>Enock</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
-                            <button class="btn btn-light btn-sm">Annuler</button>
-                        </div>
-                    </form>
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>
+                              #
+                            </th>
+                            <th>
+                              Patient
+                            </th>
+                            <th>
+                              Date
+                            </th>
+                            <th>
+                              Heure arriveée
+                            </th>
+                            <th>
+                                Motif visite
+                            </th>
+                            <th>
+                                Statut
+                            </th>
+                            <th>
+                               Heure prise en charge
+                            </th>
+                            <th>
+                                Prise en charge par
+                             </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="py-1">
+                              1
+                            </td>
+                            <td>
+                              Irung Murund Rodrigue
+                            </td>
+                            <td>
+                                12 janvier 2021
+                            </td>
+                            <td>
+                                12:12
+                            </td>
+                            <td>
+                                RDV
+                            </td>
+                            <td>
+                                <label class="badge badge-danger">En attente</label>
+                            </td>
+                            <td> -
+                            </td>
+                            <td> -
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td class="py-1">
+                                1
+                              </td>
+                              <td>
+                                Irung Murund Rodrigue
+                              </td>
+                              <td>
+                                  12 janvier 2021
+                              </td>
+                              <td>
+                                  11:12
+                              </td>
+                              <td>
+                                  Consultation
+                              </td>
+                              <td>
+                                <label class="badge badge-success">Terminée</label>
+                              </td>
+                              <td>
+                                  13:14
+                              </td>
+                              <td>
+                                  Dr Gregoire
+                              </td>
+                          </tr>
+                          <tr>
+                            <td class="py-1">
+                                1
+                              </td>
+                              <td>
+                                Irung Murund Rodrigue
+                              </td>
+                              <td>
+                                  12 janvier 2021
+                              </td>
+                              <td>
+                                  11:12
+                              </td>
+                              <td>
+                                  Consultation
+                              </td>
+                              <td>
+                                <label class="badge badge-success">Terminée</label>
+                              </td>
+                              <td>
+                                  13:14
+                              </td>
+                              <td>
+                                  Dr Gregoire
+                              </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
