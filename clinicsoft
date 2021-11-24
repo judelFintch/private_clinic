@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-23T20:38:52.802Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/96.0.1054.29" etag="tfbtDOm0KHE124Zle2w3" version="15.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-24T06:53:17.220Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/96.0.1054.29" etag="ugUKAP9jX3791XlDd3Mu" version="15.8.3" type="github">
   <diagram id="EEbMAoLFToL-UoKh_trc" name="Page-1">
     <mxGraphModel dx="1108" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -100,7 +100,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mb02fc5HfGQfMgPmnVmv-23" value="T_finance" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
-          <mxGeometry x="440" y="540" width="160" height="175" as="geometry" />
+          <mxGeometry x="800" y="560" width="160" height="175" as="geometry" />
         </mxCell>
         <mxCell id="mb02fc5HfGQfMgPmnVmv-24" value="+code_lit : int&#xa;+libelle : int&#xa;+code_consultatation&#xa;+prix : String&#xa;+service: String" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="mb02fc5HfGQfMgPmnVmv-23">
           <mxGeometry y="30" width="160" height="145" as="geometry" />
@@ -116,6 +116,12 @@
         </mxCell>
         <mxCell id="mb02fc5HfGQfMgPmnVmv-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mb02fc5HfGQfMgPmnVmv-3" target="mb02fc5HfGQfMgPmnVmv-23">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mb02fc5HfGQfMgPmnVmv-30" value="T_finance" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="450" y="550" width="160" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="mb02fc5HfGQfMgPmnVmv-31" value="+code_lit : int&#xa;+libelle : int&#xa;+code_consultatation&#xa;+prix : String&#xa;+service: String" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="mb02fc5HfGQfMgPmnVmv-30">
+          <mxGeometry y="30" width="160" height="145" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
