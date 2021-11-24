@@ -84,8 +84,8 @@
             </a>
             <div class="collapse" id="ui-med">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="nouveaumedecin.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="Medecin.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creatMedecin.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="showMedecin.php">Liste</a></li>
               </ul>
             </div>
           </li>

@@ -11,5 +11,7 @@
             "email": "judfintch@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^3.3"
+    }
 }
