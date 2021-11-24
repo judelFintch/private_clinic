@@ -1,0 +1,17 @@
+{
+    "name": "fintch/clinic-soft",
+    "autoload": {
+        "psr-4": {
+            "Fintch\\ClinicSoft\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "judel fintch",
+            "email": "judfintch@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.3"
+    }
+}
