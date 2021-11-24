@@ -57,8 +57,8 @@
             </a>
             <div class="collapse" id="ui-hospi">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="n_hospi.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="hospitalisation.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_hospitalisation.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_hospitalisation.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -99,8 +99,8 @@
             </a>
             <div class="collapse" id="ui-serv">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="nouveauservice.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="service.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_service.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_service.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -113,8 +113,8 @@
             </a>
             <div class="collapse" id="ui-rdv">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="n_rdv.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="rdv.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_rdz.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_rdz.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -127,8 +127,8 @@
             </a>
             <div class="collapse" id="ui-rdv">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="n_rdv.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="rdv.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_prestation.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_prestation.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -136,7 +136,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-fct" aria-expanded="false" aria-controls="ui-rdv">
               <i class="icon-ribbon menu-icon"></i>
-              <span class="menu-title">Facturation</span>
+              <span class="menu-title">Caisse</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-rdv">
@@ -155,8 +155,9 @@
             </a>
             <div class="collapse" id="ui-user">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="n_user.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="user.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_user.php">Ajouter </a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_user.php">Voir</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_user.php">Roles User</a></li>
               </ul>
             </div>
           </li>
