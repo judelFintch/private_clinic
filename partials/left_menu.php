@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -14,8 +14,8 @@
             </a>
             <div class="collapse" id="ui-file">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/file_attente.html">File</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="file_attente.php">File</a></li>
               </ul>
             </div>
           </li>
@@ -28,8 +28,8 @@
             </a>
             <div class="collapse" id="ui-chambre">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -56,8 +56,8 @@
             </a>
             <div class="collapse" id="ui-hospi">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/n_hospi.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/hospitalisation.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="n_hospi.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="hospitalisation.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -70,8 +70,8 @@
             </a>
             <div class="collapse" id="ui-pat">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/nouveaupatient.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/patient.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="nouveaupatient.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="patient.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -84,8 +84,8 @@
             </a>
             <div class="collapse" id="ui-med">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/nouveaumedecin.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/Medecin.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="nouveaumedecin.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="Medecin.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -98,8 +98,8 @@
             </a>
             <div class="collapse" id="ui-serv">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/nouveauservice.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/service.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="nouveauservice.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="service.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -112,8 +112,8 @@
             </a>
             <div class="collapse" id="ui-rdv">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/n_rdv.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/rdv.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="n_rdv.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="rdv.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -126,8 +126,8 @@
             </a>
             <div class="collapse" id="ui-rdv">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/n_rdv.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/rdv.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="n_rdv.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="rdv.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -140,8 +140,8 @@
             </a>
             <div class="collapse" id="ui-rdv">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/n_rdv.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/rdv.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="n_rdv.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="rdv.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -154,8 +154,8 @@
             </a>
             <div class="collapse" id="ui-user">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="./pages/n_user.html">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="./pages/user.html">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="n_user.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="user.php">Liste</a></li>
               </ul>
             </div>
           </li>
