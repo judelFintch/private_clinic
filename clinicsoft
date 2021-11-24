@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-24T06:53:17.220Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/96.0.1054.29" etag="ugUKAP9jX3791XlDd3Mu" version="15.8.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-24T15:40:43.093Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36 Edg/96.0.1054.29" etag="38hxZ2tpA_M6xhCGdZ3c" version="15.8.3" type="github">
   <diagram id="EEbMAoLFToL-UoKh_trc" name="Page-1">
     <mxGraphModel dx="1108" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -27,7 +27,7 @@
         <mxCell id="wWra-n6el95cTNcETHcs-5" value="T_Lit" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
           <mxGeometry x="30" y="490" width="160" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="wWra-n6el95cTNcETHcs-6" value="+code_lit : int&#xa;+code_chambre : int&#xa;+etat_disponible : String" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="wWra-n6el95cTNcETHcs-5" vertex="1">
+        <mxCell id="wWra-n6el95cTNcETHcs-6" value="+code_lit : int&#xa;+code_chambre : int&#xa;+etat:bool&#xa;+etat_disponible : String" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="wWra-n6el95cTNcETHcs-5" vertex="1">
           <mxGeometry y="30" width="160" height="110" as="geometry" />
         </mxCell>
         <mxCell id="mb02fc5HfGQfMgPmnVmv-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="wWra-n6el95cTNcETHcs-7">
