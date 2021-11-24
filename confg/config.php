@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+require_once('../App/filtre_variable.php');
 $dataConfig = file_get_contents("config/config.txt");
 if(empty($dataConfig)){
     ?>
