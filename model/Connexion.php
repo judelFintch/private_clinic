@@ -1,32 +1,22 @@
 <?php
+
+
 class Connexion
 {
-    private static $resource;
+    private static $ressource;
 
-    private function __construct()
+    public static function GetConnexion()
     {
-    }
+        if(self::$ressource == null)
+        {
+            self::$ressource = new PDO(DNS,DB_USER,DB_PASSWORD,array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+            return self::$ressource;
+        }
+        else
+        {
+            return self::$ressource;
 
-   
-    public static  function getConnexion(){
-        if(session_status() == PHP_SESSION_NONE){
-           
         }
 
-
-        if (self::$resource==null){
-          
-            self::$resource = new PDO (DSN,
-                DB_USER,
-                DB_PWD,
-                array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-
-        
-
-            return self::$resource;
-        } else{
-            return self::$resource;
-        }
     }
-
 }

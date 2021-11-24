@@ -1,5 +1,5 @@
 <?php
-include('../model/patientsmodel');
+include('../model/UserModel');
 if(isset($_POST[''])){
 
     $nom = $_POST['nom'];
@@ -9,8 +9,7 @@ if(isset($_POST[''])){
     $sexe = $_POST['sexe'];
     $date = $_POST['type'];
     $heure = $_POST['role'];
-    $ajout = patientsmodel::insert($nom, $postnom, $prenom, $age, $sexe, $type, $role);
+    $ajout = patientsmodel::insert($nom, $postnom, $prenom, $age, $sexe);
 
     header("Location:../");
-
 }

@@ -7,9 +7,9 @@ if(isset($_POST[''])){
     $prenom = $_POST['prenom'];
     $age = $_POST['age'];
     $sexe = $_POST['sexe'];
-    $date = $_POST['type'];
-    $heure = $_POST['role'];
-    $ajout = patientsmodel::insert($nom, $postnom, $prenom, $age, $sexe, $type, $role);
+    $date = $_POST['date'];
+    $heure = $_POST['heure'];
+    $ajout = patientsmodel::insert($nom, $postnom, $prenom, $age, $sexe, $date, $heure);
 
     header("Location:../");
 
