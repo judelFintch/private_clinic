@@ -219,7 +219,7 @@
               </a>
               <div class="collapse" id="ui-med">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="./nouveaumedecin.html">Ajouter</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="views/nouveaumedecin.php">Ajouter</a></li>
                   <li class="nav-item"> <a class="nav-link" href="./Medecin.html">Liste</a></li>
                 </ul>
               </div>

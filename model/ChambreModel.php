@@ -3,37 +3,31 @@
     function insert() {
     
             $pdo_connexion = Connexion::GetConnexion();
-            $pdo_query = "INSERT INTO patients (nom, postnom, prenom, age, sexe, date, heure) VALUES (?,?,?,?,?,?,?)";
+            $pdo_query = "INSERT INTO chambre (nom_chambre, nombre_lit, detail_chambre, prix_chambre) VALUES (?,?,?,?)";
             $pdo_result = $pdo_connexion->prepare($pdo_query);
             $pdo_result->execute();
             $tableau = array();
             if($pdo_result != NULL){
                 while ($ob = $pdo_result->fetch(PDO::FETCH_OBJ) ){
-                    $tableau[] = new Patient($ob->id, $ob->nom, $ob->postnom, $ob->prenom, $ob->age, $ob->sexe, $ob->date, $ob->heure);
+                    $tableau[] = new chambre($ob->id, $ob->nom_chambre, $ob->nombre_lit, $ob->detail_chambre, $ob->prix_chambre);
                 }
             }
             return $tableau;
 
 
-        // $pdo = Connexion::getConnexion();
-        // $query = "INSERT INTO patients (nom, postnom, prenom, age, sexe, date, heure) VALUES (?,?,?,?,?,?,?)";
-        // $sql = $pdo->prepare($query);
-        // $sql->execute([$this->nom, $this->postnom, $this->prenom, $this->age, $this->sexe, $this->date, $this->heure]);
-    
-        // return true;
 
 }
 
 function select_all(){
     
         $connexion = Connexion::GetConnexion();
-        $requete = "SELECT * FROM patients ";
+        $requete = "SELECT * FROM chambre ";
         $reponse = $connexion->prepare($requete);
         $reponse->execute();
         $tableau = array();
         if($reponse != null){
             while($obj = $reponse->fetch(PDO::FETCH_OBJ)  ){
-                $tableau[] = new Patient($obj->id, $obj->nom, $obj->postnom, $obj->prenom,$obj->age, $obj->sexe, $obj->date, $obj->heure);
+                $tableau[] = new Patient($obj->id, $obj->nom_chambre, $obj->nombre_lit, $obj->detail_chambre, $obj->prix_chambre);
             }
         }
         return $tableau;
@@ -41,20 +35,20 @@ function select_all(){
 function delete($id){
     
         $connexion = Connexion::GetConnexion();
-        $requete = "DELETE FROM patients  WHERE id = '$id' ";
+        $requete = "DELETE FROM chambre  WHERE id = '$id' ";
         $reponse = $connexion->prepare($requete);
         $reponse->execute();
 
     }
 function update($id){
     $pdo_connexion = Connexion::GetConnexion();
-    $pdo_query = "UPDATE patients where id='$id'";
+    $pdo_query = "UPDATE chambre where id='$id'";
     $pdo_result = $pdo_connexion->prepare($pdo_query);
     $pdo_result->execute();
     $tableau = array();
     if($pdo_result != NULL){
         while ($ob = $pdo_result->fetch(PDO::FETCH_OBJ) ){
-            $tableau[] = new Patient($ob->id, $ob->nom, $ob->postnom, $ob->prenom,$ob->age, $ob->sexe, $ob->date, $ob->heure);
+            $tableau[] = new Patient($ob->id, $ob->nom_chambre, $ob->nombre_lit, $ob->detail_chambre, $ob->prix_chambre);
         }
     }
     return $tableau;
