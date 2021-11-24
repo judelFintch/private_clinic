@@ -1,5 +1,8 @@
 <?php
-include('../model/patientsmodel');
+require_once('../model/patientsmodel');
+require_once('../config/config.php');
+require_once('../model/Connexion');
+
 if(isset($_POST[''])){
 
     $nom = $_POST['nom'];

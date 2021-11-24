@@ -1,12 +1,9 @@
 <?php
-session_start();
-require_once('../config/config.php');
-require_once('../model/Connexion.php');
-  
+
     function insert() {
     
             $pdo_connexion = Connexion::GetConnexion();
-            $pdo_query = "INSERT INTO patients (libelle, prix_consultation, type_consultation) VALUES (?,?,?)";
+            $pdo_query = "INSERT INTO service (libelle, prix_consultation, type_consultation) VALUES (?,?,?)";
             $pdo_result = $pdo_connexion->prepare($pdo_query);
             $pdo_result->execute();
             $tableau = array();
