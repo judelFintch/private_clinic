@@ -28,8 +28,8 @@
             </a>
             <div class="collapse" id="ui-chambre">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_room.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_room.php">Liste</a></li>
               </ul>
             </div>
           </li>
@@ -71,8 +71,8 @@
             </a>
             <div class="collapse" id="ui-pat">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="nouveaupatient.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="patient.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_patient.php">Ajouter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Liste</a></li>
               </ul>
             </div>
           </li>
