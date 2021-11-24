@@ -45,8 +45,8 @@
             </a>
             <div class="collapse" id="ui-hospi">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_hospitalisation.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_hospitalisation.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_hospitalisation.php">Hospitaliser</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_hospitalisation.php">Suivis </a></li>
               </ul>
             </div>
           </li>
@@ -131,7 +131,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="creat_user.php">Ajouter </a></li>
                 <li class="nav-item"> <a class="nav-link" href="show_user.php">Voir</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_user.php">Ajouter un role/a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_user.php">Ajouter un role</a></li>
               
               </ul>
             </div>
