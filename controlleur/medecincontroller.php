@@ -43,3 +43,15 @@ if(isset($_POST['savemed'])){
 else {
    echo 'la vache';
 }
+
+function getMedecins()
+{
+    $db = new crudhelp();
+    $datas = $db->getData("medecin");
+    $result = null;
+    if(!empty($datas))
+    { 
+        $result = $datas;
+    }
+    return $result;
+}
