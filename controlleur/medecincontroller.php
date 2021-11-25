@@ -4,7 +4,6 @@ $dbh = new crudhelp();
 if(isset($_POST['savemed'])){
     if (!empty(isset($_POST['medecinname'])) && !empty(isset($_POST['postnom'])) && !empty(isset($_POST['date_nais'])) && !empty(isset($_POST['sexe'])) && !empty(isset($_POST['type'])) && !empty(isset($_POST['role']))) {
         try {
-            $age = $_POST['date_nais'];
             $data = [
                 "nom"=>$_POST['medecinname'],
                 "postnom" => $_POST['postnom'],
@@ -40,8 +39,31 @@ if(isset($_POST['savemed'])){
     }
 
 }
-else {
-   echo 'la vache';
+else if(isset($_POST['updatemed'])){
+   if (isset($_GET['id'])) {
+    if (!empty(isset($_POST['medecinname'])) && !empty(isset($_POST['postnom'])) && !empty(isset($_POST['date_nais'])) && !empty(isset($_POST['sexe'])) && !empty(isset($_POST['type'])) && !empty(isset($_POST['role']))) {
+        try {
+            $data = [
+                "nom"=>$_POST['medecinname'],
+                "postnom" => $_POST['postnom'],
+                "prenom" => $_POST['prenom'],
+                "date_nais" =>  $_POST['date_nais'],
+                "sexe" =>  $_POST['sexe'],
+                "type" =>  $_POST['type'],
+                "role" =>  $_POST['role']
+            ];
+            $where = [
+                "id" => $_GET['id']
+            ];
+            $dbh->update("medecin", $data, $where);
+        } catch (Exception $th) {
+            print($th);
+        }
+    }
+    else {
+        echo "merde";
+    }
+   }
 }
 
 function getMedecins()
