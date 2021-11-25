@@ -7,7 +7,7 @@
         <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Liste medecin</h4>
                         <div class="d-flex">
-                            <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
+                            <a href="./createMedecin.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
                         </div>
                     </div>
                     <div class="table-responsive">

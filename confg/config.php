@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once('../App/filtre_variable.php');
-$dataConfig = file_get_contents("config/config.txt");
+require_once('./App/filtre_variable.php');
+$dataConfig = file_get_contents("confg/config.txt");
 if(empty($dataConfig)){
     ?>
         <script>window.location.replace("install.php")</script>

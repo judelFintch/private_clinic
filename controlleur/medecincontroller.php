@@ -1,19 +1,45 @@
 <?php
-require_once('../model/MedecinModel');
-require_once('../model/Connexion.php');
-require_once('../config/config.php');
+require_once('./../confg/crudhelp.php');
+$dbh = new crudhelp();
+if(isset($_POST['savemed'])){
+    if (!empty(isset($_POST['medecinname'])) && !empty(isset($_POST['postnom'])) && !empty(isset($_POST['date_nais'])) && !empty(isset($_POST['sexe'])) && !empty(isset($_POST['type'])) && !empty(isset($_POST['role']))) {
+        try {
+            $age = $_POST['date_nais'];
+            $data = [
+                "nom"=>$_POST['medecinname'],
+                "postnom" => $_POST['postnom'],
+                "prenom" => $_POST['prenom'],
+                "date_nais" =>  $_POST['date_nais'],
+                "sexe" =>  $_POST['sexe'],
+                "type" =>  $_POST['type'],
+                "role" =>  $_POST['role']
+            ];
+            $where = [
+                "id" => 1
+            ];
+            //$dbh->update("medecin", $data, $where);
+            $dbh -> insert("medecin", $data);
+            //$dbh -> delete("medecin",$where);
+            
+            $datas = $dbh->getData("medecin");
+            if(!empty($datas))
+            { 
+                $count = 0; 
+                foreach($datas as $row)
+                { 
+                    $count++;
+                    echo "$count => ". $row['nom'] ."<br>";
+                }
+            }
+        } catch (Exception $th) {
+            print($th);
+        }
+    }
+    else {
+        echo "merde";
+    }
 
-if(isset($_POST[''])){
-
-    $nom = $_POST['nom'];
-    $postnom = $_POST['postnom'];
-    $prenom = $_POST['prenom'];
-    $age = $_POST['age'];
-    $sexe = $_POST['sexe'];
-    $date = $_POST['type'];
-    $heure = $_POST['role'];
-    $ajout = MedecinModel::insert($nom, $postnom, $prenom, $age, $sexe, $type, $role);
-
-    header("Location:../");
-
+}
+else {
+   echo 'la vache';
 }

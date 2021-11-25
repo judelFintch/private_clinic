@@ -41,7 +41,7 @@ function delete($id){
     }
 function update($id){
     $pdo_connexion = Connexion::GetConnexion();
-    $pdo_query = "UPDATE medecin where id='$id'";
+    $pdo_query = "UPDATE medecin set nom=?, postnom=?, prenom=?, age=?, sexe=?, type=?, role=? where id='$id'";
     $pdo_result = $pdo_connexion->prepare($pdo_query);
     $pdo_result->execute();
     $tableau = array();
