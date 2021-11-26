@@ -15,7 +15,7 @@
                             <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form class="forms-sample row">
+                    <form action = "../controlleur/PatientController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Nom</label>
@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="date" name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Uploader image</label>
-                                <input type="file" name="img[]" class="file-upload-default">
+                                <input type="file" name="photo[]" class="file-upload-default">
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info form-control-sm" disabled placeholder="Upload Image">
                                     <span class="input-group-append">
@@ -55,7 +55,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Groupe sanguin</label>
-                                <select class="form-control form-control-sm" name = "groupe_sanguin">
+                                <select class="form-control form-control-sm" name = "groupe">
                                     <option>Selectionnez le Groupe sanguin du patient</option>
                                     <option>A+</option>
                                     <option>A-</option>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Situation familiale</label>
-                                <select class="form-control form-control-sm" name="situation_fa">
+                                <select class="form-control form-control-sm" name="situation">
                                     <option>Selectionnez la Situation familiale</option>
                                     <option>Marié</option>
                                     <option>Célibataire</option>
@@ -81,11 +81,11 @@
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input type="email" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="email" name="email" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input type="adresse" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="adresse" name="adresse" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                         </div>
                         <div class="col-md-12">

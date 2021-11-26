@@ -12,13 +12,13 @@ if(isset($_POST['btn_patient'])){
     $datenaiss = $_POST['datenaiss'];
     $genre = $_POST['genre'];
     $photo = $_POST['photo'];
-    $groupe_sanguin = $_POST['groupe_sanguin'];
-    $situation_m = $_POST['situation_fa'];
+    $groupe = $_POST['groupe'];
+    $situation = $_POST['situation'];
     $tel = $_POST['tel'];
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
 
-    $ajout = InsertPatient($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$typemedecin,$role,$tel,$email,$adresse);
+    $ajout = InsertPatient($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
     
 
 }
