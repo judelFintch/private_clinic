@@ -49,7 +49,7 @@
                   </div>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  KelasiSoft <br> <a href="" class="text-primary">www.clinicSoft.com</a>
+                  <?=$logiciel_client?> <br> <a href="" class="text-primary">www.clinicSoft.com</a>
                 </div>
               </form>
             </div>
