@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once('../model/medecinmodel.php');
 require_once('../model/Connexion.php');
 require_once('../confg/Connexion.php');

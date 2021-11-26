@@ -1,7 +1,11 @@
 <?php include('../partials/app.php')?>
+<?php include('../model/Connexion.php')?>
+<?php include('../confg/Connexion.php')?>
+<?php include('../model/patientsmodel.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
+
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="d-flex align-items-center justify-content-between">
@@ -41,6 +45,9 @@
                           </tr>
                         </thead>
                         <tbody>
+                          <?php 
+                          var_dump(selectPatient());
+                          ?>
                           <tr>
                             <td class="py-1">
                               1

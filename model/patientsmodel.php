@@ -8,8 +8,8 @@
     }
 
      function selectPatient(){
-        global $bdd ;
-        $select=$bdd ->query("SELECT * FROM patients") or die(print_r($bdd->error_info()));
+        global $bdd;
+        $select=$bdd->query("SELECT * FROM patients") or die(print_r($bdd->error_info()));
         $data=$select->fetch();
         return $data;
  }
