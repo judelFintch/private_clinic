@@ -28,26 +28,14 @@
             </a>
             <div class="collapse" id="ui-chambre">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_room.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_room.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_room.php">Ajouter Chambre</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_room.php">Liste Chambre</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_bed.php">Ajouter lit</a></li>
+               
               </ul>
             </div>
           </li>
-          <!--
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-consul" aria-expanded="false" aria-controls="ui-consul">
-              <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">Consultation</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-consul">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="">Ajouter</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Liste</a></li>
-              </ul>
-            </div>
-          </li>
-        -->
+         
           
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-hospi" aria-expanded="false" aria-controls="ui-hospi">
@@ -57,8 +45,8 @@
             </a>
             <div class="collapse" id="ui-hospi">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_hospitalisation.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_hospitalisation.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_hospitalisation.php">Hospitaliser</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_hospitalisation.php">Suivis </a></li>
               </ul>
             </div>
           </li>
@@ -134,20 +122,6 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-fct" aria-expanded="false" aria-controls="ui-rdv">
-              <i class="icon-ribbon menu-icon"></i>
-              <span class="menu-title">Caisse</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-rdv">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="n_rdv.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="rdv.php">Liste</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-user" aria-expanded="false" aria-controls="ui-user">
               <i class="icon-ribbon menu-icon"></i>
               <span class="menu-title">Utilisateur</span>
@@ -157,7 +131,8 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="creat_user.php">Ajouter </a></li>
                 <li class="nav-item"> <a class="nav-link" href="show_user.php">Voir</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_user.php">Roles User</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_user.php">Ajouter un role</a></li>
+              
               </ul>
             </div>
           </li>

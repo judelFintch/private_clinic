@@ -148,18 +148,15 @@
                               
                             </th>
                             <th>
-                              Nom
+                              N
                             </th>
                             <th>
-                              Post-Nom
+                              Libelle
                             </th>
                             <th>
-                              Prénom
+                              Detail
                             </th>
-                            <th>
-                              Date de naissance
-                            </th>
-                            <th>Operations</th>
+                            
                           </tr>
                         </thead>
                         <tbody>
@@ -173,12 +170,8 @@
                             <td>
                               Murund
                             </td>
-                            <td>
-                              Rodrigue
-                            </td>
-                            <td>
-                              08 janvier 2000
-                            </td>
+            
+                           
                             <td>
                                 <a href="./" class="btn btn-warning btn-sm">Visualiser</a>
                             </td>
@@ -194,16 +187,7 @@
                             <td>
                               Kasongo
                             </td>
-                            <td>
-                              Alpha
-                            </td>
-                            <td>
-                              04 Avril 1999
-                            </td>
-                            <td>
-                                <a href="./" class="btn btn-warning btn-sm">Editer</a>
-                                <a href="./" class="btn btn-success btn-sm">Dossier</a>
-                            </td>
+                            
                           </tr>
                           
                         </tbody>

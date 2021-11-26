@@ -1,57 +1,15 @@
 <?php
-  
-    function insert() {
-    
-            $pdo_connexion = Connexion::GetConnexion();
-            $pdo_query = "INSERT INTO medecin (nom, postnom, prenom, age, sexe, type, role) VALUES (?,?,?,?,?,?,?)";
-            $pdo_result = $pdo_connexion->prepare($pdo_query);
-            $pdo_result->execute();
-            $tableau = array();
-            if($pdo_result != NULL){
-                while ($ob = $pdo_result->fetch(PDO::FETCH_OBJ) ){
-                    $tableau[] = new Patient($ob->id, $ob->nom, $ob->postnom, $ob->prenom, $ob->age, $ob->sexe, $ob->type, $ob->role);
-                }
-            }
-            return $tableau;
-
-
-}
-
-function select_all(){
-    
-        $connexion = Connexion::GetConnexion();
-        $requete = "SELECT * FROM medecin ";
-        $reponse = $connexion->prepare($requete);
-        $reponse->execute();
-        $tableau = array();
-        if($reponse != null){
-            while($obj = $reponse->fetch(PDO::FETCH_OBJ)  ){
-                $tableau[] = new Patient($obj->id, $obj->nom, $obj->postnom, $obj->prenom,$obj->age, $obj->sexe, $obj->type, $obj->role);
-            }
-        }
-        return $tableau;
-}
-function delete($id){
-    
-        $connexion = Connexion::GetConnexion();
-        $requete = "DELETE FROM medecin  WHERE id = '$id' ";
-        $reponse = $connexion->prepare($requete);
-        $reponse->execute();
-
+ function InsertMedecin($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$typemedecin,$role,$tel,$email,$adresse){
+     global $bdd ;
+     $insert=$bdd ->query("INSERT INTO medecin VALUES ('','$nom','$postnom','$prenom','$datenaiss','$genre','$photo','$typemedecin','$role','$tel','$email','$adresse')") or die(print_r($bdd->error_info()));
+     if($insert){
+         echo "Insertion reussi";
+      }
     }
-function update($id){
-    $pdo_connexion = Connexion::GetConnexion();
-    $pdo_query = "UPDATE medecin where id='$id'";
-    $pdo_result = $pdo_connexion->prepare($pdo_query);
-    $pdo_result->execute();
-    $tableau = array();
-    if($pdo_result != NULL){
-        while ($ob = $pdo_result->fetch(PDO::FETCH_OBJ) ){
-            $tableau[] = new Patient($ob->id, $ob->nom, $ob->postnom, $ob->prenom,$ob->age, $ob->sexe, $ob->type, $ob->role);
-        }
-    }
-    return $tableau;
 
-
-    
-}
+     function selectMedecin(){
+        global $bdd ;
+        $select=$bdd ->query("SELECT * FROM medecin") or die(print_r($bdd->error_info()));
+        $data=$select->fetch();
+        return $data;
+ }

@@ -5,17 +5,9 @@
             $pdo_connexion = Connexion::GetConnexion();
             $pdo_query = "INSERT INTO chambre (nom_chambre, nombre_lit, detail_chambre, prix_chambre) VALUES (?,?,?,?)";
             $pdo_result = $pdo_connexion->prepare($pdo_query);
-            $pdo_result->execute();
-            $tableau = array();
-            if($pdo_result != NULL){
-                while ($ob = $pdo_result->fetch(PDO::FETCH_OBJ) ){
-                    $tableau[] = new chambre($ob->id, $ob->nom_chambre, $ob->nombre_lit, $ob->detail_chambre, $ob->prix_chambre);
-                }
-            }
-            return $tableau;
-
-
-
+            $pdo_result->execute([$this->id, $this->nom_chambre, $this->nombre_lit, $this->detail_chambre, $this->prix_chambre]);
+                
+            return $true;
 }
 
 function select_all(){
@@ -41,18 +33,11 @@ function delete($id){
 
     }
 function update($id){
-    $pdo_connexion = Connexion::GetConnexion();
-    $pdo_query = "UPDATE chambre where id='$id'";
-    $pdo_result = $pdo_connexion->prepare($pdo_query);
-    $pdo_result->execute();
-    $tableau = array();
-    if($pdo_result != NULL){
-        while ($ob = $pdo_result->fetch(PDO::FETCH_OBJ) ){
-            $tableau[] = new Patient($ob->id, $ob->nom_chambre, $ob->nombre_lit, $ob->detail_chambre, $ob->prix_chambre);
-        }
-    }
-    return $tableau;
+        $pdo = Connexion::getConnexion();
+        $query="UPDATE chambre SET nom_chambre=?, nombre_lit=?, detail_chambre=?, prix_chambre=? WHERE id=?";
+        $sql = $pdo->prepare($query);
+        $sql->execute([$this->id, $this->nom_chambre, $this->nombre_lit, $this->detail_chambre, $this->prix_chambre]);
 
+        return true;
 
-    
 }

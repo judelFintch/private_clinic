@@ -1,3 +1,4 @@
+
 <?php include('../partials/app.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
@@ -10,7 +11,7 @@
                   <div class="card-body">
                     
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Nouveau patient</h4>
+                        <h4 class="card-title">Ajoute un Utilisateur</h4>
                         <div class="d-flex">
                             <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
@@ -54,17 +55,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label >Groupe sanguin</label>
+                                <label >Role</label>
                                 <select class="form-control form-control-sm">
                                     <option>Selectionnez le Groupe sanguin du patient</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
+                                    <option>Admin</option>
+                                    <option>Laboratoire</option>
+                                    <option>Nursing</option>
+                                    <option>Medecin</option>
+
                                   </select>
                             </div>
                             <div class="form-group">
@@ -83,10 +81,7 @@
                                 <label >G-Mail</label>
                                 <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
-                            <div class="form-group">
-                                <label >Adresse</label>
-                                <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient">
-                            </div>
+                          
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
@@ -100,6 +95,4 @@
         </div>
     <!-- content-wrapper ends -->
     <?php include('../partials/_footer.php')?>
-
-
 
