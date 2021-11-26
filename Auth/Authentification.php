@@ -9,20 +9,18 @@ if(isset($_POST['login']) and (isset($_POST['psswd']))){
    function Authenfication($login,$passwd){
 		global $bdd;	
 		//requette
-		$requete = $bdd->query("SELECT * FROM user ") or die(print_r($bdd->errorinfo()));
-		
+		$requete = $bdd->query("SELECT * FROM user WHERE login='$login' AND password_user='$passwd'") or die(print_r($bdd->errorinfo()));
 		$resultat = $requete->fetch();
-		var_dump($resultat);
 		if($resultat == 0){
 			echo '<div class="alert alert-danger" id="cont" ><h3><center>Authenfication echouée!</h3></center></p><br /><br />';
 		 }
-		 elseif($resultat['login'] == $login AND $resultat['motp'] == $passwd ){
+		 elseif($resultat['login'] == $login AND $resultat['password_user'] == $passwd ){
 		 	switch ($resultat['level']) {
 		 		case 1:
 				$_SESSION['login'] = $resultat['login'];
 				$_SESSION['level']=$resultat['level'];
 				$_SESSION['user'] = $resultat['nomuser'];
-		 	    header('Location:pages/default.php');
+		 	    header('Location:../pages/default.php');
 		 		break;
 				//chef entites
 				case 2:
