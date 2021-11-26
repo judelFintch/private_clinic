@@ -31,11 +31,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" name = "genre">
                                     <option>Selectionnez le genre du patient</option>
                                     <option>Homme</option>
                                     <option>Femme</option>
@@ -55,7 +55,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Groupe sanguin</label>
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" name = "groupe_sanguin">
                                     <option>Selectionnez le Groupe sanguin du patient</option>
                                     <option>A+</option>
                                     <option>A-</option>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Situation familiale</label>
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" name="situation_fa">
                                     <option>Selectionnez la Situation familiale</option>
                                     <option>Marié</option>
                                     <option>Célibataire</option>
@@ -77,19 +77,19 @@
                             </div>
                             <div class="form-group">
                                 <label >Téléphone</label>
-                                <input type="number" class="form-control form-control-sm" placeholder="Numero tel du patient">
+                                <input type="number" name="tel" class="form-control form-control-sm" placeholder="Numero tel du patient">
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="email" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="adresse" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button type="submit" name = "btn_patient" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>

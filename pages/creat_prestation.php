@@ -16,23 +16,23 @@
                             <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form class="forms-sample row">
+                    <form action = "../controlleur/PrestationController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Libelle </label>
-                                <input type="text"name="name_prestation" class="form-control form-control-sm" placeholder="Code Chambre">
+                                <input type="text"name="libelleprestation" class="form-control form-control-sm" placeholder="Code Chambre">
                             </div>
 
                             <div class="form-group">
                                 <label >Prix</label>
-                                <input type="text" name="prix_acte" class="form-control form-control-sm" placeholder="Prix chambre">
+                                <input type="text" name="prix" class="form-control form-control-sm" placeholder="Prix chambre">
                             </div>
                            
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Ajouter un service</label>
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" name= "nomservice">
                                     <option>Selectionnez un service</option>
                                     <option>Medical</option>
                                     <option>Nursing</option>
@@ -43,12 +43,12 @@
                             </div>
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text"name="detail_room" class="form-control form-control-sm" placeholder="detail chambre">
+                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre">
                             </div>
                            
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button type="submit"name="btn_prestation" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>

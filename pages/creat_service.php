@@ -16,21 +16,21 @@
                             <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form class="forms-sample row">
+                    <form action="../controlleur/ServiceController.php" method="post" class="forms-sample row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Libelle</label>
-                                <input type="text" name="libelle_service" class="form-control form-control-sm" placeholder="Libelle service">
+                                <input type="text" name="libelle" class="form-control form-control-sm" placeholder="Libelle service">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text"name="detail_room" class="form-control form-control-sm" placeholder="detail chambre">
+                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre">
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button name ="btn_service" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>

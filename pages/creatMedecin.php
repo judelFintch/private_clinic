@@ -15,11 +15,11 @@
                             <a href="./Medecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form class="forms-sample row" name="insertmed" method="POST" action="./../controlleur/medecincontroller.php">
+                    <form class="forms-sample row"  method="POST" action="../controlleur/medecincontroller.php">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Nom</label>
-                                <input type="text" name="medecinname" class="form-control form-control-sm" placeholder="Ex : Katembue">
+                                <input type="text" name="nom" class="form-control form-control-sm" placeholder="Ex : Katembue">
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
@@ -31,11 +31,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date" name="date_nais" class="form-control form-control-sm" placeholder="01-04-2000">
+                                <input type="date" name="datenaiss" class="form-control form-control-sm" placeholder="01-04-2000">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
-                                <select name="sexe" class="form-control form-control-sm">
+                                <select name="genre" class="form-control form-control-sm">
                                     <option>Selectionnez le genre du medecin</option>
                                     <option>Homme</option>
                                     <option>Femme</option>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Uploader image</label>
-                                <input type="file" name="img" class="file-upload-default">
+                                <input type="file" name="photo" class="file-upload-default">
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info form-control-sm" disabled placeholder="Upload Image">
                                     <span class="input-group-append">
@@ -55,7 +55,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Type medecin</label>
-                                <select name="type" class="form-control form-control-sm">
+                                <select name="typemedecin" class="form-control form-control-sm">
                                     <option>Selectionnez type medecin</option>
                                     <option>Generaliste</option>
                                     <option>Specialiste</option>
@@ -75,15 +75,15 @@
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input name="mail_ad" type="mail" class="form-control form-control-sm" placeholder="johndoe@gmail.com">
+                                <input name="email" type="mail" class="form-control form-control-sm" placeholder="johndoe@gmail.com">
                             </div>
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input name="adress" type="mail" class="form-control form-control-sm" placeholder="ex : Lubumbashi, Commune annexe Quatier kasapa, Rue ...">
+                                <input name="adresse" type="mail" class="form-control form-control-sm" placeholder="ex : Lubumbashi, Commune annexe Quatier kasapa, Rue ...">
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button name="savemed" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button name="btn_enregistrer" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>
