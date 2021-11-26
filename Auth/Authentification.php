@@ -20,7 +20,7 @@ if(isset($_POST['login']) and (isset($_POST['psswd']))){
 				$_SESSION['login'] = $resultat['login'];
 				$_SESSION['level']=$resultat['level'];
 				$_SESSION['user'] = $resultat['nomuser'];
-		 	    header('Location:../pages/default.php');
+		 	    header('Location:../index.php');
 		 		break;
 				//chef entites
 				case 2:

@@ -6,5 +6,3 @@ if(isset($_SESSION['login'])){
 else{
     header("refresh: 0; auth/login.php");
 }
-
-
