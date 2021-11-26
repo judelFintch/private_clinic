@@ -261,7 +261,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="date" name ="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
@@ -307,15 +307,15 @@
                             </div>
                             <div class="form-group">
                                 <label >Téléphone</label>
-                                <input type="number" class="form-control form-control-sm" placeholder="Numero tel du patient">
+                                <input type="number" name="tel" class="form-control form-control-sm" placeholder="Numero tel du patient">
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="mail" name="email" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="mail" name="adresse" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                         </div>
                         <div class="col-md-12">

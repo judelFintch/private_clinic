@@ -1,18 +1,14 @@
 <?php
-  
-    function insert() {
+
+
+ function insert($nom, $postnom,$prenom,$datenaiss,$genre,$typemedecin,$role,$tel,$email,$adresse) {
     
             $pdo_connexion = Connexion::GetConnexion();
-            $pdo_query = "INSERT INTO medecin (nom, postnom, prenom, age, sexe, type, role) VALUES (?,?,?,?,?,?,?)";
+            $pdo_query = "INSERT INTO medecin (nom, postnom, prenom, datenaiss, genre, photo, typemedecin,role, tel, email, adresse) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
             $pdo_result = $pdo_connexion->prepare($pdo_query);
-            $pdo_result->execute();
-            $tableau = array();
-            if($pdo_result != NULL){
-                while ($ob = $pdo_result->fetch(PDO::FETCH_OBJ) ){
-                    $tableau[] = new Patient($ob->id, $ob->nom, $ob->postnom, $ob->prenom, $ob->age, $ob->sexe, $ob->type, $ob->role);
-                }
-            }
-            return $tableau;
+            $pdo_result->execute([$this->id, $this->nom, $this->postnom, $this->prenom, $this->datenaiss, $this->genre, $this->photo, $this->typemedecin, $this->role, $this->tel, $this->email, $this->adresse]);
+             
+            return $true;
 
 
 }
