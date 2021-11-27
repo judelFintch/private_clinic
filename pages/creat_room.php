@@ -9,11 +9,10 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Ajouter une chambre</h4>
                         <div class="d-flex">
-                            <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
+                            <a href="show_room.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Toutes les chambres</a>
                         </div>
                     </div>
                     <form action = "../controlleur/ChambreController.php"class="forms-sample row" method ="post">

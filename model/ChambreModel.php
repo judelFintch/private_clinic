@@ -12,5 +12,13 @@ function Creat_room($room_code,$room_type,$room_price,$room_details){
 }
 
 function select_room(){
+    global $bdd;
+    $data=$bdd->query("SELECT * FROM room");
+    return $data;
+}
 
+function select_room_by_id($id){
+    global $bdd;
+    $data=$bdd->query("SELECT * FROM room WHER id like($id)");
+    return $data;
 }

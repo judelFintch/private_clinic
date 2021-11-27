@@ -1,5 +1,4 @@
 <?php include('../partials/app.php')?>
-<?php include('../model/Connexion.php')?>
 <?php include('../confg/Connexion.php')?>
 <?php include('../model/patientsmodel.php')?>
 <body>

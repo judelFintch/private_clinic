@@ -1,13 +1,16 @@
 <?php include('../partials/app.php')?>
+<?php include('../confg/Connexion.php')?>
+<?php include('../model/Chambremodel.php')?>
+
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Liste medecin</h4>
+                        <h4 class="card-title">Toutes les chambres</h4>
                         <div class="d-flex">
-                            <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
+                            <a href="creat_room.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Ajouter une chambre</a>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -15,67 +18,50 @@
                         <thead>
                           <tr>
                             <th>
-                              
+                              #N
                             </th>
                             <th>
-                              Nom
+                             Code
                             </th>
                             <th>
-                              Post-Nom
+                             Type Chambre
                             </th>
                             <th>
-                              Prénom
+                              Prix
                             </th>
                             <th>
-                              Date de naissance
+                              Details
                             </th>
-                            <th>Operations</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td class="py-1">
-                              <img src="./../images/faces/face1.jpg" alt="image"/>
-                            </td>
-                            <td>
-                              Irung
-                            </td>
-                            <td>
-                              Murund
-                            </td>
-                            <td>
-                              Rodrigue
-                            </td>
-                            <td>
-                              08 janvier 2000
-                            </td>
-                            <td>
-                                <a href="./" class="btn btn-warning btn-sm">Visualiser</a>
-                            </td>
-                          </tr>
-                          
-                          <tr>
-                            <td class="py-1">
-                              <img src="./../images/faces/face1.jpg" alt="image"/>
-                            </td>
-                            <td>
-                              Mwema
-                            </td>
-                            <td>
-                              Kasongo
-                            </td>
-                            <td>
-                              Alpha
-                            </td>
-                            <td>
-                              04 Avril 1999
-                            </td>
-                            <td>
-                                <a href="./" class="btn btn-warning btn-sm">Editer</a>
-                                <a href="./" class="btn btn-success btn-sm">Dossier</a>
-                            </td>
-                          </tr>
-                          
+
+                        <?php 
+                        $rooms=select_room();
+                        $count=0;
+                        while($room=$rooms->fetch()){
+                          $count++;
+                          echo'
+                            <tr>
+                              <td>
+                              '.$count.'
+                              </td>
+                              <td>
+                              '.$room['room_code'].'
+                              </td>
+                              <td>
+                              '.$room['room_type'].'
+                              </td>
+                              <td>
+                              '.$room['room_price'].'
+                              </td>
+                              <td>
+                              '.$room['room_details'].'
+                              </td>
+                              
+                            </tr>';
+                          }
+                          ?>
                         </tbody>
                       </table>
                     </div>
