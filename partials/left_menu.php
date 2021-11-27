@@ -19,13 +19,6 @@
               <span class="menu-title">Caisse</span>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="swow_weting_page.php">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Caisse</span>
-            </a>
-          </li>
          
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-chambre" aria-expanded="false" aria-controls="ui-chambre">
