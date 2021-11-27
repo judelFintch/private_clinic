@@ -1,5 +1,16 @@
 <?php include('../partials/app.php')?>
 <body>
+<script type="text/javascript">
+          $(document).ready(function(){
+             if (jQuery) {  
+               // jQuery is loaded  
+               alert("Yeah!");
+             } else {
+               // jQuery is not loaded
+               alert("Doesn't Work");
+             }
+          });
+        </script>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
       <div class="main-panel">

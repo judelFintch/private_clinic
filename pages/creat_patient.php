@@ -1,5 +1,6 @@
 <?php include('../partials/app.php')?>
-
+<?php include('../confg/Connexion.php')?>
+<?php include('../model/patientsmodel.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
@@ -9,22 +10,23 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Nouveau patient</h4>
                         <div class="d-flex">
-                            <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
+                            <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
                     <form action = "../controlleur/PatientController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
+                        <input type="hidden" required name="patient" value="<?=PatientCode()?>" >
+    
                             <div class="form-group">
                                 <label >Nom</label>
-                                <input type="text"name="nom" class="form-control form-control-sm" placeholder="Nom du patient">
+                                <input type="text"  name="nom" class="form-control form-control-sm" placeholder="Nom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
-                                <input type="text"name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient">
+                                <input type="text"  name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Prénom</label>
@@ -32,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date" name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="date"  name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>

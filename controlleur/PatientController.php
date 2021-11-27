@@ -3,6 +3,7 @@ session_start();
 require_once('../model/patientsmodel.php');
 require_once('../confg/Connexion.php');
 if(isset($_POST['btn_patient'])){
+    echo $patient_code=$_POST['patient'];
     $nom = $_POST['nom'];
     $postnom = $_POST['postnom'];
     $prenom = $_POST['prenom'];
@@ -14,9 +15,9 @@ if(isset($_POST['btn_patient'])){
     $tel = $_POST['tel'];
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
-    $creat_patient = InsertPatient($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
+    $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
     if($creat_patient==1){
-        header("refresh: 0; ../index.php?operation=creat_patient");
+        header("refresh: 0; ../index.php?operation=creat_patient&&codep=$patient_code");
        }
        else{
           header("refresh: 0; ../index.php?operation=error");

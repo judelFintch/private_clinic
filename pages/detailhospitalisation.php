@@ -20,7 +20,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-        <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Detail hospitalistion Numéro <?= $result['id'] ?></h4>
                         <div class="d-flex">
                             <a href="edit_hospitalisation.php?id=<?= $result['id'] ?>" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Editer</a>
