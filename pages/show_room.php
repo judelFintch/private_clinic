@@ -1,7 +1,6 @@
 <?php include('../partials/app.php')?>
 <?php include('../confg/Connexion.php')?>
 <?php include('../model/Chambremodel.php')?>
-
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
@@ -64,7 +63,7 @@
                               </td>
 
                               <td>
-                              '.$room['room_details'].'
+                              <a href="details_room.php?id='.$room['id'].'">Voir</a>
                               </td>
                             </tr>';
                           }
@@ -72,7 +71,6 @@
                         </tbody>
                       </table>
                     </div>
-          
                     </div>
     <!-- content-wrapper ends -->
     <?php include('../partials/_footer.php')?>

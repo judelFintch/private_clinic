@@ -9,3 +9,7 @@ if(isset($_POST['btn_chambre'])){
     $room_details = $_POST['room_details'];
     $creat_room = Creat_room($room_code, $room_type, $room_price, $room_details);
 }
+
+if(isset($_GET['id']) or isset($_POST['id'])){
+
+}

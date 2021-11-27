@@ -19,7 +19,9 @@ function select_room(){
 
 function select_room_by_id($id){
     global $bdd;
-    $data=$bdd->query("SELECT * FROM room WHER id like($id)");
+    echo $id;
+    $data_r=$bdd->query("SELECT * FROM room WHERE id like('$id')");
+    $data=$data_r->fetch();
     return $data;
 }
 
