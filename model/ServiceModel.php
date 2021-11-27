@@ -9,6 +9,15 @@
          echo "Insertion reussi";
       }
     }
+    
+   /* function UpdateService($id, $libelle, $detail)
+    {
+      global $bdd;
+      $insert = $bdd -> query("UPDATE service SET libelle = ?, detail = ? where id = ?");
+      if ($insert->execute([$Libelle, $detail, $id])) {
+         echo "update successfully";
+      }
+    }*/
 
      function selectServices(){
         global $bdd ;

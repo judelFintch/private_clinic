@@ -21,7 +21,7 @@
                             <th>Id</th>
                             <th> Libelle </th>
                             <th> Details</th>
-                            <th> <Details></Details></th>
+                            <th> </th>
                           
                           </tr>
                         </thead>
@@ -30,20 +30,17 @@
                         <?php
                   
                   while ($result = $select->fetch()){
-                    echo '
+                    ?>
 
                 
                           <tr>
-                            <td>'.$result['id'].'</td>
-                            <td>'.$result ['libelle'].'</td>
-                            <td>'.$result['detail'].'</td>
-                            <td><a href="updateService.php?id='.$result['id'].'">  Modifier</a></td>
-                          
-                            <td><label class="badge badge-danger">En attente</label></td>
-                            <td> </td>
-                            <td> </td>
+                            <td><?=$result['id']?></td>
+                            <td><?=$result ['libelle']?></td>
+                            <td><?=$result['detail']?></td>
+                            
+                            <td><a href="updateService.php?id=<?=$result['id']?>" class="btn btn-warning">Editer</a></td>
                           </tr>
-                              ';
+                             <?php
                     }
                   ?>
                         </tbody>

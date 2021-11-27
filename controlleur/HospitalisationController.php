@@ -1,17 +1,34 @@
 <?php
-require_once('../model/HospitalisationModel');
-require_once('../model/patientsmodel.php');
-require_once('../model/medecinmodel.php');
-require_once('../model/Connexion.php');
-require_once('../config/config.php');
+require_once('../model/HospitalisationModel.php');
+require_once('../confg/Connexion.php');
 
-if(isset($_POST[''])){
+if(isset($_POST['savehospi'])){
 
-    $nom = $_POST['nom_patient'];
-    $postnom = $_POST['nom_medecin'];
-    $prenom = $_POST['motif_hospitalisation'];
-    $age = $_POST['date_hospitalisation'];
-    $sexe = $_POST['date_accord'];
-   
-
+    $patient= $_POST['patient'];
+    $medecintr = $_POST['medecin_trait'];
+    $motifhosp = $_POST['motif_hospitalisation'];
+    $datehosp = $_POST['date_hospitalisation'];
+    $hosptby = $_POST['serv_id'];
+    $note =$_POST['note'];
+    $chambre =$_POST['chambre_id'];
+    $lit =$_POST['lit_id'];
+    insertHospitalistion($patient, $medecintr, $motifhosp, $datehosp, $hosptby, $note, $chambre, $lit);
+}
+elseif (isset($_POST['updatehospi'])) {
+    $patient= $_POST['patient'];
+    $medecintr = $_POST['medecin_trait'];
+    $motifhosp = $_POST['motif_hospitalisation'];
+    $datehosp = $_POST['date_hospitalisation'];
+    $hosptby = $_POST['serv_id'];
+    $note =$_POST['note'];
+    $chambre =$_POST['chambre_id'];
+    $lit =$_POST['lit_id'];
+    $id =$_POST['id'];
+    updateHospitalistion($patient, $medecintr, $motifhosp, $datehosp, $hosptby, $note, $id, $chambre, $lit);
+}
+elseif (isset($_POST['libhospi'])) {
+    $date_lib = $_POST['date_lib'];
+    $note =$_POST['note'];
+    $id =$_POST['id'];
+    liberePat($id, $date_lib, $note);
 }

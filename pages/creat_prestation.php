@@ -13,14 +13,14 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Ajouter une prestation</h4>
                         <div class="d-flex">
-                            <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
+                            <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
                     <form action = "../controlleur/PrestationController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Libelle </label>
-                                <input type="text"name="libelleprestation" class="form-control form-control-sm" placeholder="Code Chambre">
+                                <input type="text" name="libelleprestation" class="form-control form-control-sm" placeholder="Code Chambre">
                             </div>
 
                             <div class="form-group">

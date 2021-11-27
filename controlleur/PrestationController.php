@@ -9,13 +9,8 @@ if(isset($_POST['btn_prestation'])){
     $prix = $_POST['prix'];
     $nomservice = $_POST['nomservice'];
     $detail = $_POST['detail'];
-
+    $ajout = InsertPrestation($libellepresstation,$prix,$nomservice,$detail);
     
-     $ajout = InsertPrestation($libelleprestation,$prix,$nomservice,$detail);
-
-
-    // header("Location:../");
-
 }
 if(isset($_POST['btn_modifier'])){
     $id=$_POST['id'];
@@ -23,6 +18,5 @@ if(isset($_POST['btn_modifier'])){
     $prix = $_POST['prix'];
     $nomservice = $_POST['nomservice'];
     $detail = $_POST['detail'];
-
-     $update = updatePrestation($id,$libelleprestation,$prix,$nomservice,$detail);
+    $update = updatePrestation($id,$libelleprestation,$prix,$nomservice,$detail);
 }
