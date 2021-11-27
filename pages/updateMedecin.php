@@ -5,19 +5,12 @@
 	if($_REQUEST['id']) {
 		$id = $_REQUEST['id'];
         $resultat=$bdd ->query("SELECT * FROM medecin WHERE id=$id") or die(print_r($bdd->error_info()));
-<<<<<<< HEAD
 		// echo $sql . '<br />';
 		if($resultat) {
 			$sql = "SELECT * FROM medecin WHERE id=".$id;
 			echo $id;
             $data=$resultat->fetch();
 			//  $resultat = qdb($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());
-=======
-		if($resultat) {
-			 $sql = "SELECT * FROM medecin WHERE id=".$id;
-			// echo $id;
-            $data=$resultat->fetch();
->>>>>>> ae3ddb019a599ba126e48e2c3fa887c5746006ba
 			$id = $_REQUEST['id'];
 			
 ?>
