@@ -1,7 +1,7 @@
 <?php
- function InsertChambre($codeChambre,$typechambre,$prix,$detail){
+ function InsertLit($codeLit,$chambre){
      global $bdd ;
-     $insert=$bdd->query("INSERT INTO chambre VALUES ('','$codeChambre','$typechambre','$prix','$detail')") or die(print_r($bdd->error_info()));
+     $insert=$bdd ->query("INSERT INTO lit VALUES ('','$codeLit','$chambre')") or die(print_r($bdd->error_info()));
      if($insert){
          echo "Insertion reussi"; 
       }

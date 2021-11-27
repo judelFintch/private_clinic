@@ -2,16 +2,15 @@
 session_start();
 require_once('../model/ChambreModel.php');
 require_once('../model/Connexion.php');
-require_once('../config/config.php');
+require_once('../confg/config.php');
 
-if(isset($_POST[''])){
+if(isset($_POST['btn_chambre'])){
 
-    $nom = $_POST['nom_chambre'];
-    $postnom = $_POST['nombre_lit'];
-    $prenom = $_POST['detail_chambre'];
-    $age = $_POST['prix_chambre'];
-    $ajout = ChambreModel::insert($nom_chambre, $nombre_lit, $detail_chambre, $prix_chambre);
+    $codeChambre = $_POST['codeChambre'];
+    $typechambre = $_POST['typechambre'];
+    $prix = $_POST['prix'];
+    $detail = $_POST['detail'];
+    $ajout = InsertChambre($codeChambre, $typechambre, $prix, $detail);
 
-    header("Location:../");
 
 }

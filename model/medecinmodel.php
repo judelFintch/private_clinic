@@ -13,3 +13,10 @@
         $data=$select->fetch();
         return $data;
  }
+    function updateMedecin($id){
+        global $bdd ;
+        $select=$bdd ->query("UPDATE  medecin SET nom=?, postnom=?, prenom=?, datenaiss=?, genre=?, photo=?,typemedecin=?
+        ,role=?,tel=?, email=?, adresse=? WHERE id='$id'") or die(print_r($bdd->error_info()));
+        $data=$upd->fetch();
+        return $data;
+}
