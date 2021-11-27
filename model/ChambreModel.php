@@ -22,3 +22,13 @@ function select_room_by_id($id){
     $data=$bdd->query("SELECT * FROM room WHER id like($id)");
     return $data;
 }
+
+
+function update_room($id){
+
+}
+
+
+function delete_room($id){
+
+}

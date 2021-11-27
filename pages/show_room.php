@@ -32,6 +32,10 @@
                             <th>
                               Details
                             </th>
+
+                            <th>
+                              Operation
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -58,7 +62,10 @@
                               <td>
                               '.$room['room_details'].'
                               </td>
-                              
+
+                              <td>
+                              '.$room['room_details'].'
+                              </td>
                             </tr>';
                           }
                           ?>
