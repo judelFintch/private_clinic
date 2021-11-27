@@ -2,9 +2,7 @@
 session_start();
 require_once('../model/patientsmodel.php');
 require_once('../confg/Connexion.php');
-
 if(isset($_POST['btn_patient'])){
-
     $nom = $_POST['nom'];
     $postnom = $_POST['postnom'];
     $prenom = $_POST['prenom'];
@@ -16,14 +14,11 @@ if(isset($_POST['btn_patient'])){
     $tel = $_POST['tel'];
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
-
     $ajout = InsertPatient($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
     
-
 }
 
 if(isset($_POST['btn_modifier'])){
-
     $id = $_POST['id'];
     $nom = $_POST['nom'];
     $postnom = $_POST['postnom'];
@@ -36,7 +31,6 @@ if(isset($_POST['btn_modifier'])){
     $tel = $_POST['tel'];
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
-
     $ajout = updatePatient($id,$nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
     
 
