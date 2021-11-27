@@ -8,7 +8,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="swow_weting_page.php">
+            <a class="nav-link" href="show_waiting_line.php">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">File d'attente</span>
             </a>
