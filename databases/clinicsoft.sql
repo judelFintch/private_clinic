@@ -1,34 +1,33 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
--- https://www.phpmyadmin.net/
+-- version 4.1.14
+-- http://www.phpmyadmin.net
 --
--- Hôte : 127.0.0.1
--- Généré le : ven. 26 nov. 2021 à 15:23
--- Version du serveur :  10.4.18-MariaDB
--- Version de PHP : 8.0.3
+-- Host: 127.0.0.1
+-- Generation Time: Nov 27, 2021 at 11:48 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Base de données : `clinicsoft`
+-- Database: `clinicsoft`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `medecin`
+-- Table structure for table `medecin`
 --
 
-CREATE TABLE `medecin` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `medecin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) NOT NULL,
   `postnom` varchar(45) NOT NULL,
   `prenom` varchar(45) NOT NULL,
@@ -39,11 +38,12 @@ CREATE TABLE `medecin` (
   `role` varchar(20) NOT NULL,
   `tel` varchar(10) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `adresse` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `adresse` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=2 ;
 
 --
--- Déchargement des données de la table `medecin`
+-- Dumping data for table `medecin`
 --
 
 INSERT INTO `medecin` (`id`, `nom`, `postnom`, `prenom`, `datenaiss`, `genre`, `photo`, `typemedecin`, `role`, `tel`, `email`, `adresse`) VALUES
@@ -52,11 +52,11 @@ INSERT INTO `medecin` (`id`, `nom`, `postnom`, `prenom`, `datenaiss`, `genre`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `patients`
+-- Table structure for table `patients`
 --
 
-CREATE TABLE `patients` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `patients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   `postnom` varchar(50) NOT NULL,
   `presnom` varchar(50) NOT NULL,
@@ -67,11 +67,12 @@ CREATE TABLE `patients` (
   `situation` varchar(50) NOT NULL,
   `tel` int(10) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `adresse` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `adresse` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=6 ;
 
 --
--- Déchargement des données de la table `patients`
+-- Dumping data for table `patients`
 --
 
 INSERT INTO `patients` (`id`, `nom`, `postnom`, `presnom`, `datenaiss`, `genre`, `photo`, `groupe`, `situation`, `tel`, `email`, `adresse`) VALUES
@@ -84,19 +85,20 @@ INSERT INTO `patients` (`id`, `nom`, `postnom`, `presnom`, `datenaiss`, `genre`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `prestation`
+-- Table structure for table `prestation`
 --
 
-CREATE TABLE `prestation` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `prestation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelleprestation` varchar(80) NOT NULL,
   `prix` float NOT NULL,
   `nomservice` varchar(80) NOT NULL,
-  `detail` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `detail` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=3 ;
 
 --
--- Déchargement des données de la table `prestation`
+-- Dumping data for table `prestation`
 --
 
 INSERT INTO `prestation` (`id`, `libelleprestation`, `prix`, `nomservice`, `detail`) VALUES
@@ -106,82 +108,72 @@ INSERT INTO `prestation` (`id`, `libelleprestation`, `prix`, `nomservice`, `deta
 -- --------------------------------------------------------
 
 --
--- Structure de la table `service`
+-- Table structure for table `room`
 --
 
-CREATE TABLE `service` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `room` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `room_code` varchar(10) NOT NULL,
+  `room_type` varchar(20) NOT NULL,
+  `room_price` float NOT NULL,
+  `room_details` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`,`room_code`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`id`, `room_code`, `room_type`, `room_price`, `room_details`) VALUES
+(3, 'chambre1', 'Moyen', 20, 'detaisl chanmbre'),
+(4, 'chambre1', 'Moyen', 20, 'detaisl chanmbre'),
+(5, 'chambre1', 'Moyen', 20, 'detaisl chanmbre');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service`
+--
+
+CREATE TABLE IF NOT EXISTS `service` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(100) NOT NULL,
-  `detail` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `detail` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=12 ;
 
 --
--- Déchargement des données de la table `service`
+-- Dumping data for table `service`
 --
 
 INSERT INTO `service` (`id`, `libelle`, `detail`) VALUES
-(2, 'NURSING', 'SERVICES INFIRMIER'),
-(3, 'NURSING', 'SERVICES INFIRMIER'),
-(4, 'NURSING', 'SERVICES INFIRMIER'),
 (5, 'NURSING', 'SERVICES INFIRMIER'),
-(6, 'laboratoir', 'service labo');
+(8, 'Chambre', '20'),
+(9, 'Chambre', '20'),
+(10, 'SGAD', 'detail'),
+(11, 'SGAD', 'l');
+
+-- --------------------------------------------------------
 
 --
--- Index pour les tables déchargées
+-- Table structure for table `user`
 --
 
---
--- Index pour la table `medecin`
---
-ALTER TABLE `medecin`
-  ADD PRIMARY KEY (`id`);
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(15) NOT NULL COMMENT 'password',
+  `password_user` varchar(15) NOT NULL,
+  `level` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Index pour la table `patients`
---
-ALTER TABLE `patients`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `prestation`
---
-ALTER TABLE `prestation`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `service`
---
-ALTER TABLE `service`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
+-- Dumping data for table `user`
 --
 
---
--- AUTO_INCREMENT pour la table `medecin`
---
-ALTER TABLE `medecin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT pour la table `patients`
---
-ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT pour la table `prestation`
---
-ALTER TABLE `prestation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT pour la table `service`
---
-ALTER TABLE `service`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-COMMIT;
+INSERT INTO `user` (`id`, `login`, `password_user`, `level`) VALUES
+(1, '1010', '1010', 1),
+(2, '66', '66', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

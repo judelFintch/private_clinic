@@ -1,5 +1,8 @@
 <?php include('../partials/app.php')?>
+<<<<<<< HEAD
+=======
 <?php include('../controlleur/medecincontroller.php')?>
+>>>>>>> ae3ddb019a599ba126e48e2c3fa887c5746006ba
 <?php include('../confg/Connexion.php')?>
 <?php include('../model/patientsmodel.php')?>
 <body>

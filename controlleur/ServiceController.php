@@ -7,11 +7,7 @@ if(isset($_POST['btn_service'])){
     $id='';
     $libelle = $_POST['libelle'];
     $detail = $_POST['detail'];
-    
-     $ajout = InsertService($libelle,$detail);
-     
-
-    // header("Location:../");
+    $ajout = InsertService($libelle,$detail);
 
 }
 if(isset($_POST['btn_modifier'])){

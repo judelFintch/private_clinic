@@ -1,25 +1,19 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-file" aria-expanded="false" aria-controls="ui-file">
-              <i class="icon-clipboard menu-icon"></i>
-              <span class="menu-title">File d'attente</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-file">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_waiting_line.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_waiting_line.php">Voir</a></li>
-              </ul>
-            </div>
-          </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="swow_weting_page.php">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">File d'attente</span>
+            </a>
+          </li>
+         
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-chambre" aria-expanded="false" aria-controls="ui-chambre">
               <i class="icon-clipboard menu-icon"></i>

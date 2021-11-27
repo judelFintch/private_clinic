@@ -2,14 +2,15 @@
 	
     require_once('../confg/Connexion.php');
     require_once('../model/medecinmodel.php');
-
 	if($_REQUEST['id']) {
 		$id = $_REQUEST['id'];
         $resultat=$bdd ->query("SELECT * FROM medecin WHERE id=$id") or die(print_r($bdd->error_info()));
+		// echo $sql . '<br />';
 		if($resultat) {
-			 $sql = "SELECT * FROM medecin WHERE id=".$id;
-			// echo $id;
+			$sql = "SELECT * FROM medecin WHERE id=".$id;
+			echo $id;
             $data=$resultat->fetch();
+			//  $resultat = qdb($sql) or die('Erreur SQL !'.$sql.'<br />'.mysql_error());
 			$id = $_REQUEST['id'];
 			
 ?>
