@@ -88,13 +88,13 @@
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input name="email" value="<?php echo $data['email']; ?>" type="number" class="form-control form-control-sm" placeholder="Numero tel du patient">
+                                <input name="email" value="<?php echo $data['email']; ?>" type="mail" class="form-control form-control-sm" placeholder="Email patient">
                             </div>
                             
                             
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input name="adresse" value="<?php echo $data['adresse']; ?>" type="mail" class="form-control form-control-sm" placeholder="ex : Lubumbashi, Commune annexe Quatier kasapa, Rue ...">
+                                <input name="adresse" value="<?php echo $data['adresse']; ?>" type="text" class="form-control form-control-sm" placeholder="ex : Lubumbashi, Commune annexe Quatier kasapa, Rue ...">
                             </div>
                         </div>
                         <div class="col-md-12">
