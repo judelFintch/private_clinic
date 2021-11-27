@@ -2,6 +2,7 @@
  function InsertPatient($nom,$postnom,$presnom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse){
      global $bdd ;
      $insert=$bdd ->query("INSERT INTO patients VALUES ('','$nom','$postnom','$presnom','$datenaiss','$genre','$photo','$groupe','$situation','$tel','$email','$adresse')") or die(print_r($bdd->error_info()));
+     $insert=$bdd ->query("INSERT INTO ffiledattente VALUES('','$nom','$postnom','$presnom','$genre')") or die(print_r($bdd->error_info()));
      if($insert){
          echo "Insertion reussi";
       }

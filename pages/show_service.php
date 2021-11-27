@@ -21,7 +21,7 @@
                             <th>Id</th>
                             <th> Libelle </th>
                             <th> Details</th>
-                            <th> <Details></Details></th>
+                            <th> Action</th>
                           
                           </tr>
                         </thead>
