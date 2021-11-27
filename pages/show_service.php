@@ -1,5 +1,4 @@
 <?php include('../partials/app.php')?>
-<?php include('../model/Connexion.php')?>
 <?php include('../confg/Connexion.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
@@ -38,7 +37,7 @@
                             <td>'.$result['id'].'</td>
                             <td>'.$result ['libelle'].'</td>
                             <td>'.$result['detail'].'</td>
-                           
+                            <td><a href="updateService.php?id='.$result['id'].'">  Modifier</a></td>
                           
                             <td><label class="badge badge-danger">En attente</label></td>
                             <td> </td>

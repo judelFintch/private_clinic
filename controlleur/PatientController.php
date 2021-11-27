@@ -22,3 +22,23 @@ if(isset($_POST['btn_patient'])){
     
 
 }
+
+if(isset($_POST['btn_modifier'])){
+
+    $id = $_POST['id'];
+    $nom = $_POST['nom'];
+    $postnom = $_POST['postnom'];
+    $prenom = $_POST['presnom'];
+    $datenaiss = $_POST['datenaiss'];
+    $genre = $_POST['genre'];
+    $photo = $_POST['photo'];
+    $groupe = $_POST['groupe'];
+    $situation = $_POST['situation'];
+    $tel = $_POST['tel'];
+    $email = $_POST['email'];
+    $adresse = $_POST['adresse'];
+
+    $ajout = updatePatient($id,$nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
+    
+
+}

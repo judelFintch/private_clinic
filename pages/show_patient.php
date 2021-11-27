@@ -1,5 +1,5 @@
 <?php include('../partials/app.php')?>
-<?php include('../model/Connexion.php')?>
+<?php include('../controlleur/medecincontroller.php')?>
 <?php include('../confg/Connexion.php')?>
 <?php include('../model/patientsmodel.php')?>
 <body>
@@ -33,6 +33,7 @@
                             <th>Email</th>
                             <th>Adresse</th>
                             <th>Etat</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -54,6 +55,7 @@
                             <td>'.$res['email'].'</td>
                             <td>'.$res['adresse'].'</td>
                             <td><label class="badge badge-danger">En attente</label></td>
+                            <td><a href="updatePatient.php?id='.$res['id'].'">  Modifier</a></td>
                             <td> </td>
                             <td> </td>
                           </tr>

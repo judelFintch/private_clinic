@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('../model/PrestationModel.php');
-require_once('../model/Connexion.php');
 require_once('../confg/Connexion.php');
 
 if(isset($_POST['btn_prestation'])){
@@ -12,9 +11,18 @@ if(isset($_POST['btn_prestation'])){
     $detail = $_POST['detail'];
 
     
-     $ajout = InsertPrestation($libellepresstation,$prix,$nomservice,$detail);
-     var_dump(selectPrestation());
+     $ajout = InsertPrestation($libelleprestation,$prix,$nomservice,$detail);
+
 
     // header("Location:../");
 
+}
+if(isset($_POST['btn_modifier'])){
+    $id=$_POST['id'];
+    $libelleprestation = $_POST['libelleprestation'];
+    $prix = $_POST['prix'];
+    $nomservice = $_POST['nomservice'];
+    $detail = $_POST['detail'];
+
+     $update = updatePrestation($id,$libelleprestation,$prix,$nomservice,$detail);
 }

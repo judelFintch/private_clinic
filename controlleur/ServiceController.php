@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('../model/ServiceModel.php');
-require_once('../model/Connexion.php');
 require_once('../confg/Connexion.php');
 
 if(isset($_POST['btn_service'])){
@@ -10,8 +9,14 @@ if(isset($_POST['btn_service'])){
     $detail = $_POST['detail'];
     
      $ajout = InsertService($libelle,$detail);
-     var_dump(selectServices());
+     
 
     // header("Location:../");
 
+}
+if(isset($_POST['btn_modifier'])){
+    $id=$_POST['id'];
+    $libelle = $_POST['libelle'];
+    $detail = $_POST['detail'];
+     $update = updateService($id,$libelle,$detail);
 }

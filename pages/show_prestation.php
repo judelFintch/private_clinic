@@ -1,5 +1,4 @@
 <?php include('../partials/app.php')?>
-<?php include('../model/Connexion.php')?>
 <?php include('../confg/Connexion.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
@@ -7,7 +6,7 @@
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Liste medecin</h4>
+                        <h4 class="card-title">Liste Prestation</h4>
                         <div class="d-flex">
                             <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
                         </div>
@@ -20,11 +19,11 @@
                         <thead>
                           <tr>
                             <th>Id</th>
-                            <th> Libelle Prestation</th>
-                            <th> Prix</th>
+                            <th>Libelle Prestation</th>
+                            <th>Prix</th>
                             <th>Nom Service</th>
                             <th>Details</th>
-                            <th> <Details></Details></th>
+                            <th>Action</th>
                           
                           </tr>
                         </thead>
@@ -44,6 +43,7 @@
                             <td>'.$result['detail'].'</td>
                           
                             <td><label class="badge badge-danger">En attente</label></td>
+                            <td><a href="updatePrestation.php?id='.$result['id'].'">  Modifier</a></td>
                             <td> </td>
                             <td> </td>
                           </tr>

@@ -1,11 +1,12 @@
 <?php include('../partials/app.php')?>
-<?php include('../model/Connexion.php')?>
+
 <?php include('../confg/Connexion.php')?>
+<?php include('../controlleur/medecincontroller.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
 
-<?php require('../model/medecinmodel.php')?>
+
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="d-flex align-items-center justify-content-between">
@@ -28,6 +29,7 @@
                             <th>Date naissance</th>
                             <th>Role</th>
                             <th>Telephone</th>
+                            <th>Email</th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -46,12 +48,13 @@
                             <td>'.$resultat['datenaiss'].'</td>
                             <td>'.$resultat['role'].'</td>
                             <td>'.$resultat['tel'].'</td>
-                            <td><a href="updateMedecin.php?id='.$resultat['id'].'"> Modifier</a></td>
+                            <td>'.$resultat['email'].'</td>
+                            <td><a href="updateMedecin.php?id='.$resultat['id'].'">  Modifier</a></td>
                            
-                            <td> </td>
-                            <td> </td>
+            
                           </tr>
                               ';
+                            
                     }
                   ?>
                  

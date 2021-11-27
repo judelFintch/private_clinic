@@ -1,13 +1,13 @@
 <?php
-	
+
     require_once('../confg/Connexion.php');
-    require_once('../model/medecinmodel.php');
+    require_once('../model/patientsmodel.php');
 
 	if($_REQUEST['id']) {
 		$id = $_REQUEST['id'];
-        $resultat=$bdd ->query("SELECT * FROM medecin WHERE id=$id") or die(print_r($bdd->error_info()));
+        $resultat=$bdd ->query("SELECT * FROM patients WHERE id=$id") or die(print_r($bdd->error_info()));
 		if($resultat) {
-			 $sql = "SELECT * FROM medecin WHERE id=".$id;
+			 $sql = "SELECT * FROM patients WHERE id=".$id;
 			// echo $id;
             $data=$resultat->fetch();
 			$id = $_REQUEST['id'];
@@ -31,7 +31,7 @@
                             <a href="./Medecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form class="forms-sample row"  method="POST" action="../controlleur/medecincontroller.php">
+                    <form class="forms-sample row"  method="POST" action="../controlleur/PatientController.php">
                         <div class="col-md-6">
                             <div class="form-group">
                             <label >Id</label>
@@ -47,7 +47,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Prénom</label>
-                                <input type="text" name="prenom" value="<?php echo $data['prenom']; ?> "class="form-control form-control-sm" placeholder="Ex : John">
+                                <input type="text" name="presnom" value="<?php echo $data['presnom']; ?> "class="form-control form-control-sm" placeholder="Ex : John">
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
@@ -71,23 +71,27 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label >Type medecin</label>
-                                <input type="text" name="typemedecin" value="<?php echo $data['typemedecin']; ?>"class="form-control form-control-sm">
+                                <label >Groupe Sanguin</label>
+                                <input type="text" name="groupe" value="<?php echo $data['groupe']; ?>"class="form-control form-control-sm">
+                                   
+                            </div>
+                          
+                            <div class="form-group">
+                                <label >Situation Matrimoniale</label>
+                                <input type="text" name="situation" value="<?php echo $data['situation']; ?>"class="form-control form-control-sm">
                                    
                             </div>
                             <div class="form-group">
-                                <label >Role du medecin</label>
-                                <input type="text" name="role" value="<?php echo $data['role']; ?> "class="form-control form-control-sm">
+                                <label >Telephone</label>
+                                <input type="text" name="tel" value="<?php echo $data['tel']; ?> "class="form-control form-control-sm">
                                    
-                            </div>
-                            <div class="form-group">
-                                <label >Téléphone</label>
-                                <input name="tel" value="<?php echo $data['tel']; ?>" type="number" class="form-control form-control-sm" placeholder="Numero tel du patient">
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input name="email" value="<?php echo $data['email']; ?>" type="mail" class="form-control form-control-sm" placeholder="johndoe@gmail.com">
+                                <input name="email" value="<?php echo $data['email']; ?>" type="number" class="form-control form-control-sm" placeholder="Numero tel du patient">
                             </div>
+                            
+                            
                             <div class="form-group">
                                 <label >Adresse</label>
                                 <input name="adresse" value="<?php echo $data['adresse']; ?>" type="mail" class="form-control form-control-sm" placeholder="ex : Lubumbashi, Commune annexe Quatier kasapa, Rue ...">
