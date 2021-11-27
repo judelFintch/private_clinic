@@ -12,8 +12,6 @@ if(isset($_POST[''])){
     $prenom = $_POST['motif_hospitalisation'];
     $age = $_POST['date_hospitalisation'];
     $sexe = $_POST['date_accord'];
-    $ajout = HospitalisationModel::insert($nom_patient, $nom_medecin, $motif_hospitalisation, $date_hospitalisation, $date_accord);
-
-    header("Location:../");
+   
 
 }

@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('../model/PrestationModel.php');
-require_once('../model/Connexion.php');
 require_once('../confg/Connexion.php');
 
 if(isset($_POST['btn_prestation'])){

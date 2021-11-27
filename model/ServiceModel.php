@@ -1,7 +1,9 @@
 <?php
  function InsertService($libelle,$detail){
-     global $bdd ;
+     global $bdd;
      $insert=$bdd ->query("INSERT INTO service VALUES ('','$libelle','$detail')") or die(print_r($bdd->error_info()));
+     
+     
      if($insert){
          echo "Insertion reussi";
       }
