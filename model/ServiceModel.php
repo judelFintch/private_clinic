@@ -15,3 +15,8 @@
         $data=$select->fetch();
         return $data;
  }
+ function updateService($id,$libelle, $detail){
+  global $bdd ;
+  $upd=$bdd ->query("UPDATE  service SET libelle='$libelle',detail='$detail' WHERE id='$id'") or die(print_r($bdd->error_info()));
+  return true;
+}

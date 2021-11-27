@@ -13,3 +13,8 @@
         $data=$select->fetch();
         return $data;
  }
+      function updatePrestation($id,$libelleprestation,$prix,$nomservice,$detail){
+      global $bdd ;
+      $upd=$bdd ->query("UPDATE  prestation SET libelleprestation='$libelleprestation',nomservice='$nomservice',prix='$prix',detail='$detail' WHERE id='$id'") or die(print_r($bdd->error_info()));
+      return true;
+}
