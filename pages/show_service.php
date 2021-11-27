@@ -1,5 +1,4 @@
 <?php include('../partials/app.php')?>
-<?php include('../model/Connexion.php')?>
 <?php include('../confg/Connexion.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
@@ -22,7 +21,7 @@
                             <th>Id</th>
                             <th> Libelle </th>
                             <th> Details</th>
-                            <th> <Details></Details></th>
+                            <th> </th>
                           
                           </tr>
                         </thead>
@@ -31,20 +30,17 @@
                         <?php
                   
                   while ($result = $select->fetch()){
-                    echo '
+                    ?>
 
                 
                           <tr>
-                            <td>'.$result['id'].'</td>
-                            <td>'.$result ['libelle'].'</td>
-                            <td>'.$result['detail'].'</td>
-                           
-                          
-                            <td><label class="badge badge-danger">En attente</label></td>
-                            <td> </td>
-                            <td> </td>
+                            <td><?=$result['id']?></td>
+                            <td><?=$result ['libelle']?></td>
+                            <td><?=$result['detail']?></td>
+                            
+                            <td><a href="editservice.php?id=<?=$result['id']?>" class="btn btn-warning">Editer</a></td>
                           </tr>
-                              ';
+                             <?php
                     }
                   ?>
                         </tbody>
