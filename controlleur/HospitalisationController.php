@@ -24,8 +24,9 @@ elseif (isset($_POST['updatehospi'])) {
     $chambre =$_POST['chambre_id'];
     $lit =$_POST['lit_id'];
     $id =$_POST['id'];
-    updateHospitalistion($patient, $medecintr, $motifhosp, $datehosp, $hosptby, $note, $id, $chambre, $lit);
+    updateHospitalisation($patient, $medecintr, $motifhosp, $datehosp, $hosptby, $note, $id, $chambre, $lit);
 }
+
 elseif (isset($_POST['libhospi'])) {
     $date_lib = $_POST['date_lib'];
     $note =$_POST['note'];

@@ -1,17 +1,22 @@
 <?php
  function InsertPatient($nom,$postnom,$presnom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse){
      global $bdd ;
+     $message=false;
      $insert=$bdd ->query("INSERT INTO patients VALUES ('','$nom','$postnom','$presnom','$datenaiss','$genre','$photo','$groupe','$situation','$tel','$email','$adresse')") or die(print_r($bdd->error_info()));
-     if($insert){
-         echo "Insertion reussi";
+      if($insert){
+        $message=true;
       }
+      else{
+        $message=false;
+      }
+      return $message;
     }
 
-     function selectPatient(){
-        global $bdd;
-        $select=$bdd->query("SELECT * FROM patients") or die(print_r($bdd->error_info()));
-        $data=$select->fetch();
-        return $data;
+  function selectPatient(){
+    global $bdd;
+    $select=$bdd->query("SELECT * FROM patients") or die(print_r($bdd->error_info()));
+    $data=$select->fetch();
+    return $data;
  }
  function updatePatient($id, $nom,$postnom,$presnom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse){
   global $bdd ;

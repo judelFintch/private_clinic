@@ -1,8 +1,4 @@
 <?php include('../partials/app.php')?>
-<<<<<<< HEAD
-=======
-<?php include('../controlleur/medecincontroller.php')?>
->>>>>>> ae3ddb019a599ba126e48e2c3fa887c5746006ba
 <?php include('../confg/Connexion.php')?>
 <?php include('../model/patientsmodel.php')?>
 <body>
@@ -28,37 +24,30 @@
                             <th>Nom</th>
                             <th>Postnom</th>
                             <th>Prenom</th>
-                            <th>Date naissance</th>
+                            <th>Date</th>
                             <th>Genre</th>
-                            <th>Groupe Sanguin</th>
-                            <th>Situation Matrimoniale</th>
-                            <th>Telephone</th>
-                            <th>Email</th>
-                            <th>Adresse</th>
                             <th>Etat</th>
-                            <th>Action</th>
+                            <th>Operation</th>
                           </tr>
                         </thead>
                         <tbody>
                       <?php
-                  
+                  $count=0;
                   while ($res = $select->fetch()){
+                    $count+=1;
                     echo '
-
                           <tr>
-                            <td>'.$res['id'].'</td>
+                            <td>'.$count.'</td>
                             <td>'.$res ['nom'].'</td>
                             <td>'.$res['postnom'].'</td>
                             <td>'.$res['presnom'].'</td>
                             <td>'.$res['datenaiss'].'</td>
                             <td>'.$res['genre'].'</td>
-                            <td>'.$res['groupe'].'</td>
-                            <td>'.$res['situation'].'</td>
-                            <td>'.$res['tel'].'</td>
-                            <td>'.$res['email'].'</td>
-                            <td>'.$res['adresse'].'</td>
                             <td><label class="badge badge-danger">En attente</label></td>
-                            <td><a href="updatePatient.php?id='.$res['id'].'">  Modifier</a></td>
+                            <td>
+                                 <a href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
+                                 <a href="updatePatient.php?id='.$res['id'].'">  Details</a>
+                            </td>
                             <td> </td>
                             <td> </td>
                           </tr>

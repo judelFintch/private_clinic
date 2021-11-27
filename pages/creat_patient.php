@@ -1,4 +1,5 @@
 <?php include('../partials/app.php')?>
+
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>

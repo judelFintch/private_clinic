@@ -14,8 +14,13 @@ if(isset($_POST['btn_patient'])){
     $tel = $_POST['tel'];
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
-    $ajout = InsertPatient($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
-    
+    $creat_patient = InsertPatient($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
+    if($creat_patient==1){
+        header("refresh: 0; ../index.php?operation=creat_patient");
+       }
+       else{
+          header("refresh: 0; ../index.php?operation=error");
+       }
 }
 
 if(isset($_POST['btn_modifier'])){
