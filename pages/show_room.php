@@ -40,7 +40,7 @@
                         <tbody>
 
                         <?php 
-                        $rooms=select_room();
+                        $rooms=select_all_room();
                         $count=0;
                         while($room=$rooms->fetch()){
                           $count++;

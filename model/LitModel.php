@@ -1,14 +1,15 @@
 <?php
  function InsertLit($codeLit,$chambre){
      global $bdd ;
+     $message=false;
      $insert=$bdd ->query("INSERT INTO lit VALUES ('','$codeLit','$chambre')");
      if($insert){
-         echo true; 
+         $message=true; 
       }
       else{
-           echo false;
+          $message=false;
       }
-
+      return $message;
     }
 
   function selectChambre(){
