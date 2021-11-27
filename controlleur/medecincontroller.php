@@ -22,3 +22,20 @@ if(isset($_POST['btn_enregistrer'])){
     
 
 }
+if(isset($_GET['btn_modifier'])){
+
+    $id='';
+    $nom = $_GET['nom'];
+    $postnom = $_GET['postnom'];
+    $prenom = $_GET['prenom'];
+    $datenaiss = $_GET['datenaiss'];
+    $genre = $_GET['genre'];
+    $photo = $_GET['photo'];
+    $typemedecin = $_GET['typemedecin'];
+    $role = $_GET['role'];
+    $tel = $_GET['tel'];
+    $email = $_GET['email'];
+    $adresse = $_GET['adresse'];
+
+    $ajout = updateMedecin($nom,$postnom,$prenom,$datenaiss,$genre,$photo,$typemedecin,$role,$tel,$email,$adresse);
+}

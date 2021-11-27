@@ -16,18 +16,18 @@
                             <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form class="forms-sample row">
+                    <form method="post" action="../controlleur/litController.php" class="forms-sample row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Code Lit</label>
-                                <input type="text"name="nom_lit" class="form-control form-control-sm" placeholder="Code Lit">
+                                <input type="text"name="codeLit" class="form-control form-control-sm" placeholder="Code Lit">
                             </div>
                            
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Chambre</label>
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" name = "chambre">
                                     <option>Selectionnez une chambre</option>
                                     <option>Chambre 1</option>
                                     <option>Chambre 2</option>
@@ -38,7 +38,7 @@
                            
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button type="submit" name="btn_lit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>
