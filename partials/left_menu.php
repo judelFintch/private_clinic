@@ -15,7 +15,7 @@
             <div class="collapse" id="ui-ab">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="creat_abonne.php">Ajouter Abonne</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Liste </a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_abonne.php">Liste </a></li>
                
                
               </ul>

@@ -12,18 +12,19 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Ajouter une entreprise</h4>
                         <div class="d-flex">
-                            <a href="show_room.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Toutes les chambres</a>
+                            <a href="show_abonne.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Tous les abonnés</a>
                         </div>
                     </div>
-                    <form action = ""class="forms-sample row" method ="post">
+                    <form action = "../controlleur/AbonneController.php"class="forms-sample row" method ="post">
                         <div class="col-md-6">
+                       
                             <div class="form-group">
                                 <label >Libelle</label>
                                 <input type="text"name="libelle" class="form-control form-control-sm" placeholder="libelle entreprise">
                             </div>
                             <div class="form-group">
                                 <label >Nom Responsable</label>
-                                <input type="text"name="nomRes" class="form-control form-control-sm" placeholder="Nom responsable">
+                                <input type="text"name="nomRes"  class="form-control form-control-sm" placeholder="Nom responsable">
                             </div>
 
                             <div class="form-group">

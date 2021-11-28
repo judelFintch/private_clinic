@@ -12,7 +12,7 @@ if(isset($_POST['btn_abonne'])){
     $adresse = $_POST['adresse'];
     $typeabonne = $_POST['typeabonne'];
 
-    $ajout = InsertAbonne($libelle,$nomRes,$rccm,$idnat,$adresse,$typeabonne);
+    $ajout = Creat_abonne($libelle,$nomRes,$rccm,$idnat,$adresse,$typeabonne);
     
 
 }

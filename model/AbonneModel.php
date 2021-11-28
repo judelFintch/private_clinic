@@ -1,6 +1,6 @@
 <?php 
 
-function Creat_room($libelle,$nomRes,$rccm,$idnat,$adresse,$typeabonne){
+function Creat_abonne($libelle,$nomRes,$rccm,$idnat,$adresse,$typeabonne){
  global $bdd;
  $creat_abonne=$bdd->query("INSERT INTO abonne Values('','$libelle','$nomRes','$rccm','$idnat','$adresse','$typeabonne')");
   if($creat_abonne){
