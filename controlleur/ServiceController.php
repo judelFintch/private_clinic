@@ -8,6 +8,4 @@ if(isset($_POST['btn_service'])){
     $libelle = $_POST['libelle'];
     $detail = $_POST['detail'];
     $ajout = InsertService($libelle,$detail);
-
-
 }

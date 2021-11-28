@@ -60,21 +60,15 @@ function getSingleRow()
                               Patient
                             </th>
                             <th>
-                              Date hospitalisation
-                            </th>
-                            <th>
-                              Service 
+                              Date consultation
                             </th>
                             <th>
                                Medecin traitant
                             </th>
-                            <th>
-                                Statut
-                            </th>
                           </tr>
                         </thead>
                         <?php
-                   $select=$bdd ->query("SELECT * FROM hospitalisation") or die(print_r($bdd->error_info()));
+                   $select=$bdd ->query("SELECT * FROM consultation") or die(print_r($bdd->error_info()));
                   ?>
                         <tbody>
                           
@@ -84,20 +78,9 @@ function getSingleRow()
                     ?>
                           <tr>
                             <td><?= $result['id'] ?></td>
-                            <td><?= getPatientName($result['patient'])  ?></td>
-                            <td><?= $result['datehosp'] ?></td>
-                            <td><?= getServiceName($result['serv_id']) ?></td>
-                            <td><?= getMedecinName($result['medecintr']) ?></td>
-                            <td><?php
-                            if ($result['statut_hosp'] == 0) {
-                              ?>
-                              <label class="badge badge-warning">En cours</label>
-                              <?php
-                            }else {
-                              ?><label class="badge badge-success">Liberé</label>
-                              <?php
-                            }
-                            ?></td>
+                            <td><?= getPatientName($result['patient_id'])  ?></td>
+                            <td><?= $result['date_cons'] ?></td>
+                            <td><?= getMedecinName($result['medecin_id']) ?></td>
                             <td><a href="detailhospitalisation.php?id=<?= $result['id'] ?>" class="btn btn-warning btn-sm">Voir</a></td>
                           </tr>
                          <?php
