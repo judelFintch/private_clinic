@@ -13,17 +13,14 @@ if(isset($_SESSION['login'])){
                     header("refresh: 0; pages/first_op.php?code=$code_op");
                 }
                 break;
-            case "creat_service":
-                header("refresh: 0; pages/creat_service.php?code=op");
-            }
-            
-
-            
-          }
-        else{
-            header("refresh: 0; pages/default.php");
-        }
-    }
-    else{
-        header("refresh: 0; auth/login.php");
-    }
+                case "creat_service":
+                    header("refresh: 0; pages/creat_service.php?code=op");
+                }
+                }
+                else{
+                    header("refresh: 0; pages/default.php");
+                }
+                    }
+                    else{
+                        header("refresh: 0; auth/login.php");
+                    }

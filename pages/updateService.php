@@ -4,7 +4,7 @@
 
 	if($_REQUEST['id']) {
 		$id = $_REQUEST['id'];
-        $resultat=$bdd ->query("SELECT * FROM service WHERE id=$id") or die(print_r($bdd->error_info()));
+        $resultat=$bdd ->query("SELECT * FROM service_op WHERE id=$id") or die(print_r($bdd->error_info()));
 		if($resultat) {
 			 $sql = "SELECT * FROM service WHERE id=".$id;
 			// echo $id;

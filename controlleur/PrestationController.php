@@ -16,7 +16,6 @@ if(isset($_POST['btn_prestation'])){
        else{
           header("refresh: 0; ../index.php?operation=error");
        }
-    
 }
 if(isset($_POST['btn_modifier'])){
     $id=$_POST['id'];

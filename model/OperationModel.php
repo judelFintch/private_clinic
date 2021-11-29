@@ -9,13 +9,23 @@ function code_op(){
     return $data;
 }
 
-function insert_init_op($acte){
+function insert_init_op($acte,$code_patient){
     global $bdd;
+    $message=false;
+    $date=date('d-m-Y');
     $data_service=select_by_id($acte);
     $libelle=$data_service['libelle'];
     $price=$data_service['price'];
     $code_op=code_op();
-    $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_op','$')");
+    $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op','$date','','$libelle','encours')");
+     if($creat_op){
+         $message=true;
+     }
+     else{
+         $message=false;
+     }
+
+     return $message;
 }
 
 function select_by_id($id){
