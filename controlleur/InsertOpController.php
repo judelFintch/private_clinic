@@ -1,0 +1,10 @@
+<?php
+require_once('../confg/Connexion.php');
+require_once('../model/OperationModel.php');
+if(isset($_POST['acte'])){
+     $date=date('d-m-Y');
+     $acte=$_POST['acte'];
+     $code_patient=$_POST['code_patient'];
+     $insert_op=insert_init_op($acte,$code_patient);
+     var_dump($insert_op);
+}

@@ -27,6 +27,12 @@
               <span class="menu-title">File d'attente</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="op_caisse.php">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Caisse</span>
+            </a>
+          </li>
          
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-chambre" aria-expanded="false" aria-controls="ui-chambre">
@@ -44,7 +50,21 @@
             </div>
           </li>
          
-          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-fdf" aria-expanded="false" aria-controls="ui-fdf">
+              <i class="icon-clipboard menu-icon"></i>
+              <span class="menu-title">Consultation</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-fdf">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="create_consultation.php">Consulter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_consultation.php">Liste</a></li>
+               
+              </ul>
+            </div>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-hospi" aria-expanded="false" aria-controls="ui-hospi">
               <i class="icon-ribbon menu-icon"></i>

@@ -18,6 +18,7 @@
                     <table class="table table-striped">
                         <thead>
                           <tr>
+<<<<<<< HEAD
                             <th>Id</th>
                             <th>Nom </th>
                             <th>Post-Nom</th>
@@ -26,9 +27,33 @@
                             <th>Date</th>
                             <th>Etat</th>
                           
+=======
+                            <th>
+                              #
+                            </th>
+                            <th>
+                              Patient
+                            </th>
+                            <th>
+                              Date hospitalisation
+                            </th>
+                            <th>
+                              Service 
+                            </th>
+                            <th>
+                               Medecin traitant
+                            </th>
+                            <th>
+                                Statut
+                            </th>
+>>>>>>> e51f8381496653912673bcb72cca5bcee6f5786b
                           </tr>
                         </thead>
+                        <?php
+                   $select=$bdd ->query("SELECT * FROM hospitalisation") or die(print_r($bdd->error_info()));
+                  ?>
                         <tbody>
+<<<<<<< HEAD
                         
                         <?php
                   
@@ -57,5 +82,39 @@
                       </table>
                     </div>
                     </div>
+=======
+                          
+                        <?php
+                  
+                  while ($result = $select->fetch()){
+                    ?>
+                          <tr>
+                            <td><?= $result['id'] ?></td>
+                            <td><?= getPatientName($result['patient'])  ?></td>
+                            <td><?= $result['datehosp'] ?></td>
+                            <td><?= getServiceName($result['serv_id']) ?></td>
+                            <td><?= getMedecinName($result['medecintr']) ?></td>
+                            <td><?php
+                            if ($result['statut_hosp'] == 0) {
+                              ?>
+                              <label class="badge badge-warning">En cours</label>
+                              <?php
+                            }else {
+                              ?><label class="badge badge-success">Liberé</label>
+                              <?php
+                            }
+                            ?></td>
+                            <td><a href="detailhospitalisation.php?id=<?= $result['id'] ?>" class="btn btn-warning btn-sm">Voir</a></td>
+                          </tr>
+                         <?php
+                  }?>
+                        </tbody>
+                      </table>
+                      </div>
+                </div>
+              </div>
+          </div>
+        </div>
+>>>>>>> e51f8381496653912673bcb72cca5bcee6f5786b
     <!-- content-wrapper ends -->
     <?php include('../partials/_footer.php')?>

@@ -1,5 +1,7 @@
 
 <?php include('../partials/app.php')?>
+<?php include('../confg/Connexion.php')?>
+<?php include('../model/Chambremodel.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
@@ -24,15 +26,19 @@
                             </div>
                            
                         </div>
+                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Chambre</label>
+                                <?php $rooms=select_all_room(); ?>
                                 <select class="form-control form-control-sm" name = "chambre">
                                     <option>Selectionnez une chambre</option>
-                                    <option>Chambre 1</option>
-                                    <option>Chambre 2</option>
-                                    <option>Chambre 3</option>
-                                    
+                                    <?php
+                                      while($room=$rooms->fetch()){
+                                        echo '
+                                            <option value="'.$room['id'].'">'.$room['room_code'].'</option>';
+                                        }
+                                        ?>
                                   </select>
                             </div>
                            

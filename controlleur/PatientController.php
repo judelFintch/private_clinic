@@ -2,9 +2,8 @@
 session_start();
 require_once('../model/patientsmodel.php');
 require_once('../confg/Connexion.php');
-
 if(isset($_POST['btn_patient'])){
-
+    echo $patient_code=$_POST['patient'];
     $nom = $_POST['nom'];
     $postnom = $_POST['postnom'];
     $presnom = $_POST['presnom'];
@@ -23,7 +22,6 @@ if(isset($_POST['btn_patient'])){
 }
 
 if(isset($_POST['btn_modifier'])){
-
     $id = $_POST['id'];
     $nom = $_POST['nom'];
     $postnom = $_POST['postnom'];

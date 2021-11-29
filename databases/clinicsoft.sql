@@ -175,6 +175,19 @@ INSERT INTO `user` (`id`, `login`, `password_user`, `level`) VALUES
 (1, '1010', '1010', 1),
 (2, '66', '66', 1);
 
+
+CREATE TABLE IF NOT EXISTS `hospitalisation`(  
+    `id` int NOT NULL primary key AUTO_INCREMENT COMMENT 'Primary Key',
+    `patient` int NOT NULL COMMENT 'id du patient',
+    `medecintr` INT NOT NULL COMMENT 'id du medecin traitant',
+    `motifhosp` varchar(255) COMMENT 'Motif d hospitalisation',
+    `datehosp` VARCHAR(10) COMMENT 'Date d hospitalisation',
+    `hosptby` int NOT NULL COMMENT 'id de la personne qui a hospitalisé le patient',
+    `note` varchar(255) COMMENT 'Note sur l hospitalisation',
+    `datesort` DATETIME COMMENT 'Date sortie du patient',
+    `statut_hosp` INT(1) not null COMMENT 'statut hospitalisation, 0 : en cours de traitement, 1 : liberer'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
