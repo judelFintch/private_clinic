@@ -2,7 +2,7 @@
  function InsertService($libelle,$detail){
      global $bdd;
      $message=false;
-     $insert=$bdd->query("INSERT INTO service VALUES ('','$libelle','$detail')") or die(print_r($bdd->error_info()));
+     $insert=$bdd->query("INSERT INTO service VALUES ('','$libelle','$detail',0)") or die(print_r($bdd->error_info()));
      
      
      if($insert){

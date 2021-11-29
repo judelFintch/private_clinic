@@ -51,34 +51,24 @@
           </div>
         </div>
     </div>
-        </div>
-        </div>
+  </div>
+  </div>
 
-
-<h1>Welcome to jQuery UI!</h1>
-
-<div class="ui-widget">
-	<p>This page demonstrates the widgets and theme you selected in Download Builder. Please make sure you are using them with a compatible jQuery version.</p>
-</div>
-
-<h1>YOUR COMPONENTS:</h1>
-
-
-
-<!-- Autocomplete -->
-<h2 class="demoHeaders">Autocomplete</h2>
 <div>
-	<input id="autocomplete" title="type &quot;a&quot;">
+	<input id="autocomplete" class="acte" title="type &quot;a&quot;">
+  <button  class="insertOp">Valider</button>
 </div>
 <script>
-$( "#accordion" ).accordion();
-
 $( "#autocomplete" ).autocomplete({
-    source: availableTags
+    source: '../model/__service.php'
 });
 
+$('.insertOp').click(function(){
+  var acte=$('.acte').val();
+  $.post('../controlleur/InsertOpController.php',{acte:acte},function(retourVerification){
+          		//alert(retourVerification);
+  });
+
+});
 </script>
-
-
-<script src="../__js/__first_op_patient.js"></script>
 <?php include('../partials/_footer.php')?>

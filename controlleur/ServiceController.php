@@ -14,5 +14,6 @@ if(isset($_POST['btn_modifier'])){
     $id=$_POST['id'];
     $libelle = $_POST['libelle'];
     $detail = $_POST['detail'];
+    
      $update = updateService($id,$libelle,$detail);
 }

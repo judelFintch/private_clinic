@@ -17,6 +17,7 @@
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../vendors/js/vendor.bundle.base.js"></script>
+  <script type="text/javascript" src="../js/jquery.smartTab.min.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="../vendors/chart.js/Chart.min.js"></script>
