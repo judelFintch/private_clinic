@@ -2,8 +2,6 @@
 <?php include('../confg/Connexion.php')?>
 <?php include('../model/patientsmodel.php')?>
 <body>
-
-
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
       <div class="main-panel">
@@ -11,17 +9,9 @@
       <div class="content-wrapper">
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
-
-
-
-
-
-            
-              
                 <div class="card">
                   <div class="card-body">
-                    
-                 
+                  <div class="code_patient"> <?=$info_cli['patient_code']?></div>
               <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -53,7 +43,6 @@
     </div>
   </div>
   </div>
-
 <div>
 	<input id="autocomplete" class="acte" title="type &quot;a&quot;">
   <button  class="insertOp">Valider</button>
@@ -66,7 +55,6 @@ $( "#autocomplete" ).autocomplete({
 $('.insertOp').click(function(){
   var acte=$('.acte').val();
   $.post('../controlleur/InsertOpController.php',{acte:acte},function(retourVerification){
-          		//alert(retourVerification);
   });
 
 });

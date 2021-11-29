@@ -10,6 +10,12 @@ if(isset($_POST['btn_prestation'])){
     $nomservice = $_POST['nomservice'];
     $detail = $_POST['detail'];
     $ajout = InsertPrestation($libellepresstation,$prix,$nomservice,$detail);
+    if($ajout){
+        header("refresh: 0; ../pages/creat_prestation.php?operation=creat_prestation&&codep=success");
+       }
+       else{
+          header("refresh: 0; ../index.php?operation=error");
+       }
     
 }
 if(isset($_POST['btn_modifier'])){

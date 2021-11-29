@@ -13,9 +13,12 @@ if(isset($_SESSION['login'])){
                     header("refresh: 0; pages/first_op.php?code=$code_op");
                 }
                 break;
-            case "cake":
-                header("refresh: 0; pages/creat_bed.php?op=error");
+            case "creat_service":
+                header("refresh: 0; pages/creat_service.php?code=op");
             }
+            
+
+            
           }
         else{
             header("refresh: 0; pages/default.php");

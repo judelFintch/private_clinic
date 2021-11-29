@@ -12,7 +12,7 @@
         </div>
          </div>
          <?php
-                   $select=$bdd ->query("SELECT * FROM service") or die(print_r($bdd->error_info()));
+                   $select=$bdd ->query("SELECT * FROM service_op") or die(print_r($bdd->error_info()));
                   ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
