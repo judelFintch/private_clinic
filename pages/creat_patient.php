@@ -74,8 +74,9 @@
                                 <label >Situation familiale</label>
                                 <select class="form-control form-control-sm" name="situation">
                                     <option>Selectionnez la Situation familiale</option>
-                                    <option>Marié</option>
+                                    <option>Enfant</option>
                                     <option>Célibataire</option>
+                                    <option>Marié</option>
                                   </select>
                             </div>
                             <div class="form-group">

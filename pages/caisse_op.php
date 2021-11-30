@@ -60,10 +60,6 @@
     padding : 10px !important;
 }
 
-
-
-
-
 .modal-box {
   display: none;
   position: absolute;
@@ -107,10 +103,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.3) !important;
 }
-
-
-
-    </style>
+</style>
 
 
 <div id="ordonnance" class="modal-box">

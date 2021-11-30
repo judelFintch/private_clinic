@@ -17,14 +17,13 @@ function insert_init_op($acte,$code_patient){
     $libelle=$data_service['libelle'];
     $price=$data_service['price'];
     $code_op=code_op();
-    $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op','$date','','$libelle','encours')");
+    $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op','$date','','$libelle','$price','encours')");
      if($creat_op){
          $message=true;
      }
      else{
          $message=false;
      }
-
      return $message;
 }
 
@@ -32,6 +31,14 @@ function select_by_id($id){
     global $bdd;
     $data=$bdd->query("SELECT * FROM service_op WHERE libelle LIKE ('$id')");
     $data=$data->fetch();
+    return $data;
+}
+
+
+function select_by_op(){
+    global $bdd;
+    $data=$bdd->query("SELECT * FROM report_soins ");
+    $data=$data->fetchAll();
     return $data;
 }
 
