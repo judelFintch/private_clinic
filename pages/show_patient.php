@@ -12,8 +12,8 @@
                         <div class="d-flex">
                             <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
                         </div>
-</div>
-                        <?php
+          </div>
+                  <?php
                     $select=$bdd ->query("SELECT * FROM patients") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
@@ -27,7 +27,7 @@
                             <th>Date</th>
                             <th>Genre</th>
                             <th>Etat</th>
-                            <th>Operation</th>
+                            <th>Operations</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -47,6 +47,7 @@
                             <td>
                                  <a href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
                                  <a href="updatePatient.php?id='.$res['id'].'">  Details</a>
+                                 <a href="encodage.php?code='.$res['patient_code'].'">  Encoder</a>
                             </td>
                             <td> </td>
                             <td> </td>

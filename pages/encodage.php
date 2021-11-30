@@ -117,7 +117,7 @@
 
                   <div class="form-group">
                     <div class="input-group">
-                      <input type="text" class="acte form-control"  id="autocomplete" placeholder="Motif  de la visite" aria-label="Recipient's username">
+                      <input type="text" class="acte form-control"  id="autocomplete" placeholder="Actes Medical, Laboratoire, Nursing, Phamarcie, Radio" aria-label="Recipient's username">
                       <div class="input-group-append">
                         <button class="btn btn-sm btn-primary insertOp" type="button">Valider</button>
                       </div>
@@ -136,20 +136,20 @@
 
 <script>
 $( "#autocomplete" ).autocomplete({
-  source: '../model/__service.php'
+  source: '../model/__prestation.php'
 });
 $('.insertOp').click(function(){
-var acte=$('.acte').val();
+var prestation=$('.acte').val();
 var code_patient=$('.code_patient').html();
-$.post('../controlleur/InsertOpController.php',{acte:acte,code_patient:code_patient},function(retourVerification){
+$.post('../controlleur/InsertOpController.php',{prestation:prestation,code_patient:code_patient},function(retourVerification){
       if(retourVerification==true){
         $.post('../controlleur/InsertOpController.php',{selectService:true,code_patient:code_patient},function(data){
           $('.result_insert').html(data);
+          $('.acte').val('');
         });
       }else{
         alert('error insert');
       }
-      
 });
 });
 </script>
