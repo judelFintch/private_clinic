@@ -1,6 +1,4 @@
 <?php
-
-
 function code_op(){
     global $bdd;
     $select=$bdd->query("SELECT id FROM patients ORDER BY id DESC LIMIT 1") or die(print_r($bdd->error_info()));
@@ -15,17 +13,21 @@ function insert_init_op($acte,$code_patient){
     $date=date('d-m-Y');
     $data_service=select_by_id($acte);
     $libelle=$data_service['libelle'];
+    $id_act=$data_service['id'];
     $price=$data_service['price'];
     $code_op=code_op();
-    $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op','$date','','$libelle','$price','encours')");
-     if($creat_op){
-         $message=true;
-     }
-     else{
-         $message=false;
-     }
-     return $message;
+    $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op',now(),'','$libelle','$price','encours')");
+    $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code_op','$code_patient','$price','false','','user','$id_act',now())");
+        if($creat_op){
+            $message=true;
+        }
+        else{
+            $message=false;
+        }
+        return $message;
 }
+
+
 
 function select_by_id($id){
     global $bdd;

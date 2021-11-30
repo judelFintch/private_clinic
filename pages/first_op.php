@@ -113,17 +113,21 @@
                     <hr>
 
                     <div class="row">
-                        <div class="col-md-8">
-                            <div id="smarttab">
-                            <input placeholder="Motif  de la visite" id="autocomplete" class="acte form-control form-control-sm " title="type &quot;a&quot;">
-                            <button  class="insertOp btn btn-primary btn-sm mr-2">Valider</button>
-                          </div>
-                          <hr>
-                          <div class="result_insert">
-                            
-                          </div>
+                    <div class="col-md-8">
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input type="text" class="acte form-control"  id="autocomplete" placeholder="Motif  de la visite" aria-label="Recipient's username">
+                      <div class="input-group-append">
+                        <button class="btn btn-sm btn-primary insertOp" type="button">Valider</button>
+                      </div>
+                    </div>
+                  </div>    
+                    <hr>  
                   </div>
+                  
                 </div>
+                <div class="result_insert"></div>
               </div>
               </div>
               </div></div>
@@ -134,7 +138,6 @@
 $( "#autocomplete" ).autocomplete({
   source: '../model/__service.php'
 });
-
 $('.insertOp').click(function(){
 var acte=$('.acte').val();
 var code_patient=$('.code_patient').html();
@@ -143,13 +146,10 @@ $.post('../controlleur/InsertOpController.php',{acte:acte,code_patient:code_pati
         $.post('../controlleur/InsertOpController.php',{selectService:true,code_patient:code_patient},function(data){
           $('.result_insert').html(data);
         });
-        
-
       }else{
         alert('error insert');
       }
 });
-
 });
 </script>
 <?php include('../partials/_footer.php')?>

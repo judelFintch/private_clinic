@@ -9,25 +9,47 @@ if(isset($_POST['acte'])){
      echo 1;
      ;
 }
-
 if(isset($_POST['selectService'])){
      $date=date('d-m-Y');
      $data_op=select_by_op();
      $item='';
-     foreach ($data_op as $key ) {
-          $item .= "
-          <table class='table table-striped table-bordered '>
-               <tr>";
-              $item .= "<td>".$key['id']."</td>
-              <td class='code'>".$key['codeconsultation']."</td>
-              <td>".$key['date_debut']."</td>
-              <td>".$key['operation']."</td>
-              ";
-          
-
-               $item .= "</tr></table>";
-          }
-          echo utf8_encode($item);
+     $item .= "
+     <div class='table-responsive'>
+          <table class='table table-striped'>
+          <thead>
+          <tr>
+               <th>
+               #codeOp
+               </th>
+               <th>
+               Date
+               </th>
+               <th>
+               Motif de la visite
+               </th>
+               <th>
+               Prix 
+               </th>
+               <th>
+               Effacer
+               </th>
+          </tr>
+          </thead>";
+               foreach ($data_op as $key) {
+                    $item .= "
+                    <tr>";
+                    $item .= "
+                    <td class='code'>".$key['codeconsultation']."</td>
+                    <td>".$key['date_debut']."</td>
+                    <td>".$key['operation']."</td>
+                    <td>".$key['price']."</td>
+                    <td><button class='delete btn btn-danger btn-rounded btn-fw'>Effacer</button> </td>
+                    ";
+                    }
+                    $item .= "</tr>
+                    </table>
+                    ";
+                    echo utf8_encode($item);
 
      //return $data_op;
     

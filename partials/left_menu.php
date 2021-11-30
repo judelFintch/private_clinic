@@ -8,12 +8,6 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="swow_weting_page.php">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">File d'attente</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="op_caisse.php">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Caisse</span>
@@ -31,7 +25,6 @@
                 <li class="nav-item"> <a class="nav-link" href="creat_room.php">Ajouter Chambre</a></li>
                 <li class="nav-item"> <a class="nav-link" href="show_room.php">Liste Chambre</a></li>
                 <li class="nav-item"> <a class="nav-link" href="creat_bed.php">Ajouter lit</a></li>
-               
               </ul>
             </div>
           </li>
@@ -103,20 +96,6 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="creat_service.php">Ajouter</a></li>
                 <li class="nav-item"> <a class="nav-link" href="show_service.php">Liste</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-rdv" aria-expanded="false" aria-controls="ui-rdv">
-              <i class="icon-ribbon menu-icon"></i>
-              <span class="menu-title">Rendez-vous</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-rdv">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_rdz.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_rdz.php">Liste</a></li>
               </ul>
             </div>
           </li>
