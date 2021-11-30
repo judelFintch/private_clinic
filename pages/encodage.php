@@ -104,11 +104,9 @@
                     </div>
                     
                     <div class="d-flex align-items-center mb-3 mt-2">
-                        <a  href="#" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span>Consultation</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Laboratoire</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Pharmacie</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Echo</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> RX</a>
+                        <a  href="#" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span>Encodage</a>
+                        <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
+                    
                     </div>
                     <hr>
 
@@ -152,5 +150,17 @@ $.post('../controlleur/InsertOpController.php',{prestation:prestation,code_patie
       }
 });
 });
+$('.all_prestation').click(function(){
+  var prestation=$('.acte').val();
+  var code_patient=$('.code_patient').html();
+  
+  $.post('../controlleur/__prestationController.php',{select_all:true,code_patient:code_patient},function(data){
+    $('.result_insert').empty().html(data);
+
+  });
+
+});
+
+
 </script>
 <?php include('../partials/_footer.php')?>
