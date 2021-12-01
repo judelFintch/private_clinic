@@ -28,7 +28,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="op_caisse.php">
+            <a class="nav-link" href="show_patient.php">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Caisse</span>
             </a>

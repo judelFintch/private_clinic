@@ -48,6 +48,7 @@
                                  <a href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
                                  <a href="updatePatient.php?id='.$res['id'].'">  Details</a>
                                  <a href="encodage.php?code='.$res['patient_code'].'">  Encoder</a>
+                                 <a href="op_caisse.php?code='.$res['patient_code'].'">  Caisse</a>
                             </td>
                             <td> </td>
                             <td> </td>

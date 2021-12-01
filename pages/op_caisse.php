@@ -1,8 +1,11 @@
 <?php include('../partials/app.php')?>
 <?php include('../confg/Connexion.php')?>
+<?php include('../model/patientsmodel.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
+<?php $info_cli=select_by_id($_GET['code'])?>
+<div class="code_patient"> <?=$info_cli['patient_code']?></div>
 <?php
   function getServiceName($id)
   {
@@ -151,12 +154,12 @@
                     <hr>
                     
                     <div class="d-flex align-items-center mb-3 mt-2">
-                        <a  href="op_caisse.php" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span> Entree</a>
+                    <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
                         <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Depense</a>
                         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Rapport</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis Patient</a>
+                        <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
                     </div>
-
+                  <section class="form_caisse">
                     <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
                         
                         <div class="col-md-6">
@@ -164,7 +167,8 @@
                             <div class="form-group">
                                 <label >Patient</label>
                                 <?php
-                                  $patients=$bdd ->query("SELECT * FROM patients") or die(print_r($bdd->error_info()));
+                                $code=$_GET['code'];
+                                  $patients=$bdd ->query("SELECT * FROM patients WHERE patient_code like('$code')") or die(print_r($bdd->error_info()));
                                 ?>
                                 <select name="patient" class="form-control form-control-sm">
                                   <?php
@@ -192,14 +196,14 @@
                                     <option>CDF</option>
                                 </select>
                             </div>
-                           
-                           
-                        </div>
-                        <div class="col-md-6">             
                             <div class="form-group">
                                 <label >Montant</label>
                                 <input type="text" name="montant" class="form-control form-control-sm" placeholder="montant">
                             </div>
+                           
+                        </div>
+                        <div class="col-md-6">             
+                            
                             
                         </div>
                         <div class="col-md-12">
@@ -208,7 +212,40 @@
                         </div>
                     </form>
                   </div>
+                                </section>
+                  <div class="result_insert"></div>
 
                   </div>
-                    
+ <script>
+$('.int_caisse').click(function(){
+  $('.form_caisse').show();
+  $('.int_caisse').hide();
+});
+$('.insertOp').click(function(){
+var prestation=$('.acte').val();
+var code_patient=$('.code_patient').html();
+$.post('../controlleur/InsertOpController.php',{prestation:prestation,code_patient:code_patient},function(retourVerification){
+      if(retourVerification==true){
+        $.post('../controlleur/InsertOpController.php',{selectService:true,code_patient:code_patient},function(data){
+          $('.result_insert').html(data);
+          $('.acte').val('');
+        });
+      }else{
+        alert('error insert');
+      }
+});
+});
+$('.all_prestation').click(function(){
+  $('.form_caisse').hide();
+  var prestation=$('.acte').val();
+  var code_patient=$('.code_patient').html();
+  
+  $.post('../controlleur/__prestationController.php',{select_all:true,code_patient:code_patient},function(data){
+    $('.result_insert').empty().html(data);
+
+  });
+
+});
+        
+</script>
     <?php include('../partials/_footer.php')?>

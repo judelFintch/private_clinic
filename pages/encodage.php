@@ -14,7 +14,6 @@
 }.st-theme-default > .nav .nav-link.active::after {
     background: #3F3E91 !important;
     transform: scale(1);
-
 }
 .tab-content
 {
