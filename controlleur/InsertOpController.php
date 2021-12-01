@@ -46,18 +46,21 @@ if(isset($_POST['selectService'])){
                </th>
           </tr>
           </thead>";
+          $tot_prest=0;
                foreach ($data_op as $key) {
+                    $tot_prest+=$key['price'];
                     $item .= "
                     <tr>";
                     $item .= "
                     <td class='code'>".$key['code_op']."</td>
                     <td>".$key['id_service']."</td>
                     <td>".$key['date_op']."</td>
-                    <td>".$key['price']."</td>
-                    <td><button class='delete btn btn-danger btn-rounded btn-fw'>Effacer</button> </td>
+                    <td>".$key['price']." CDF</td>
+                    <td><button class='delete badge badge-danger btn-fw'>Effacer</button> </td>
                     ";
                     }
                     $item .= "</tr>
+                    <tr><td></td><td></td><td></td>Total :<td>".$tot_prest." CDF</td></tr>
                     </table>
                     ";
                     echo utf8_encode($item);

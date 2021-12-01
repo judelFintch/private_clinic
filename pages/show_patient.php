@@ -10,11 +10,11 @@
         <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Liste Patients</h4>
                         <div class="d-flex">
-                            <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
+                            <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
                         </div>
           </div>
                   <?php
-                    $select=$bdd ->query("SELECT * FROM patients") or die(print_r($bdd->error_info()));
+                    $select=$bdd ->query("SELECT * FROM patients ORDER BY id desc") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
@@ -24,9 +24,7 @@
                             <th>Nom</th>
                             <th>Postnom</th>
                             <th>Prenom</th>
-                            <th>Date</th>
                             <th>Genre</th>
-                            <th>Etat</th>
                             <th>Operations</th>
                           </tr>
                         </thead>
@@ -41,14 +39,12 @@
                             <td>'.$res ['nom'].'</td>
                             <td>'.$res['postnom'].'</td>
                             <td>'.$res['presnom'].'</td>
-                            <td>'.$res['datenaiss'].'</td>
                             <td>'.$res['genre'].'</td>
-                            <td><label class="badge badge-danger">En attente</label></td>
                             <td>
-                                 <a href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
-                                 <a href="updatePatient.php?id='.$res['id'].'">  Details</a>
-                                 <a href="encodage.php?code='.$res['patient_code'].'">  Encoder</a>
-                                 <a href="op_caisse.php?code='.$res['patient_code'].'">  Caisse</a>
+                                 <a class="badge badge-success" href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
+                                 <a class="badge badge-danger" href="updatePatient.php?id='.$res['id'].'">  Details</a>
+                                 <a class="badge badge-warning" href="encodage.php?code='.$res['patient_code'].'">  Encoder</a>
+                                 <a class="badge badge-info" href="op_caisse.php?code='.$res['patient_code'].'">  Caisse</a>
                             </td>
                             <td> </td>
                             <td> </td>
