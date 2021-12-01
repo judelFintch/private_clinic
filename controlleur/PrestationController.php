@@ -9,13 +9,13 @@ if(isset($_POST['btn_prestation'])){
     $prix = $_POST['prix'];
     $nomservice = $_POST['nomservice'];
     $detail = $_POST['detail'];
-
-    
-     $ajout = InsertPrestation($libelleprestation,$prix,$nomservice,$detail);
-
-
-    // header("Location:../");
-
+    $ajout = InsertPrestation($libellepresstation,$prix,$nomservice,$detail);
+    if($ajout){
+        header("refresh: 0; ../pages/creat_prestation.php?operation=creat_prestation&&codep=success");
+       }
+       else{
+          header("refresh: 0; ../index.php?operation=error");
+       }
 }
 if(isset($_POST['btn_modifier'])){
     $id=$_POST['id'];
@@ -23,6 +23,5 @@ if(isset($_POST['btn_modifier'])){
     $prix = $_POST['prix'];
     $nomservice = $_POST['nomservice'];
     $detail = $_POST['detail'];
-
-     $update = updatePrestation($id,$libelleprestation,$prix,$nomservice,$detail);
+    $update = updatePrestation($id,$libelleprestation,$prix,$nomservice,$detail);
 }

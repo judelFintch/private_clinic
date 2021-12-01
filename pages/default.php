@@ -87,5 +87,15 @@
           </div>
         </div>
     <!-- content-wrapper ends -->
-    <?php include('../partials/_footer.php')?>
+   
+
+
+
+
+
+
+
+</body>
+</html>
+ <?php include('../partials/_footer.php')?>
 

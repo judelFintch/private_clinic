@@ -6,14 +6,34 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="swow_weting_page.php">
+            <a class="nav-link" data-toggle="collapse" href="#ui-ab" aria-expanded="false" aria-controls="ui-chambre">
+              <i class="icon-clipboard menu-icon"></i>
+              <span class="menu-title">Abonne</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-ab">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="creat_abonne.php">Ajouter Abonne</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_abonne.php">Liste </a></li>
+               
+               
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="creat_agent.php">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">File d'attente</span>
+              <span class="menu-title">Agent</span>
             </a>
           </li>
-         
+          <li class="nav-item">
+            <a class="nav-link" href="op_caisse.php">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Caisse</span>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-chambre" aria-expanded="false" aria-controls="ui-chambre">
               <i class="icon-clipboard menu-icon"></i>
@@ -25,12 +45,38 @@
                 <li class="nav-item"> <a class="nav-link" href="creat_room.php">Ajouter Chambre</a></li>
                 <li class="nav-item"> <a class="nav-link" href="show_room.php">Liste Chambre</a></li>
                 <li class="nav-item"> <a class="nav-link" href="creat_bed.php">Ajouter lit</a></li>
-               
               </ul>
             </div>
           </li>
          
-          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-fdf" aria-expanded="false" aria-controls="ui-fdf">
+              <i class="icon-clipboard menu-icon"></i>
+              <span class="menu-title">Consultation</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-fdf">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="create_consultation.php">Consulter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_consultation.php">Liste</a></li>
+               
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-hospi" aria-expanded="false" aria-controls="ui-hospi">
+              <i class="icon-ribbon menu-icon"></i>
+              <span class="menu-title">Nursing</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-hospi">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Encodage</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_hospitalisation.php">Suivis </a></li>
+              </ul>
+            </div>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-hospi" aria-expanded="false" aria-controls="ui-hospi">
               <i class="icon-ribbon menu-icon"></i>
@@ -53,8 +99,11 @@
             </a>
             <div class="collapse" id="ui-pat">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_patient.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_patient.php">Ajouter privé</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_patient_abone.php">Ajouter abonné</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Liste Patients privé</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_patient_abonne.php">Liste Patients abonné</a></li>
+
               </ul>
             </div>
           </li>
@@ -83,20 +132,6 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="creat_service.php">Ajouter</a></li>
                 <li class="nav-item"> <a class="nav-link" href="show_service.php">Liste</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-rdv" aria-expanded="false" aria-controls="ui-rdv">
-              <i class="icon-ribbon menu-icon"></i>
-              <span class="menu-title">Rendez-vous</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-rdv">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_rdz.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_rdz.php">Liste</a></li>
               </ul>
             </div>
           </li>

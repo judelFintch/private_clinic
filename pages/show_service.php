@@ -12,7 +12,7 @@
         </div>
          </div>
          <?php
-                   $select=$bdd ->query("SELECT * FROM service") or die(print_r($bdd->error_info()));
+                   $select=$bdd ->query("SELECT * FROM service_op") or die(print_r($bdd->error_info()));
                   ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
@@ -21,7 +21,11 @@
                             <th>Id</th>
                             <th> Libelle </th>
                             <th> Details</th>
-                            <th> <Details></Details></th>
+<<<<<<< HEAD
+                            <th> Action</th>
+=======
+                            <th> </th>
+>>>>>>> e51f8381496653912673bcb72cca5bcee6f5786b
                           
                           </tr>
                         </thead>
@@ -30,20 +34,17 @@
                         <?php
                   
                   while ($result = $select->fetch()){
-                    echo '
+                    ?>
 
                 
                           <tr>
-                            <td>'.$result['id'].'</td>
-                            <td>'.$result ['libelle'].'</td>
-                            <td>'.$result['detail'].'</td>
-                            <td><a href="updateService.php?id='.$result['id'].'">  Modifier</a></td>
-                          
-                            <td><label class="badge badge-danger">En attente</label></td>
-                            <td> </td>
-                            <td> </td>
+                            <td><?=$result['id']?></td>
+                            <td><?=$result ['libelle']?></td>
+                            <td><?=$result['detail']?></td>
+                            
+                            <td><a href="updateService.php?id=<?=$result['id']?>" class="btn btn-warning">Editer</a></td>
                           </tr>
-                              ';
+                             <?php
                     }
                   ?>
                         </tbody>
