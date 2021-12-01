@@ -41,9 +41,7 @@ if(isset($_POST['selectService'])){
                <th>
                Prix 
                </th>
-               <th>
-               Effacer
-               </th>
+               
           </tr>
           </thead>";
           $tot_prest=0;
@@ -56,11 +54,11 @@ if(isset($_POST['selectService'])){
                     <td>".$key['id_service']."</td>
                     <td>".$key['date_op']."</td>
                     <td>".$key['price']." CDF</td>
-                    <td><button class='delete badge badge-danger btn-fw'>Effacer</button> </td>
+                    
                     ";
                     }
                     $item .= "</tr>
-                    <tr><td></td><td></td><td></td>Total :<td>".$tot_prest." CDF</td></tr>
+                    <tr><td></td><td></td><td>Total :</td> <td>".$tot_prest." CDF</td></tr>
                     </table>
                     ";
                     echo utf8_encode($item);

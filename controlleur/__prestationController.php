@@ -25,12 +25,12 @@ if(isset($_POST['select_all'])){
               <th>
               Prix 
               </th>
-              <th>
-              Effacer
-              </th>
+              
          </tr>
          </thead>";
+         $total=0;
               foreach ($data_op as $key) {
+                   $total+=$key['price'];
                    $item .= "
                    <tr>";
                    $item .= "
@@ -38,14 +38,13 @@ if(isset($_POST['select_all'])){
                    <td>".$key['id_service']."</td>
                    <td>".$key['date_op']."</td>
                    <td>".$key['price']."</td>
-                   <td><button class='delete btn btn-danger btn-rounded btn-fw'>Effacer</button> </td>
                    ";
                    }
                    $item .= "</tr>
+                   <tr><td></td><td></td><td>Total :</td> <td>".$total." CDF</td></tr>
                    </table>
                    ";
                    echo utf8_encode($item);
-
     //return $data_op;
 
 }
