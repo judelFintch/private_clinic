@@ -12,7 +12,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Ajouter une entreprise</h4>
                         <div class="d-flex">
-                            <a href="show_room.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Toutes les chambres</a>
+                            <a href="show_room.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Toutes les entreprises</a>
                         </div>
                     </div>
                     <form action = ""class="forms-sample row" method ="post">
