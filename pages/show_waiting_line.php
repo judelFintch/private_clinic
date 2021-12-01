@@ -3,56 +3,31 @@
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
-
-<?php
-function getSingleRow()
-{
-  
-}
-  function getPatientName($id)
-  {
-    global $bdd;
-    $req = "select nom, postnom, presnom from patients where id = $id ";
-    $stmt = $bdd->prepare($req);
-    $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return  $result['nom']. " ".$result['postnom']. " ". $result['presnom'] ; 
-  }
-  function getServiceName($id)
-  {
-    global $bdd;
-    $req = "select libelle from service where id = $id ";
-    $stmt = $bdd->prepare($req);
-    $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return  $result['libelle'];
-  }
-  function getMedecinName($id)
-  {
-    global $bdd;
-    $req = "select nom, postnom, prenom from medecin where id = $id ";
-    $stmt = $bdd->prepare($req);
-    $stmt->execute();
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return  $result['nom']. " ".$result['postnom']. " ". $result['prenom'] ;
-  }
-?>
-      <div class="main-panel">
-        <div class="content-wrapper">
-        <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-        <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Liste medecin</h4>
-                        <div class="d-flex">
-                            <a href="creat_hospitalisation.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
-                        </div>
-                    </div>
+<div class="main-panel">
+<div class="content-wrapper">
+<div class="d-flex align-items-center justify-content-between">
+        <h4 class="card-title">Liste D'attente</h4>
+        <div class="d-flex">
+            <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
+        </div>
+         </div>
+         <?php
+                   $select=$bdd ->query("SELECT * FROM ffiledattente") or die(print_r($bdd->error_info()));
+                  ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                           <tr>
+<<<<<<< HEAD
+                            <th>Id</th>
+                            <th>Nom </th>
+                            <th>Post-Nom</th>
+                            <th>Prenom</th>
+                            <th>Genre</th>
+                            <th>Date</th>
+                            <th>Etat</th>
+                          
+=======
                             <th>
                               #
                             </th>
@@ -71,12 +46,43 @@ function getSingleRow()
                             <th>
                                 Statut
                             </th>
+>>>>>>> e51f8381496653912673bcb72cca5bcee6f5786b
                           </tr>
                         </thead>
                         <?php
                    $select=$bdd ->query("SELECT * FROM hospitalisation") or die(print_r($bdd->error_info()));
                   ?>
                         <tbody>
+<<<<<<< HEAD
+                        
+                        <?php
+                  
+                  while ($result = $select->fetch()){
+                    echo '
+
+                
+                          <tr>
+                            <td>'.$result['id'].'</td>
+                            <td>'.$result ['nom'].'</td>
+                            <td>'.$result['postnom'].'</td>
+                            <td>'.$result['presnom'].'</td>
+                            <td>'.$result['genre'].'</td>
+                            <td>'.$result['date'].'</td>
+
+                           
+                          
+                            <td><label class="badge badge-danger">En attente</label></td>
+                            <td> </td>
+                            <td> </td>
+                          </tr>
+                              ';
+                    }
+                  ?>
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+=======
                           
                         <?php
                   
@@ -109,5 +115,6 @@ function getSingleRow()
               </div>
           </div>
         </div>
+>>>>>>> e51f8381496653912673bcb72cca5bcee6f5786b
     <!-- content-wrapper ends -->
     <?php include('../partials/_footer.php')?>

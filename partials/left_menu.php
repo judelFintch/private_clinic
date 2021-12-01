@@ -7,6 +7,27 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-ab" aria-expanded="false" aria-controls="ui-chambre">
+              <i class="icon-clipboard menu-icon"></i>
+              <span class="menu-title">Abonne</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-ab">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="creat_abonne.php">Ajouter Abonne</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_abonne.php">Liste </a></li>
+               
+               
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="creat_agent.php">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Agent</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="op_caisse.php">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Caisse</span>
@@ -78,8 +99,11 @@
             </a>
             <div class="collapse" id="ui-pat">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="creat_patient.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_patient.php">Ajouter privé</a></li>
+                <li class="nav-item"> <a class="nav-link" href="creat_patient_abone.php">Ajouter abonné</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Liste Patients privé</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_patient_abonne.php">Liste Patients abonné</a></li>
+
               </ul>
             </div>
           </li>

@@ -26,7 +26,7 @@
                   <div class="card-body">
                     
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Nouveau Medecin</h4>
+                        <h4 class="card-title">Modifier Patient</h4>
                         <div class="d-flex">
                             <a href="./Medecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>

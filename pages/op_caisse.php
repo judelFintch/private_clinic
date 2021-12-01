@@ -151,15 +151,15 @@
                     <hr>
                     
                     <div class="d-flex align-items-center mb-3 mt-2">
-                        <a  href="#" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span> Entree</a>
+                        <a  href="op_caisse.php" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span> Entree</a>
                         <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Depense</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Rapport</a>
+                        <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Rapport</a>
                         <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis Patient</a>
                     </div>
 
-                    <form class="forms-sample row" method="POST" action="../controlleur/HospitalisationController.php">
+                    <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
                         
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             
                             <div class="form-group">
                                 <label >Patient</label>
@@ -179,65 +179,31 @@
                             </div>
                             <div class="form-group">
                                 <label >Date </label>
-                                <input type="date" name="date_hospitalisation" class="form-control form-control-sm" placeholder="Nom du patient">
+                                <input type="date" name="date" class="form-control form-control-sm" placeholder="date">
                             </div>
                             
                         </div>
                         
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                <label >Motif hospitalisation</label>
-                                <select name="motif_hospitalisation" class="form-control form-control-sm">
-                                    <option value="Diabete">Diabete</option>
-                                    <option value="WY">Trouble bipo</option>
-                                    <option value="AM">Amnesie</option>
+                                <label >Devise</label>
+                                <select class="form-control form-control-sm"  name="devise">
+                                    <option>USD</option>
+                                    <option>CDF</option>
                                 </select>
                             </div>
                            
-                            <div class="form-group">
-                                <label >Lit</label>
-                                <?php
-                                  $lits=$bdd ->query("SELECT * FROM lit") or die(print_r($bdd->error_info()));
-                                ?>
-                                <select name="lit_id" class="form-control form-control-sm">
-                                  <?php
-                                  while ($lit= $lits->fetch()){
-                                    ?>
-                                    <option value="<?= $lit['id'] ?>"><?= $lit['bed_code']  ?> </option>
-                                    <?php
-                                  }
-                                  ?>
-                                    
-                                </select>
-                            </div>
+                           
                         </div>
-                        <div class="col-md-4">
-                            
-                            
+                        <div class="col-md-6">             
                             <div class="form-group">
-                                <label >Medecin traitant</label>
-                                <?php
-                                  $medecins=$bdd ->query("SELECT * FROM medecin") or die(print_r($bdd->error_info()));
-                                ?>
-                                <select name="medecin_trait" class="form-control form-control-sm">
-                                  <?php
-                                  while ($medecin = $medecins->fetch()){
-                                    ?>
-                                    <option value="<?= $medecin['id'] ?>"><?= $medecin['nom'] ." ".$medecin['postnom']. " ".$medecin['prenom'] ?> </option>
-                                    <?php
-                                  }
-                                  ?>
-                                    
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label >Note</label>
-                                <input type="text" name="note" class="form-control form-control-sm" placeholder="note ou remarque">
+                                <label >Montant</label>
+                                <input type="text" name="montant" class="form-control form-control-sm" placeholder="montant">
                             </div>
                             
                         </div>
                         <div class="col-md-12">
-                            <button name="savehospi" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button name="btn_caisse" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>
