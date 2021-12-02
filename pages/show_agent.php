@@ -1,6 +1,6 @@
 <?php include('../partials/app.php')?>
 <?php include('../confg/Connexion.php')?>
-<?php include('../model/patientsmodel.php')?>
+<?php include('../model/AbonneModel.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
@@ -8,17 +8,13 @@
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="d-flex align-items-center justify-content-between">
-        
-
-              <h3 class=" h3 heading">Patient encours de traitement</h3>
-              <hr>
-              <div class="d-flex">
-                  <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
-              </div>
-
-               </div>
-                  <?php
-                    $select=$bdd ->query("SELECT * FROM patients ORDER BY id desc") or die(print_r($bdd->error_info()));
+                        <h4 class="card-title">Liste Patients</h4>
+                        <div class="d-flex">
+                            <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
+                        </div>
+</div>
+                        <?php
+                    $select=$bdd ->query("SELECT * FROM abonne") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
@@ -28,8 +24,11 @@
                             <th>Nom</th>
                             <th>Postnom</th>
                             <th>Prenom</th>
+                            <th>Date</th>
                             <th>Genre</th>
-                            <th>Operations</th>
+                            <th>Matricule</th>
+                            <th>Nom entreprise</th>
+                            <th>Operation</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -43,12 +42,14 @@
                             <td>'.$res ['nom'].'</td>
                             <td>'.$res['postnom'].'</td>
                             <td>'.$res['presnom'].'</td>
+                            <td>'.$res['datenaiss'].'</td>
                             <td>'.$res['genre'].'</td>
+                            <td>'.$res['matricule'].'</td>
+                            <td>'.$res['nomentrep'].'</td>
+                          
                             <td>
-                                 <a class="badge badge-success" href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
-                                 <a class="badge badge-danger" href="updatePatient.php?id='.$res['id'].'">  Details</a>
-                                 <a class="badge badge-warning" href="encodage.php?code='.$res['patient_code'].'">  Encoder</a>
-                                 <a class="badge badge-info" href="op_caisse.php?code='.$res['patient_code'].'">  Caisse</a>
+                                 <a href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
+                                 <a href="updatePatient.php?id='.$res['id'].'">  Details</a>
                             </td>
                             <td> </td>
                             <td> </td>
@@ -57,10 +58,10 @@
                     }
                   ?>
                           
-              </tbody>
-            </table>
-          </div>
-          </div>
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
     <!-- content-wrapper ends -->
     <?php include('../partials/_footer.php')?>
 

@@ -20,12 +20,12 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Libelle </label>
-                                <input type="text" name="libelleprestation" class="form-control form-control-sm" placeholder="Code Chambre">
+                                <input type="text" name="libelleprestation" class="form-control form-control-sm" placeholder="Code Chambre" requires="required">
                             </div>
 
                             <div class="form-group">
                                 <label >Prix</label>
-                                <input type="text" name="prix" class="form-control form-control-sm" placeholder="Prix chambre">
+                                <input type="text" name="prix" class="form-control form-control-sm" placeholder="Prix chambre" required="required">
                             </div>
                            
                         </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre">
+                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre" required="required">
                             </div>
                            
                         </div>

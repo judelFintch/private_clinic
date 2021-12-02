@@ -57,7 +57,7 @@ include('../confg/Connexion.php');?>
                             <div class="form-group">
                                 <label >Service</label>
                                 <?php
-                                  $services=$bdd ->query("SELECT * FROM service") or die(print_r($bdd->error_info()));
+                                  $services=$bdd ->query("SELECT * FROM service_op") or die(print_r($bdd->error_info()));
                                 ?>
                                 <select name="serv_id" class="form-control form-control-sm">
                                   <?php
@@ -65,6 +65,7 @@ include('../confg/Connexion.php');?>
                                     ?>
                                     <option value="<?= $service['id'] ?>"><?= $service['libelle']  ?> </option>
                                     <?php
+                                    
                                   }
                                   ?>
                                     

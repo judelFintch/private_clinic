@@ -11,18 +11,18 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Nouveau patient</h4>
+                        <h4 class="card-title">Nouveau Qgent</h4>
                         <div class="d-flex">
                             <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form action = "../controlleur/PatientController.php" method = "post" class="forms-sample row">
+                    <form action = "../controlleur/AgentController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
-                        <input type="hidden" required name="patient" value="<?=PatientCode()?>" >
+                        <input type="hidden" required name="qgent" >
     
                             <div class="form-group">
                                 <label >Nom</label>
-                                <input type="text"  name="nom" class="form-control form-control-sm" placeholder="Nom du patient" required="required">
+                                <input type="text"  name="nom" class="form-control form-control-sm" placeholder="Nom du patient" required="nom required">
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
@@ -45,27 +45,39 @@
                                   </select>
                             </div>
                             <div class="form-group">
-                                <label>Uploader image</label>
-                                <input type="file" name="photo[]" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info form-control-sm" disabled placeholder="Upload Image">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary btn-sm" type="button">Upload</button>
-                                    </span>
-                                </div>
+                                <label >Nom entrprise</label>
+                                <input type="text"  name="nomentrep" class="form-control form-control-sm" placeholder="nom entreprise" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label >Numero matricule agent </label>
+                                <input type="text"  name="matricule" class="form-control form-control-sm" placeholder="matricule" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label >Nombre Enfant </label>
+                                <input type="number"  name="nbenfant" class="form-control form-control-sm" placeholder="Nombre enfant" required="required">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            
+                            <div class="form-group">
                                 <label >Groupe sanguin</label>
-                                <input type="hidden" name="groupe">
+                                <select class="form-control form-control-sm" name = "groupe"  required="required">
+                                    <option>Selectionnez le Groupe sanguin du patient</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                  </select>
+                            </div>
                             <div class="form-group">
                                 <label >Situation familiale</label>
-                                <select class="form-control form-control-sm" name="situation" required="required">
+                                <select class="form-control form-control-sm" name="situation">
                                     <option>Selectionnez la Situation familiale</option>
-                                    <option>Enfant</option>
-                                    <option>Célibataire</option>
                                     <option>Marié</option>
+                                    <option>Célibataire</option>
                                   </select>
                             </div>
                             <div class="form-group">
@@ -82,7 +94,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" name = "btn_patient" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button type="submit" name = "btn_agent" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>

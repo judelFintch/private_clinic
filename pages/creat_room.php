@@ -19,19 +19,19 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Code chambre</label>
-                                <input type="text"name="room_code" class="form-control form-control-sm" placeholder="Code Chambre">
+                                <input type="text"name="room_code" class="form-control form-control-sm" placeholder="Code Chambre" required="required">
                             </div>
 
                             <div class="form-group">
                                 <label >Prix</label>
-                                <input type="text"name="room_price" class="form-control form-control-sm" placeholder="Prix chambre">
+                                <input type="text"name="room_price" class="form-control form-control-sm" placeholder="Prix chambre" required="required">
                             </div>
                            
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Ajouter une chambre</label>
-                                <select class="form-control form-control-sm" name="room_type">
+                                <select class="form-control form-control-sm" name="room_type" required="required">
                                     <option>Selectionnez un type</option>
                                     <option>VIP</option>
                                     <option>Moyen</option>
@@ -41,7 +41,7 @@
 
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text" name="room_details" class="form-control form-control-sm" placeholder="detail chambre">
+                                <input type="text" name="room_details" class="form-control form-control-sm" placeholder="detail chambre" required="required">
                             </div>
             
                         </div>

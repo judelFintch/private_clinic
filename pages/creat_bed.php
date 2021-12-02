@@ -22,7 +22,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Code Lit</label>
-                                <input type="text"name="codeLit" class="form-control form-control-sm" placeholder="Code Lit">
+                                <input type="text"name="codeLit" class="form-control form-control-sm" placeholder="Code Lit" required="required">
                             </div>
                            
                         </div>

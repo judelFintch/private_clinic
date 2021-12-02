@@ -11,14 +11,14 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Nouveau patient</h4>
+                        <h4 class="card-title">Nouveau patient Abonné</h4>
                         <div class="d-flex">
                             <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
-                    <form action = "../controlleur/PatientController.php" method = "post" class="forms-sample row">
+                    <form action = "../controlleur/PatientAbonneController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
-                        <input type="hidden" required name="patient" value="<?=PatientCode()?>" >
+                        <input type="hidden" required name="patient" >
     
                             <div class="form-group">
                                 <label >Nom</label>
@@ -45,27 +45,47 @@
                                   </select>
                             </div>
                             <div class="form-group">
-                                <label>Uploader image</label>
-                                <input type="file" name="photo[]" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info form-control-sm" disabled placeholder="Upload Image">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary btn-sm" type="button">Upload</button>
-                                    </span>
-                                </div>
+                                <label >Nom entreprise</label>
+                                <?php
+                                  $patients=$bdd ->query("SELECT * FROM agent") or die(print_r($bdd->error_info()));
+                                ?>
+                              <select name="matricule" class="form-control form-control-sm">
+                                  <?php
+                                  while ($agents = $agent->fetch()){
+                                    ?>
+                                    <option value="<?= $agent['id'] ?>"><?= $agent['nom'] ." ".$agent['postnom']. " ".$agent['matricule'] ?> </option>
+                                    <?php
+                                  }
+                                  ?>
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label >Numero matricule agent </label>
+                                <input type="text"  name="matricule" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            
+                            <div class="form-group">
                                 <label >Groupe sanguin</label>
-                                <input type="hidden" name="groupe">
+                                <select class="form-control form-control-sm" name = "groupe">
+                                    <option>Selectionnez le Groupe sanguin du patient</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                  </select>
+                            </div>
                             <div class="form-group">
                                 <label >Situation familiale</label>
                                 <select class="form-control form-control-sm" name="situation" required="required">
                                     <option>Selectionnez la Situation familiale</option>
-                                    <option>Enfant</option>
-                                    <option>Célibataire</option>
                                     <option>Marié</option>
+                                    <option>Célibataire</option>
                                   </select>
                             </div>
                             <div class="form-group">

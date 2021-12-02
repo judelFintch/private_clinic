@@ -6,14 +6,34 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="op_caisse.php">
+            <a class="nav-link" data-toggle="collapse" href="#ui-ab" aria-expanded="false" aria-controls="ui-chambre">
+              <i class="icon-clipboard menu-icon"></i>
+              <span class="menu-title">Abonne</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-ab">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="creat_abonne.php">Ajouter Abonne</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_abonne.php">Liste </a></li>
+               
+               
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="creat_agent.php">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Agent</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ma_caisse.php">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Caisse</span>
             </a>
           </li>
-         
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-chambre" aria-expanded="false" aria-controls="ui-chambre">
               <i class="icon-clipboard menu-icon"></i>
@@ -43,6 +63,19 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-hospi" aria-expanded="false" aria-controls="ui-hospi">
+              <i class="icon-ribbon menu-icon"></i>
+              <span class="menu-title">Nursing</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-hospi">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Encodage</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_hospitalisation.php">Suivis </a></li>
+              </ul>
+            </div>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-hospi" aria-expanded="false" aria-controls="ui-hospi">
@@ -67,7 +100,7 @@
             <div class="collapse" id="ui-pat">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="creat_patient.php">Ajouter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" href="show_patient.php">Vor</a></li>
               </ul>
             </div>
           </li>

@@ -60,7 +60,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label >Motif hospitalisation</label>
-                                <select name="motif_hospitalisation" class="form-control form-control-sm">
+                                <select name="motif_hospitalisation" class="form-control form-control-sm" required="required">
                                     <option value="Diabete">Diabete</option>
                                     <option value="WY">Trouble bipo</option>
                                     <option value="AM">Amnesie</option>
@@ -120,7 +120,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Note</label>
-                                <input type="text" name="note" class="form-control form-control-sm" placeholder="note ou remarque">
+                                <input type="text" name="note" class="form-control form-control-sm" placeholder="note ou remarque" required="required">
                             </div>
                             
                         </div>

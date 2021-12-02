@@ -14,7 +14,6 @@
 }.st-theme-default > .nav .nav-link.active::after {
     background: #3F3E91 !important;
     transform: scale(1);
-
 }
 .tab-content
 {
@@ -92,23 +91,38 @@
 </div>
       <div class="main-panel">
         <div class="content-wrapper">
+        <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Client( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</h4>
+                  <p class="card-description">
+                    #CodeOp:Client( <?=$info_cli['patient_code']?>
+                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>
+                    <br>
+                    #Sexe:Client( <?=$info_cli['genre']?>
+                    #Etat ( <?=$info_cli['situation']?> <br>
+                    <b>Hospitalisation:</b>
+                    <span class="badje">
+                      Non Hospitaliser
+                    </span>
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">MOTIF DE LA VISITE(Patient nom)</h4>
-                        <div class="d-flex align-items-center">
-                            <a href="show_hospitalisation.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
-                        </div>
+                        
+        
                     </div>
                     
                     <div class="d-flex align-items-center mb-3 mt-2">
-                        <a  href="#" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span>Consultation</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Laboratoire</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Pharmacie</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Echo</a>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> RX</a>
+                        <a  href="#" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span>Encodage</a>
+                        <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
+                    
                     </div>
                     <hr>
 
@@ -117,7 +131,7 @@
 
                   <div class="form-group">
                     <div class="input-group">
-                      <input type="text" class="acte form-control"  id="autocomplete" placeholder="Motif  de la visite" aria-label="Recipient's username">
+                      <input type="text" class="acte form-control"  id="autocomplete" placeholder="Actes Medical, Laboratoire, Nursing, Phamarcie, Radio" aria-label="Recipient's username">
                       <div class="input-group-append">
                         <button class="btn btn-sm btn-primary insertOp" type="button">Valider</button>
                       </div>
@@ -136,21 +150,33 @@
 
 <script>
 $( "#autocomplete" ).autocomplete({
-  source: '../model/__service.php'
+  source: '../model/__prestation.php'
 });
 $('.insertOp').click(function(){
-var acte=$('.acte').val();
+var prestation=$('.acte').val();
 var code_patient=$('.code_patient').html();
-$.post('../controlleur/InsertOpController.php',{acte:acte,code_patient:code_patient},function(retourVerification){
+$.post('../controlleur/InsertOpController.php',{prestation:prestation,code_patient:code_patient},function(retourVerification){
       if(retourVerification==true){
         $.post('../controlleur/InsertOpController.php',{selectService:true,code_patient:code_patient},function(data){
           $('.result_insert').html(data);
+          $('.acte').val('');
         });
       }else{
         alert('error insert');
       }
-      
 });
 });
+$('.all_prestation').click(function(){
+  var prestation=$('.acte').val();
+  var code_patient=$('.code_patient').html();
+  
+  $.post('../controlleur/__prestationController.php',{select_all:true,code_patient:code_patient},function(data){
+    $('.result_insert').empty().html(data);
+
+  });
+
+});
+
+
 </script>
 <?php include('../partials/_footer.php')?>

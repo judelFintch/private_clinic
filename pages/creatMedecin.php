@@ -19,23 +19,23 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Nom</label>
-                                <input type="text" name="nom" class="form-control form-control-sm" placeholder="Ex : Katembue">
+                                <input type="text" name="nom" class="form-control form-control-sm" placeholder="Ex : Katembue" required="required>
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
-                                <input type="text" name="postnom" class="form-control form-control-sm" placeholder="Ex : Mpunda">
+                                <input type="text" name="postnom" class="form-control form-control-sm" placeholder="Ex : Mpunda" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Prénom</label>
-                                <input type="text" name="prenom" class="form-control form-control-sm" placeholder="Ex : John">
+                                <input type="text" name="prenom" class="form-control form-control-sm" placeholder="Ex : John" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date" name="datenaiss" class="form-control form-control-sm" placeholder="01-04-2000">
+                                <input type="date" name="datenaiss" class="form-control form-control-sm" placeholder="01-04-2000" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
-                                <select name="genre" class="form-control form-control-sm">
+                                <select name="genre" class="form-control form-control-sm" required="required">
                                     <option>Selectionnez le genre du medecin</option>
                                     <option>Homme</option>
                                     <option>Femme</option>
@@ -55,7 +55,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Type medecin</label>
-                                <select name="typemedecin" class="form-control form-control-sm">
+                                <select name="typemedecin" class="form-control form-control-sm" required="required">
                                     <option>Selectionnez type medecin</option>
                                     <option>Generaliste</option>
                                     <option>Specialiste</option>
@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Role du medecin</label>
-                                <select name="role" class="form-control form-control-sm">
+                                <select name="role" class="form-control form-control-sm" required="required">
                                     <option>Selectionnez le role du medecin</option>
                                     <option>Visiteur</option>
                                     <option>Permanant</option>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Téléphone</label>
-                                <input name="tel" type="number" class="form-control form-control-sm" placeholder="Numero tel du patient">
+                                <input name="tel" type="number" class="form-control form-control-sm" placeholder="Numero tel du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
@@ -79,7 +79,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input name="adresse" type="mail" class="form-control form-control-sm" placeholder="ex : Lubumbashi, Commune annexe Quatier kasapa, Rue ...">
+                                <input name="adresse" type="mail" class="form-control form-control-sm" placeholder="ex : Lubumbashi, Commune annexe Quatier kasapa, Rue ..." required="required">
                             </div>
                         </div>
                         <div class="col-md-12">

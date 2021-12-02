@@ -21,7 +21,7 @@ function getSingleRow()
   function getServiceName($id)
   {
     global $bdd;
-    $req = "select libelle from service where id = $id ";
+    $req = "select libelle from service_op where id = $id ";
     $stmt = $bdd->prepare($req);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
