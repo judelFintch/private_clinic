@@ -7,19 +7,20 @@
 
 <?php
 
-/* a mettre dans un model a refactore
-$info_paiement=$bdd->query("SELECT montant FROM caisse WHERE code_patient like('$code')");
-$sum_paiement=0;
+// a mettre dans un model a refactore
+$info_paiement=$bdd->query("SELECT * FROM caisse ");
+$sum_paiement_cdf=0;
+$sum_paiement_usd=0;
 while($montant=$info_paiement->fetch()){
-  $sum_paiement+=$montant['montant'];
+  $sum_paiement_cdf+=$montant['montant_cdf'];
+  $sum_paiement_usd+=$montant['montant_usd'];
 }
 
-$info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
+/*$info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
 $sum_prestation=0;
 while($montant_preste=$info_prestation->fetch()){
   $sum_prestation+=$montant_preste['montant'];
-}
-*/
+}*/
 ?>
 <style>
 .st-theme-default > .nav .nav-link.active {
@@ -85,7 +86,7 @@ while($montant_preste=$info_prestation->fetch()){
         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MA CAISSE</a>
         <a href="show_patient.php" class="btn btn-danger btn-sm mr-2"> <span class="icon-plus"></span>ENCOURS DE TRAITEMENT </a>
         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MES RAPPORTS</a>
-        <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>OPTIONS DEPENSES</a>
+        <a href="motif_depense.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>OPTIONS DEPENSES</a>
         <hr>
         <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
@@ -94,8 +95,8 @@ while($montant_preste=$info_prestation->fetch()){
                   <h4 class="card-title"></h4>
                   <p class="card-description">
                     <h3>TOTAL ENTREE</h3>
-                      Total CDF <br>
-                      Total USD <br>
+                      Total CDF <?=$sum_paiement_cdf?> CDF<br>
+                      Total USD <?=$sum_paiement_usd?> USD<br>
                   </p>
                 </div>
               </div>
@@ -120,9 +121,9 @@ while($montant_preste=$info_prestation->fetch()){
                   <div class="card-body">
                     <div class="d-flex align-items-center mb-3 mt-2">
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
-                    <button type="button" class="icon-plus depense_caisse btn int_caisse btn-primary btn-sm mr-2"></span> Depense</button>
-
+                    <button type="button" class="icon-plus depense_caisse btn  btn-primary btn-sm mr-2"></span> Depense</button>
                     </div>
+
                   <section class="form_caisse">
                     <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
                         <div class="col-md-6">
@@ -141,9 +142,11 @@ while($montant_preste=$info_prestation->fetch()){
                                   ?>
                                 </select>
                             </div>
+                            
                             <div class="form-group">
+                             
                                 <label >Date </label>
-                                <input type="date" name="date" class="form-control form-control-sm" placeholder="date">
+                                <input type="text" readonly value=" <?=$date_day =date('d-m-Y');?>" name="date" class="form-control form-control-sm" placeholder="date">
                             </div>
                             
                         </div>
@@ -172,7 +175,7 @@ while($montant_preste=$info_prestation->fetch()){
                         </div>
                     </form>
                   </div>
-                                </section>
+                </section>
                   <div class="result_insert"></div>
 
                   </div>
@@ -180,8 +183,8 @@ while($montant_preste=$info_prestation->fetch()){
   //caisse option
   $('.depense_caisse').click(function(){
     $('.form_caisse').hide();
-
   });
+
 $('.int_caisse').click(function(){
   $('.form_caisse').show();
   $('.int_caisse').hide();

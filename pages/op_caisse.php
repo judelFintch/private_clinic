@@ -128,7 +128,7 @@ while($montant_preste=$info_prestation->fetch()){
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Operation Caisse</h4>
                         <div class="d-flex align-items-center">
-                            <a href="show_hospitalisation.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
+                            
                         </div>
                     </div>
                     <hr>

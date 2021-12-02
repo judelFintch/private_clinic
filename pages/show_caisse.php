@@ -6,15 +6,20 @@
 <?php include('../partials/left_menu.php')?>
 
       <div class="main-panel">
+        
         <div class="content-wrapper">
+      <p>
+        <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MA CAISSE</a>
+        <a href="show_patient.php" class="btn btn-danger btn-sm mr-2"> <span class="icon-plus"></span>ENCOURS DE TRAITEMENT </a>
+        <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MES RAPPORTS</a>
+        <a href="motif_depense.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>OPTIONS DEPENSES</a>
+        </p>
+        <br>
+        <h4 class="card-title">Liste paiement patients du <?= date('d-m-y') ?></h4>
         <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Liste paiement patients du <?= date('d-m-y') ?></h4>
-                        <div class="d-flex">
-                            <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
-                        </div>
-</div>
+          <hr>
+        </div>
                     <?php
-                  
                     $select=$bdd ->query("SELECT * FROM caisse ") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
