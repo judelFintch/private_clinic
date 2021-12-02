@@ -83,8 +83,9 @@ while($montant_preste=$info_prestation->fetch()){
       <div class="main-panel">
         <div class="content-wrapper">
         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MA CAISSE</a>
-        <a href="show_caisse.php" class="btn btn-danger btn-sm mr-2"> <span class="icon-plus"></span>ENCOURS DE TRAITEMENT </a>
+        <a href="show_patient.php" class="btn btn-danger btn-sm mr-2"> <span class="icon-plus"></span>ENCOURS DE TRAITEMENT </a>
         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MES RAPPORTS</a>
+        <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>OPTIONS DEPENSES</a>
         <hr>
         <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
@@ -93,8 +94,8 @@ while($montant_preste=$info_prestation->fetch()){
                   <h4 class="card-title"></h4>
                   <p class="card-description">
                     <h3>TOTAL ENTREE</h3>
-                    Total CDF <br>
-                    Total USD <br>
+                      Total CDF <br>
+                      Total USD <br>
                   </p>
                 </div>
               </div>
@@ -119,8 +120,8 @@ while($montant_preste=$info_prestation->fetch()){
                   <div class="card-body">
                     <div class="d-flex align-items-center mb-3 mt-2">
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Depense</a>
-                        <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
+                    <button type="button" class="icon-plus depense_caisse btn int_caisse btn-primary btn-sm mr-2"></span> Depense</button>
+
                     </div>
                   <section class="form_caisse">
                     <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
@@ -176,6 +177,11 @@ while($montant_preste=$info_prestation->fetch()){
 
                   </div>
  <script>
+  //caisse option
+  $('.depense_caisse').click(function(){
+    $('.form_caisse').hide();
+
+  });
 $('.int_caisse').click(function(){
   $('.form_caisse').show();
   $('.int_caisse').hide();

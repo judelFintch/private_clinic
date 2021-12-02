@@ -13,12 +13,9 @@
                             <a href="./nouveaumedecin.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
                         </div>
 </div>
-                        <?php
-                    $select=$bdd ->query("SELECT * FROM caisse") or die(print_r($bdd->error_info()));
-                    
-                    
+                    <?php
                   
-                  
+                    $select=$bdd ->query("SELECT * FROM caisse ") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
@@ -27,10 +24,9 @@
                              
                             <th>Id</th>
                             <th>Nom</th>
-                            <th>Montant</th>
-                            <th>Devise</th>
-                           
-                          
+                            <th>Montant CDF</th>
+                            <th>Montant USD</th>
+          
                           </tr>
                         </thead>
                         <tbody>
@@ -42,7 +38,8 @@
                           <tr>
                             <td>'.$res['id'].'</td>
                             <td>'.$res ['patient'].'</td>
-                            <td>'.$res['montant'].'</td>
+                            <td>'.$res['montant_cdf'].'</td>
+                            <td>'.$res['montant_usd'].'</td>
                             <td>'.$res['devise'].'</td>
                         
                          

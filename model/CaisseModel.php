@@ -13,14 +13,17 @@ function Creat_caisse($patient,$devise,$date,$montant){
  $code_op_resultat=$code_op->fetch();
  var_dump($code_op_resultat);
  //$code_op=$code_op['codeconsultation'];*/
- 
- $creat_caisse=$bdd->query("INSERT INTO caisse Values('','$nom_patient','$devise','$date','$montant','','$code_patient')");
-  if($creat_caisse){
-      echo true;
-  }
 
-      echo false;
-  }
+ if($devise=="CDF"){
+    $creat_caisse=$bdd->query("INSERT INTO caisse Values('','$nom_patient','$devise','$date','$montant','','','$code_patient')");
+    
+ }
+ else{
+    $creat_caisse=$bdd->query("INSERT INTO caisse Values('','$nom_patient','$devise','$date',0,'$montant','','$code_patient')"); 
+ }
+ return true;
+}
+ 
   
 
 function select_caisse(){
