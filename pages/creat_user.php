@@ -20,19 +20,19 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Nom</label>
-                                <input type="text"name="nom" class="form-control form-control-sm" placeholder="Nom du patient">
+                                <input type="text"name="nom" class="form-control form-control-sm" placeholder="Nom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
-                                <input type="text"name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient">
+                                <input type="text"name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Prénom</label>
-                                <input type="text"  name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="text"  name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="date" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
@@ -67,7 +67,7 @@
                             </div>
                             <div class="form-group">
                                 <label >Situation familiale</label>
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" required="required">
                                     <option>Selectionnez la Situation familiale</option>
                                     <option>Marié</option>
                                     <option>Célibataire</option>
@@ -75,11 +75,11 @@
                             </div>
                             <div class="form-group">
                                 <label >Téléphone</label>
-                                <input type="number" class="form-control form-control-sm" placeholder="Numero tel du patient">
+                                <input type="number" class="form-control form-control-sm" placeholder="Numero tel du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="mail" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                           
                         </div>

@@ -22,23 +22,23 @@
     
                             <div class="form-group">
                                 <label >Nom</label>
-                                <input type="text"  name="nom" class="form-control form-control-sm" placeholder="Nom du patient">
+                                <input type="text"  name="nom" class="form-control form-control-sm" placeholder="Nom du patient" required="nom required">
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
-                                <input type="text"  name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient">
+                                <input type="text"  name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Prénom</label>
-                                <input type="text"  name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="text"  name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date"  name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="date"  name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
-                                <select class="form-control form-control-sm" name = "genre">
+                                <select class="form-control form-control-sm" name = "genre" required="required">
                                     <option>Selectionnez le genre du patient</option>
                                     <option>Homme</option>
                                     <option>Femme</option>
@@ -46,21 +46,21 @@
                             </div>
                             <div class="form-group">
                                 <label >Nom entrprise</label>
-                                <input type="text"  name="nomentrep" class="form-control form-control-sm" placeholder="nom entreprise">
+                                <input type="text"  name="nomentrep" class="form-control form-control-sm" placeholder="nom entreprise" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Numero matricule agent </label>
-                                <input type="text"  name="matricule" class="form-control form-control-sm" placeholder="matriculr">
+                                <input type="text"  name="matricule" class="form-control form-control-sm" placeholder="matricule" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Nombre Enfant </label>
-                                <input type="number"  name="nbenfant" class="form-control form-control-sm" placeholder="Nombre enfant">
+                                <input type="number"  name="nbenfant" class="form-control form-control-sm" placeholder="Nombre enfant" required="required">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Groupe sanguin</label>
-                                <select class="form-control form-control-sm" name = "groupe">
+                                <select class="form-control form-control-sm" name = "groupe"  required="required">
                                     <option>Selectionnez le Groupe sanguin du patient</option>
                                     <option>A+</option>
                                     <option>A-</option>
@@ -82,15 +82,15 @@
                             </div>
                             <div class="form-group">
                                 <label >Téléphone</label>
-                                <input type="number" name="tel" class="form-control form-control-sm" placeholder="Numero tel du patient">
+                                <input type="number" name="tel" class="form-control form-control-sm" placeholder="Numero tel du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input type="email" name="email" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="email" name="email" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input type="adresse" name="adresse" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <input type="adresse" name="adresse" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
                         </div>
                         <div class="col-md-12">

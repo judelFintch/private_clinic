@@ -7,47 +7,21 @@
 <?php $info_cli=select_by_id($_GET['code'])?>
 <div class="code_patient"> <?=$info_cli['patient_code']?></div>
 <?php
-  function getServiceName($id)
-  {
-    global $bdd;
-    $rq = "select libelle from service where id = $id ";
-    $stm = $bdd->prepare($rq);
-    $stm->execute();
-    $resul = $stm->fetch(PDO::FETCH_ASSOC);
-    return  $resul['libelle'];
-  }
-  
-  function getLitName($id)
-  {
-    global $bdd;
-    $rq = "select bed_code from lit where id = $id ";
-    $stm = $bdd->prepare($rq);
-    $stm->execute();
-    $resul = $stm->fetch(PDO::FETCH_ASSOC);
-    return  $resul['bed_code'];
-  }
-  
-  function getChambreName($id)
-  {
-    global $bdd;
-    $rq = "select room_code from room where id = $id ";
-    $stm = $bdd->prepare($rq);
-    $stm->execute();
-    $resul = $stm->fetch(PDO::FETCH_ASSOC);
-    return  $resul['room_code'];
-  }
-  
-  function getMedecinName($id)
-  {
-    global $bdd;
-    $rq = "select nom, postnom, prenom from medecin where id = $id ";
-    $stm = $bdd->prepare($rq);
-    $stm->execute();
-    $resul = $stm->fetch(PDO::FETCH_ASSOC);
-    return  $resul['nom']. " ".$resul['postnom']. " ". $resul['prenom'] ;
-  }
-?>
+$code=$_GET['code'];
+//a mettre dans un model a refactore
+$info_paiement=$bdd->query("SELECT montant FROM caisse WHERE code_patient like('$code')");
+$sum_paiement=0;
+while($montant=$info_paiement->fetch()){
+  $sum_paiement+=$montant['montant'];
+}
 
+$info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
+$sum_prestation=0;
+while($montant_preste=$info_prestation->fetch()){
+  $sum_prestation+=$montant_preste['montant'];
+}
+
+?>
 <style>
 .st-theme-default > .nav .nav-link.active {
     color: #3F3E91 !important;
@@ -62,10 +36,6 @@
 {
     padding : 10px !important;
 }
-
-
-
-
 
 .modal-box {
   display: none;
@@ -110,37 +80,44 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.3) !important;
 }
-
-
-
-    </style>
-
-
-<div id="ordonnance" class="modal-box">
-  <header> <a href="#" class="js-modal-close close">×</a>
-    <h3>Ordonnance</h3>
-  </header>
-  <div class="modal-body">
-    <div class="row">
-        
-        <form>
-            <table class="">
-
-            </table>
-            <div class="row">
-               <div class="col-md-12">
-                    <a href="show_hospitalisation.php" class="btn btn-primary btn-sm mr-2"> Apercu</a>
-                    <button type="submit" class="btn btn-primary btn-sm mr-2">Sauvegarder</button>
-                    <button type="submit" class="btn btn-danger btn-sm">Annuler</button>
-               </div>
-            </div>
-        </form>
-    </div>
-  </div>
-  <footer> <a href="#" class="btn btn-small js-modal-close">Close</a> </footer>
-</div>
+ </style>
       <div class="main-panel">
         <div class="content-wrapper">
+        <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Client( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</h4>
+                  <p class="card-description">
+                    #CodeOp:Client( <?=$info_cli['patient_code']?>
+                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>
+                    <br>
+                    #Sexe:Client( <?=$info_cli['genre']?>
+                    #DateNaissance:Client( <?=$info_cli['situation']?> <br>
+                    <b>Hospitalisation:</b>
+                    <span class="badje">
+                      Non Hospitaliser
+                    </span>
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> $) </h4>
+                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?>$) </h4>
+                  <p class="card-description">
+                    #CodeOp:Client( <?=$info_cli['patient_code']?>
+                   
+                    </span>
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
@@ -161,9 +138,7 @@
                     </div>
                   <section class="form_caisse">
                     <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
-                        
                         <div class="col-md-6">
-                            
                             <div class="form-group">
                                 <label >Patient</label>
                                 <?php

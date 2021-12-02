@@ -20,24 +20,24 @@
                        
                             <div class="form-group">
                                 <label >Libelle</label>
-                                <input type="text"name="libelle" class="form-control form-control-sm" placeholder="libelle entreprise">
+                                <input type="text"name="libelle" class="form-control form-control-sm" placeholder="libelle entreprise" required= "required" >
                             </div>
                             <div class="form-group">
                                 <label >Nom Responsable</label>
-                                <input type="text"name="nomRes"  class="form-control form-control-sm" placeholder="Nom responsable">
+                                <input type="text"name="nomRes"  class="form-control form-control-sm" placeholder="Nom responsable" required = "required">
                             </div>
 
                             <div class="form-group">
                                 <label >RCCM</label>
-                                <input type="text"name="rccm" class="form-control form-control-sm" placeholder="RCCM">
+                                <input type="text"name="rccm" class="form-control form-control-sm" placeholder="RCCM" required = "required">
                             </div>
                             <div class="form-group">
                                 <label >Id-Nat</label>
-                                <input type="text"name="idnat" class="form-control form-control-sm" placeholder="Id-Nat">
+                                <input type="text"name="idnat" class="form-control form-control-sm" placeholder="Id-Nat" required = "required">
                             </div>
                             <div class="form-group">
                                 <label >Adresse</label>
-                                <input type="text"name="adresse" class="form-control form-control-sm" placeholder="Adresse">
+                                <input type="text"name="adresse" class="form-control form-control-sm" placeholder="Adresse" required = "required">
                             </div>
                         </div>
                         <div class="col-md-6">

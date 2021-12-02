@@ -20,13 +20,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Libelle</label>
-                                <input type="text" name="libelle" class="form-control form-control-sm" placeholder="Libelle service">
+                                <input type="text" name="libelle" class="form-control form-control-sm" placeholder="Libelle service" required="required">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre">
+                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre" required="required">
                             </div>
                         </div>
                         <div class="col-md-12">

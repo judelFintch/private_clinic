@@ -91,15 +91,32 @@
 </div>
       <div class="main-panel">
         <div class="content-wrapper">
+        <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Client( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</h4>
+                  <p class="card-description">
+                    #CodeOp:Client( <?=$info_cli['patient_code']?>
+                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>
+                    <br>
+                    #Sexe:Client( <?=$info_cli['genre']?>
+                    #Etat ( <?=$info_cli['situation']?> <br>
+                    <b>Hospitalisation:</b>
+                    <span class="badje">
+                      Non Hospitaliser
+                    </span>
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">MOTIF DE LA VISITE(Patient nom)</h4>
-                        <div class="d-flex align-items-center">
-                            <a href="show_hospitalisation.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
-                        </div>
+                        
+        
                     </div>
                     
                     <div class="d-flex align-items-center mb-3 mt-2">

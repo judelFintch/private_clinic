@@ -37,31 +37,31 @@
                         <div class="col-md-6">
                         <div class="form-group">
                                 <label >ID</label>
-                                <input type="text"name="id" value="<?php echo $data['id']; ?>" class="form-control form-control-sm" placeholder="libelle entreprise">
+                                <input type="text"name="id" value="<?php echo $data['id']; ?>" class="form-control form-control-sm" placeholder="libelle entreprise" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Libelle</label>
-                                <input type="text"name="libelle" value="<?php echo $data['libelle']; ?>" class="form-control form-control-sm" placeholder="libelle entreprise">
+                                <input type="text"name="libelle" value="<?php echo $data['libelle']; ?>" class="form-control form-control-sm" placeholder="libelle entreprise" required="required">
                             </div>
                             <div class="form-group">
                                 <label >Nom Responsable</label>
-                                <input type="text"name="nomRes" value="<?php echo $data['nomRes']; ?>" class="form-control form-control-sm" placeholder="Nom responsable">
+                                <input type="text"name="nomRes" value="<?php echo $data['nomRes']; ?>" class="form-control form-control-sm" placeholder="Nom responsable" required="required">
                             </div>
 
                             <div class="form-group">
                                 <label >Prix</label>
-                                <input type="text"name="prix" class="form-control form-control-sm" placeholder="prix">
+                                <input type="text"name="prix" class="form-control form-control-sm" placeholder="prix" required="requiredq">
                             </div>
                             <div class="form-group">
                                 <label >Date Signature</label>
-                                <input type="date"name="datesign" class="form-control form-control-sm" placeholder="Id-Nat">
+                                <input type="date"name="datesign" class="form-control form-control-sm" placeholder="Id-Nat" required="required">
                             </div>
                            
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Type Contrat</label>
-                                <select class="form-control form-control-sm" name="typecontrat">
+                                <select class="form-control form-control-sm" name="typecontrat" required="required">
                                     <option>Selectionnez un type</option>
                                     <option>Forfait</option>
                                     <option>Acte</option>
@@ -70,7 +70,7 @@
                             
                             <div class="form-group">
                                 <label >Etat</label>
-                                <select class="form-control form-control-sm" name="etat">
+                                <select class="form-control form-control-sm" name="etat" required="required">
                                     <option>Selectionnez un etat du contrat</option>
                                     <option>En cours</option>
                                     <option>Suspendu</option>
