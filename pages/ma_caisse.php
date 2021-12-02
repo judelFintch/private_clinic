@@ -4,15 +4,14 @@
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
-<?php $info_cli=select_by_id($_GET['code'])?>
-<div class="code_patient"> <?=$info_cli['patient_code']?></div>
+
 <?php
-$code=$_GET['code'];
-//a mettre dans un model a refactore
-$info_paiement=$bdd->query("SELECT montant_cdf,montant_usd FROM caisse WHERE code_patient like('$code')");
+
+/* a mettre dans un model a refactore
+$info_paiement=$bdd->query("SELECT montant FROM caisse WHERE code_patient like('$code')");
 $sum_paiement=0;
 while($montant=$info_paiement->fetch()){
-  $sum_paiement+=$montant['montant_cdf'];
+  $sum_paiement+=$montant['montant'];
 }
 
 $info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
@@ -20,7 +19,7 @@ $sum_prestation=0;
 while($montant_preste=$info_prestation->fetch()){
   $sum_prestation+=$montant_preste['montant'];
 }
-
+*/
 ?>
 <style>
 .st-theme-default > .nav .nav-link.active {
@@ -84,36 +83,29 @@ while($montant_preste=$info_prestation->fetch()){
       <div class="main-panel">
         <div class="content-wrapper">
         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MA CAISSE</a>
+        <a href="show_caisse.php" class="btn btn-danger btn-sm mr-2"> <span class="icon-plus"></span>ENCOURS DE TRAITEMENT </a>
         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MES RAPPORTS</a>
         <hr>
         <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Client( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</h4>
+                  <h4 class="card-title"></h4>
                   <p class="card-description">
-                    #CodeOp:Client( <?=$info_cli['patient_code']?>
-                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>
-                    <br>
-                    #Sexe:Client( <?=$info_cli['genre']?>
-                    #DateNaissance:Client( <?=$info_cli['situation']?> <br>
-                    <b>Hospitalisation:</b>
-                    <span class="badje">
-                      Non Hospitaliser
-                    </span>
+                    <h3>TOTAL ENTREE</h3>
+                    Total CDF <br>
+                    Total USD <br>
                   </p>
-                 
                 </div>
               </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> $) </h4>
-                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?>$) </h4>
                   <p class="card-description">
-                    #CodeOp:Client( <?=$info_cli['patient_code']?>
-                   
+                  <h3>TOTAL DEPENSES</h3>
+                    Total CDF <br>
+                    Total USD <br>
                     </span>
                   </p>
                  
@@ -125,18 +117,9 @@ while($montant_preste=$info_prestation->fetch()){
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Operation Caisse</h4>
-                        <div class="d-flex align-items-center">
-                            <a href="show_hospitalisation.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
-                        </div>
-                    </div>
-                    <hr>
-                    
                     <div class="d-flex align-items-center mb-3 mt-2">
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
                         <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Depense</a>
-                       
                         <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
                     </div>
                   <section class="form_caisse">
@@ -145,8 +128,7 @@ while($montant_preste=$info_prestation->fetch()){
                             <div class="form-group">
                                 <label >Patient</label>
                                 <?php
-                                $code=$_GET['code'];
-                                  $patients=$bdd ->query("SELECT * FROM patients WHERE patient_code like('$code')") or die(print_r($bdd->error_info()));
+                                  $patients=$bdd ->query("SELECT * FROM patients ") or die(print_r($bdd->error_info()));
                                 ?>
                                 <select name="patient" class="form-control form-control-sm">
                                   <?php
@@ -156,7 +138,6 @@ while($montant_preste=$info_prestation->fetch()){
                                     <?php
                                   }
                                   ?>
-                                    
                                 </select>
                             </div>
                             <div class="form-group">

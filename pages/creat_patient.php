@@ -56,20 +56,9 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
+                            
                                 <label >Groupe sanguin</label>
-                                <select class="form-control form-control-sm" name = "groupe">
-                                    <option>Selectionnez le Groupe sanguin du patient</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
-                                  </select>
-                            </div>
+                                <input type="hidden" name="groupe">
                             <div class="form-group">
                                 <label >Situation familiale</label>
                                 <select class="form-control form-control-sm" name="situation" required="required">
