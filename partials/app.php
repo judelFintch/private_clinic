@@ -6,7 +6,7 @@
   session_start();
    if(isset($_SESSION['login']) AND isset($_SESSION['level'])){
           //$rech = $_GET['class'];
-         echo $level=$_SESSION['level'];
+          $level=$_SESSION['level'];
           $user=$_SESSION['user'];
      }
    else{

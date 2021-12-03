@@ -21,7 +21,7 @@
                             <th>Id</th>
                             <th>Libelle Prestation</th>
                             <th>Prix</th>
-                            <th>Nom Service</th>
+                            
                             <th>Details</th>
                             <th>Action</th>
                           
@@ -39,10 +39,10 @@
                             <td>'.$result ['id'].'</td>
                             <td>'.$result ['libelleprestation'].'</td>
                             <td>'.$result['prix'].'</td>
-                            <td>'.$result['nomservice'].'</td>
+                            
                             <td>'.$result['detail'].'</td>
                           
-                            <td><label class="badge badge-danger">En attente</label></td>
+                          
                             <td><a href="updatePrestation.php?id='.$result['id'].'">  Modifier</a></td>
                             <td> </td>
                             <td> </td>

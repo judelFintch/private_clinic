@@ -42,9 +42,14 @@
                             <td>'.$res['genre'].'</td>
                             <td>
                                  <a class="badge badge-success" href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
-                                 <a class="badge badge-danger" href="updatePatient.php?id='.$res['id'].'">  Details</a>
+                                 <a class="badge badge-danger" href="updatePatient.php?id='.$res['id'].'">  Details</a>';
+                                  if($_SESSION['level']==3 or $_SESSION['level']==2){echo '
                                  <a class="badge badge-warning" href="encodage.php?code='.$res['patient_code'].'">  Encoder</a>
+                                 ';}
+                                 if($_SESSION['level']==3){echo '
                                  <a class="badge badge-info" href="op_caisse.php?code='.$res['patient_code'].'">  Caisse</a>
+                                 ';}
+                                 echo '
                             </td>
                             <td> </td>
                             <td> </td>

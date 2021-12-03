@@ -21,11 +21,7 @@
                             <th>Id</th>
                             <th> Libelle </th>
                             <th> Details</th>
-<<<<<<< HEAD
                             <th> Action</th>
-=======
-                            <th> </th>
->>>>>>> e51f8381496653912673bcb72cca5bcee6f5786b
                           
                           </tr>
                         </thead>

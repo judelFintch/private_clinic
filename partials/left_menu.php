@@ -71,7 +71,7 @@
           </li>
 
           <?php }?>
-          <?php if($level==4) {?>
+          <?php if($level==2) {?>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-hospi" aria-expanded="false" aria-controls="ui-hospi">
               <i class="icon-ribbon menu-icon"></i>
@@ -110,7 +110,7 @@
             </a>
             <div class="collapse" id="ui-pat">
               <ul class="nav flex-column sub-menu">
-              <?php if($level==1 or $level==1) {?>
+              <?php if($level==1 or $level==3) {?>
                 <li class="nav-item"> <a class="nav-link" href="creat_patient.php">Ajouter</a></li>
                 <?php }?>
                 <li class="nav-item"> <a class="nav-link" href="show_patient.php">Voir</a></li>
@@ -142,7 +142,9 @@
             </a>
             <div class="collapse" id="ui-serv">
               <ul class="nav flex-column sub-menu">
+              <?php if($level==7 or $level==7 ) {?>
                 <li class="nav-item"> <a class="nav-link" href="creat_service.php">Ajouter</a></li>
+                <?php }?>
                 <li class="nav-item"> <a class="nav-link" href="show_service.php">Liste</a></li>
               </ul>
             </div>
@@ -156,7 +158,7 @@
             </a>
             <div class="collapse" id="ui-rdv">
               <ul class="nav flex-column sub-menu">
-              <?php if($level==7 or $level==7 ) {?>
+              <?php if($level==7 or $level==2 ) {?>
                 <li class="nav-item"> <a class="nav-link" href="creat_prestation.php">Ajouter</a></li>
                 <?php }?>
                 <li class="nav-item"> <a class="nav-link" href="show_prestation.php">Liste</a></li>

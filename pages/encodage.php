@@ -115,8 +115,6 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between">
-                        
-        
                     </div>
                     <div class="d-flex align-items-center mb-3 mt-2">
                         <a  href="#" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span>Encodage</a>
