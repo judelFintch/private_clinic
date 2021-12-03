@@ -18,7 +18,7 @@ while($montant=$info_paiement->fetch()){
 $info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
 $sum_prestation=0;
 while($montant_preste=$info_prestation->fetch()){
-  $sum_prestation+=$montant_preste['montant'];
+  $sum_prestation+=$montant_preste['price'];
 }
 
 ?>
@@ -109,8 +109,8 @@ while($montant_preste=$info_prestation->fetch()){
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> $) </h4>
-                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?>$) </h4>
+                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> CDF) </h4>
+                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?> CDF) </h4>
                   <p class="card-description">
                     #CodeOp:Client( <?=$info_cli['patient_code']?>
                    
@@ -135,7 +135,7 @@ while($montant_preste=$info_prestation->fetch()){
                     
                     <div class="d-flex align-items-center mb-3 mt-2">
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
-                        <a href="edit_hospitalisation.php?id=" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Depense</a>
+                        
                        
                         <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
                     </div>

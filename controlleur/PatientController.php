@@ -9,15 +9,16 @@ if(isset($_POST['btn_patient'])){
     $prenom = $_POST['prenom'];
     $datenaiss = $_POST['datenaiss'];
     $genre = $_POST['genre'];
-    $photo = $_POST['photo'];
-    $groupe = $_POST['groupe'];
+    //$photo = $_POST['photo'];
+    //$groupe = $_POST['groupe'];
     $situation = $_POST['situation'];
     $tel = $_POST['tel'];
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
-    $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$photo,$groupe,$situation,$tel,$email,$adresse);
+    $service=$_POST['serv_id'];
+    $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service);
     if($creat_patient==1){
-        header("refresh: 0; ../index.php?operation=creat_patient&&codep=$patient_code");
+        header("refresh: 0; ../index.php");
        }
        else{
           header("refresh: 0; ../index.php?operation=error");

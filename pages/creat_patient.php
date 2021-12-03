@@ -44,21 +44,9 @@
                                     <option>Femme</option>
                                   </select>
                             </div>
-                            <div class="form-group">
-                                <label>Uploader image</label>
-                                <input type="file" name="photo[]" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info form-control-sm" disabled placeholder="Upload Image">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary btn-sm" type="button">Upload</button>
-                                    </span>
-                                </div>
-                            </div>
+                          
                         </div>
                         <div class="col-md-6">
-                            
-                                <label >Groupe sanguin</label>
-                                <input type="hidden" name="groupe">
                             <div class="form-group">
                                 <label >Situation familiale</label>
                                 <select class="form-control form-control-sm" name="situation" required="required">
@@ -70,16 +58,36 @@
                             </div>
                             <div class="form-group">
                                 <label >Téléphone</label>
-                                <input type="number" name="tel" class="form-control form-control-sm" placeholder="Numero tel du patient" required="required">
+                                <input type="tel" name="tel" class="form-control form-control-sm" placeholder="Numero tel du patient" required="required">
                             </div>
+
                             <div class="form-group">
                                 <label >G-Mail</label>
                                 <input type="email" name="email" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
+
                             <div class="form-group">
                                 <label >Adresse</label>
                                 <input type="adresse" name="adresse" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
                             </div>
+                            
+                            <div class="form-group">
+                                <label >Service</label>
+                                <?php
+                                  $services=$bdd ->query("SELECT * FROM service_op") or die(print_r($bdd->error_info()));
+                                ?>
+                                <select name="serv_id" class="form-control form-control-sm">
+                                  <?php
+                                  while ($service = $services->fetch()){
+                                    ?>
+                                    <option value="<?= $service['id'] ?>"><?= $service['libelle']  ?> </option>
+                                    <?php
+                                  }
+                                  ?>
+                                    
+                                </select>
+                            </div>
+
                         </div>
                         <div class="col-md-12">
                             <button type="submit" name = "btn_patient" class="btn btn-primary btn-sm mr-2">Enregistrer</button>

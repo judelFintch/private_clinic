@@ -5,7 +5,7 @@
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
 <?php $info_cli=select_by_id($_GET['code'])?>
-<div class="code_patient"> <?=$info_cli['patient_code']?></div>
+<div class="code_patient"><?=$info_cli['code_op']?></div>
 <style>
 .st-theme-default > .nav .nav-link.active {
     color: #3F3E91 !important;
@@ -118,7 +118,6 @@
                         
         
                     </div>
-                    
                     <div class="d-flex align-items-center mb-3 mt-2">
                         <a  href="#" data-modal-id="ordonnance" class="btn btn-primary btn-sm js-open-modal mr-2"> <span class="icon-plus"></span>Encodage</a>
                         <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>

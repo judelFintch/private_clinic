@@ -41,6 +41,9 @@ if(isset($_POST['selectService'])){
                <th>
                Prix 
                </th>
+               <th>
+               Taux
+               </th>
                
           </tr>
           </thead>";
@@ -51,9 +54,10 @@ if(isset($_POST['selectService'])){
                     <tr>";
                     $item .= "
                     <td class='code'>".$key['code_op']."</td>
-                    <td>".$key['id_service']."</td>
+                    <td>".$key['libelle']."</td>
                     <td>".$key['date_op']."</td>
                     <td>".$key['price']." CDF</td>
+                    <td>".$key['taux']." </td>
                     
                     ";
                     }

@@ -3,10 +3,10 @@ require_once('../confg/Connexion.php');
 require_once('../model/OperationModel.php');
 if(isset($_POST['select_all'])){
     $code_patient=$_POST['code_patient'];
-   
     $date=date('d-m-Y');
-    $code_patient=$_POST['code_patient'];
-    $data_op=select_by_op($code_patient);
+     $code_patient=$_POST['code_patient'];
+     $data_op=select_by_op($code_patient);
+    //$data_op=$bdd->query("SELECT * FROM mouvement where code_patient like '%$code_patient%' ");
     $item='';
     $item .= "
     <div class='table-responsive'>
@@ -35,7 +35,7 @@ if(isset($_POST['select_all'])){
                    <tr>";
                    $item .= "
                    <td class='code'>".$key['code_op']."</td>
-                   <td>".$key['id_service']."</td>
+                   <td>".$key['libelle']."</td>
                    <td>".$key['date_op']."</td>
                    <td>".$key['price']."</td>
                    ";

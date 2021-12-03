@@ -3,6 +3,7 @@
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
+<?php include('../confg/Connexion.php');?>
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="row">
@@ -29,15 +30,23 @@
                            
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label >Ajouter une chambre</label>
-                                <select class="form-control form-control-sm" name="room_type" required="required">
-                                    <option>Selectionnez un type</option>
-                                    <option>VIP</option>
-                                    <option>Moyen</option>
-                                    <option>Simple</option>
-                                  </select>
+                        <div class="form-group">
+                                <label >Service</label>
+                                <?php
+                                  $services=$bdd ->query("SELECT * FROM service_op") or die(print_r($bdd->error_info()));
+                                ?>
+                                <select name="serv_id" class="form-control form-control-sm">
+                                  <?php
+                                  while ($service = $services->fetch()){
+                                    ?>
+                                    <option value="<?= $service['id'] ?>"><?= $service['libelle']  ?> </option>
+                                    <?php
+                                  }
+                                  ?>
+                                    
+                                </select>
                             </div>
+
 
                             <div class="form-group">
                                 <label ><Details></Details></label>

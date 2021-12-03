@@ -6,7 +6,6 @@
 <?php include('../partials/left_menu.php')?>
 
 <?php
-
 // a mettre dans un model a refactore
 $info_paiement=$bdd->query("SELECT * FROM caisse ");
 $sum_paiement_cdf=0;
@@ -15,7 +14,15 @@ while($montant=$info_paiement->fetch()){
   $sum_paiement_cdf+=$montant['montant_cdf'];
   $sum_paiement_usd+=$montant['montant_usd'];
 }
-
+$info_depense=$bdd->query("SELECT * FROM sorties ");
+$sum_depense_cdf=0;
+$sum_depense_usd=0;
+while($montant_dep=$info_depense->fetch()){
+  $sum_depense_cdf+=$montant_dep['montant_cdf'];
+  $sum_depense_usd+=$montant_dep['montant_usd'];
+}
+//selection motif depense
+  $select_depense=$bdd->query("SELECT * FROM compte_sorties	");
 /*$info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
 $sum_prestation=0;
 while($montant_preste=$info_prestation->fetch()){
@@ -106,11 +113,10 @@ while($montant_preste=$info_prestation->fetch()){
                 <div class="card-body">
                   <p class="card-description">
                   <h3>TOTAL DEPENSES</h3>
-                    Total CDF <br>
-                    Total USD <br>
+                    Total CDF <span class="badjet badjet-danger"> <?=$sum_depense_cdf?> </span>CDF<br>
+                    Total USD <span> <?=$sum_depense_usd?></span> USD<br>
                     </span>
                   </p>
-                 
                 </div>
               </div>
             </div>
@@ -121,9 +127,9 @@ while($montant_preste=$info_prestation->fetch()){
                   <div class="card-body">
                     <div class="d-flex align-items-center mb-3 mt-2">
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
-                    <button type="button" class="icon-plus depense_caisse btn  btn-primary btn-sm mr-2"></span> Depense</button>
+                    <button class="btn depense_caisse btn  btn-primary btn-sm mr-2"><span class="icon-plus"></span>  Depense</button>
                     </div>
-
+          <!-- Section Entree -->
                   <section class="form_caisse">
                     <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
                         <div class="col-md-6">
@@ -142,15 +148,11 @@ while($montant_preste=$info_prestation->fetch()){
                                   ?>
                                 </select>
                             </div>
-                            
                             <div class="form-group">
-                             
                                 <label >Date </label>
                                 <input type="text" readonly value=" <?=$date_day =date('d-m-Y');?>" name="date" class="form-control form-control-sm" placeholder="date">
                             </div>
-                            
                         </div>
-                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Devise</label>
@@ -163,12 +165,53 @@ while($montant_preste=$info_prestation->fetch()){
                                 <label >Montant</label>
                                 <input type="text" name="montant" class="form-control form-control-sm" placeholder="montant">
                             </div>
-                           
+                            </div>
+                        
+                        <div class="col-md-12">
+                            <button name="btn_caisse" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
+                            <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
-                        <div class="col-md-6">             
-                            
-                            
+                    </form>
+                  </div>
+                  </section>
+                
+                
+          <!-- Fin section Entree-->
+          <!-- Section Entree -->
+          <section class="form_sortie">
+                    <form class="forms-sample row" method="POST" action="">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label >Compte Sortie</label>
+                                <select name="depense" class="form-control form-control-sm">
+                                  <?php
+                                  while ($depense=$select_depense->fetch()){
+                                    ?>
+                                    <option value="<?= $depense['libelle'] ?>"><?= $depense['libelle'] ?> </option>
+                                    <?php
+                                  }
+                                  ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label >Date </label>
+                                <input type="text" readonly value=" <?=$date_day =date('d-m-Y');?>" name="date" class="form-control form-control-sm" placeholder="date">
+                            </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label >Devise</label>
+                                <select class="form-control form-control-sm"  name="devise">
+                                    <option>USD</option>
+                                    <option>CDF</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label >Montant</label>
+                                <input type="text" name="montant" class="form-control form-control-sm" placeholder="montant">
+                            </div>
+                            </div>
+
                         <div class="col-md-12">
                             <button name="btn_caisse" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
@@ -176,44 +219,57 @@ while($montant_preste=$info_prestation->fetch()){
                     </form>
                   </div>
                 </section>
-                  <div class="result_insert"></div>
+                <?php
+                // a refactore-------------------------------------
+                if(isset($_POST['depense'])){
+                  $libelle=$_POST['depense'];
+                  $devise=$_POST['devise'];
+                  $date=$_POST['date'];
+                  $montant=$_POST['montant'];
+                  if($devise=='CDF'){
+                    $insert=$bdd->query("INSERT INTO sorties VALUES('','0','$montant','$libelle',now(),'','2050')");  
+                    }else{
+                      $insert=$bdd->query("INSERT INTO sorties VALUES('','$montant','0','$libelle',now(),'','2050')");
+                    }
 
-                  </div>
- <script>
-  //caisse option
-  $('.depense_caisse').click(function(){
-    $('.form_caisse').hide();
-  });
+                }
+                //----------------------------a mettre correctement
+                ?>
+                  
+      <script>
+        //caisse option
+        $('.form_sortie').hide();
 
-$('.int_caisse').click(function(){
-  $('.form_caisse').show();
-  $('.int_caisse').hide();
-});
-$('.insertOp').click(function(){
-var prestation=$('.acte').val();
-var code_patient=$('.code_patient').html();
-$.post('../controlleur/InsertOpController.php',{prestation:prestation,code_patient:code_patient},function(retourVerification){
-      if(retourVerification==true){
-        $.post('../controlleur/InsertOpController.php',{selectService:true,code_patient:code_patient},function(data){
-          $('.result_insert').html(data);
-          $('.acte').val('');
+        $('.depense_caisse').click(function(){
+          $('.form_caisse').hide();
+          $('.form_sortie').show();
         });
-      }else{
-        alert('error insert');
-      }
-});
-});
-$('.all_prestation').click(function(){
-  $('.form_caisse').hide();
-  var prestation=$('.acte').val();
-  var code_patient=$('.code_patient').html();
-  
-  $.post('../controlleur/__prestationController.php',{select_all:true,code_patient:code_patient},function(data){
-    $('.result_insert').empty().html(data);
 
-  });
-
-});
-        
-</script>
-    <?php include('../partials/_footer.php')?>
+      $('.int_caisse').click(function(){
+        $('.form_caisse').show();
+        $('.form_sortie').hide();
+      });
+      $('.insertOp').click(function(){
+      var prestation=$('.acte').val();
+      var code_patient=$('.code_patient').html();
+      $.post('../controlleur/InsertOpController.php',{prestation:prestation,code_patient:code_patient},function(retourVerification){
+            if(retourVerification==true){
+              $.post('../controlleur/InsertOpController.php',{selectService:true,code_patient:code_patient},function(data){
+                $('.result_insert').html(data);
+                $('.acte').val('');
+              });
+            }else{
+              alert('error insert');
+            }
+      });
+      });
+      $('.all_prestation').click(function(){
+        $('.form_caisse').hide();
+        var prestation=$('.acte').val();
+        var code_patient=$('.code_patient').html();
+        $.post('../controlleur/__prestationController.php',{select_all:true,code_patient:code_patient},function(data){
+          $('.result_insert').empty().html(data);
+        });
+      });      
+   </script>
+  <?php include('../partials/_footer.php')?>

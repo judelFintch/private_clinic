@@ -24,9 +24,7 @@
                                 <label >Code Lit</label>
                                 <input type="text"name="codeLit" class="form-control form-control-sm" placeholder="Code Lit" required="required">
                             </div>
-                           
                         </div>
-                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Chambre</label>
@@ -41,7 +39,6 @@
                                         ?>
                                   </select>
                             </div>
-                           
                         </div>
                         <div class="col-md-12">
                             <button type="submit" name="btn_lit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
