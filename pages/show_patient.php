@@ -7,11 +7,11 @@
 
       <div class="main-panel">
         <div class="content-wrapper">
-        <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Liste Patients</h4>
-                        <div class="d-flex">
-                            <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
-                        </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <h4 class="card-title">Liste Patients</h4>
+            <div class="d-flex">
+                <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
+            </div>
           </div>
                   <?php
                     $select=$bdd ->query("SELECT * FROM patients ORDER BY id desc") or die(print_r($bdd->error_info()));

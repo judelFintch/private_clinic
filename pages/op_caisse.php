@@ -136,7 +136,7 @@ while($montant_preste=$info_prestation->fetch()){
                     <div class="d-flex align-items-center mb-3 mt-2">
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
                         
-                       
+  
                         <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
                     </div>
                   <section class="form_caisse">

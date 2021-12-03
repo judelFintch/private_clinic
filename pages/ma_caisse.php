@@ -94,6 +94,7 @@ while($montant_preste=$info_prestation->fetch()){
         <a href="show_patient.php" class="btn btn-danger btn-sm mr-2"> <span class="icon-plus"></span>ENCOURS DE TRAITEMENT </a>
         <a href="show_caisse.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>MES RAPPORTS</a>
         <a href="motif_depense.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>OPTIONS DEPENSES</a>
+        <a href="mon_rapport.php" class="btn btn-primary btn-sm mr-2"> <span class="icon-plus"></span>RAPPORT PAR SERVICE</a>
         <hr>
         <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
@@ -121,6 +122,7 @@ while($montant_preste=$info_prestation->fetch()){
               </div>
             </div>
         </div>
+        <?php if($level==3) {?>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
@@ -219,6 +221,7 @@ while($montant_preste=$info_prestation->fetch()){
                     </form>
                   </div>
                 </section>
+                <?php }?>
                 <?php
                 // a refactore-------------------------------------
                 if(isset($_POST['depense'])){

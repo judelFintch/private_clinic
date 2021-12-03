@@ -2,6 +2,16 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php 
+  session_start();
+   if(isset($_SESSION['login']) AND isset($_SESSION['level'])){
+          //$rech = $_GET['class'];
+         echo $level=$_SESSION['level'];
+          $user=$_SESSION['user'];
+     }
+   else{
+   header("Location:../Auth/login.php");}
+?>
  <meta charset="utf-8">
  <?php include('../env.php')?>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +29,6 @@
   <link rel="stylesheet" href="../css/vertical-layout-light/smart_tab_all.min.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
-
 </head>
 <script  src="../js/jquery-2.1.3.min.js"> </script>
 <script src="../jquery/jquery-ui.js"></script>

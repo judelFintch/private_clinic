@@ -71,8 +71,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label >Groupe Sanguin</label>
-                                <input type="text" name="groupe" value="<?php echo $data['groupe']; ?>"class="form-control form-control-sm">
+                              
+                                <input type="text" name="groupe" value="<?php echo $data['situation']; ?>"class="form-control form-control-sm">
                                    
                             </div>
                           
