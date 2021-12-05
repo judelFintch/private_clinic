@@ -1,7 +1,7 @@
 <?php
-
 require_once('../confg/Connexion.php');
 require_once('../model/OperationModel.php');
+require_once('../model/TauxModel.php');
 if(isset($_POST['acte'])){
      $date=date('d-m-Y');
      $acte=$_POST['acte'];
@@ -12,10 +12,11 @@ if(isset($_POST['acte'])){
 }
 
 if(isset($_POST['prestation'])){
+     $taux=select_taux();
      $date=date('d-m-Y');
      $prestation=$_POST['prestation'];
      $code_patient=$_POST['code_patient'];
-     $insert_op=insert_init_prestation($prestation,$code_patient);
+     $insert_op=insert_init_prestation($prestation,$code_patient,$taux);
      echo 1;
 
 }

@@ -21,10 +21,10 @@ if(isset($_POST['btn_patient'])){
     $service=$_POST['serv_id'];
     $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service,$taux);
     if($creat_patient==1){
-       // header("refresh: 0; ../index.php");
+        header("refresh: 0; ../index.php");
        }
        else{
-          //header("refresh: 0; ../index.php?operation=error");
+          header("refresh: 0; ../index.php?operation=error");
        }
 }
 

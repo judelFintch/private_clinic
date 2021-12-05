@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('../confg/Connexion.php');
+//require_once('../model/TauxModel.php');
+
 if(isset($_POST['login']) and (isset($_POST['psswd']))){
 	$login=($_POST['login']);
 	$psswd=($_POST['psswd']);
@@ -16,6 +18,7 @@ if(isset($_POST['login']) and (isset($_POST['psswd']))){
 		 }
 		 elseif($resultat['login'] == $login AND $resultat['password_user'] == $passwd ){
 		 	 if(!empty($resultat['login'])){
+				  //recuperation du taux du jour
 				$_SESSION['login'] = $resultat['login'];
 				$_SESSION['level']=$resultat['level'];
 				$_SESSION['user'] = $resultat['user_name'];
