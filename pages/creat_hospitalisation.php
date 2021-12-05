@@ -60,11 +60,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label >Motif hospitalisation</label>
-                                <select name="motif_hospitalisation" class="form-control form-control-sm" required="required">
-                                    <option value="Diabete">Diabete</option>
-                                    <option value="WY">Trouble bipo</option>
-                                    <option value="AM">Amnesie</option>
-                                </select>
+                                <input type="text" name="motif_hospitalisation" class="form-control form-control-sm" required="required">
+                                    
                             </div>
                             <div class="form-group">
                                 <label >Chambre</label>

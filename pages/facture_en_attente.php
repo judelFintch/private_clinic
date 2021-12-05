@@ -1,13 +1,15 @@
 <?php include('../partials/app.php')?>
-<?php include('../confg/Connexion.php')?>
-<?php include('../model/AbonneModel.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
-
       <div class="main-panel">
         <div class="content-wrapper">
-        <div class="d-flex align-items-center justify-content-between">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card position-relative">
+                <div class="card-body">
+                    <h3>Facture en Attente</h3>
+                    <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Liste Patients</h4>
                         <div class="d-flex">
                             <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
@@ -46,7 +48,6 @@
                             <td>'.$res['genre'].'</td>
                             <td>'.$res['matricule'].'</td>
                             <td>'.$res['nomentrep'].'</td>
-                          
                             <td>
                                  <a href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
                                  <a href="updatePatient.php?id='.$res['id'].'">  Details</a>
@@ -55,13 +56,18 @@
                             <td> </td>
                           </tr>
                               ';
-                    }
-                  ?>
-                          
+                            }
+                        ?>
                         </tbody>
                       </table>
                     </div>
-                    </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     <!-- content-wrapper ends -->
     <?php include('../partials/_footer.php')?>
 

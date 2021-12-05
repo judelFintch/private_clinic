@@ -12,20 +12,18 @@
                     
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Ajouter une prestation</h4>
-                        <div class="d-flex">
-                            <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
-                        </div>
+                       
                     </div>
                     <form action = "../controlleur/PrestationController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label >Libelle </label>
-                                <input type="text" name="libelleprestation" class="form-control form-control-sm" placeholder="Code Chambre" requires="required">
+                                <input type="text" name="libelleprestation" class="form-control form-control-sm" placeholder="Libelle de prestation" requires="required">
                             </div>
 
                             <div class="form-group">
                                 <label >Prix</label>
-                                <input type="text" name="prix" class="form-control form-control-sm" placeholder="Prix chambre" required="required">
+                                <input type="text" name="prix" class="form-control form-control-sm" placeholder="Prix de la prestation" required="required">
                             </div>
                            
                         </div>
@@ -48,7 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre" required="required">
+                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="Detail de la prestation" required="required">
                             </div>
                            
                         </div>

@@ -31,21 +31,25 @@
                     </div>
                     <form action="../controlleur/ServiceController.php" method="post" class="forms-sample row">
                     <div class="col-md-6">
-                            <div class="form-group">
-                                <label >Id</label>
-                                <input type="text" name="id"  value="<?php echo $data['id']; ?>" class="form-control form-control-sm" placeholder="Libelle service">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
+                    <div class="form-group">
                                 <label >Libelle</label>
                                 <input type="text" name="libelle"  value="<?php echo $data['libelle']; ?>" class="form-control form-control-sm" placeholder="Libelle service">
                             </div>
+                                <input type="hidden" name="id"  value="<?php echo $data['id']; ?>" class="form-control form-control-sm" placeholder="Libelle service">
+                        
+                        </div>
+                        <div class="col-md-6">
+                            
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text"name="detail"  value="<?php echo $data['detail']; ?>" class="form-control form-control-sm" placeholder="detail chambre">
+                                <input type="text" name="detail"  value="<?php echo $data['detail']; ?>" class="form-control form-control-sm" placeholder="detail chambre">
+                            </div>
+
+                            <div class="form-group">
+                                <label >Prix Service</label>
+                                <input type="text" name="prix"  value="<?php echo $data['price']; ?>" class="form-control form-control-sm" placeholder="detail chambre">
                             </div>
                         </div>
                         <div class="col-md-12">

@@ -13,7 +13,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Ajouter un service</h4>
                         <div class="d-flex">
-                            <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
+                            <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
                         </div>
                     </div>
                     <form action="../controlleur/ServiceController.php" method="post" class="forms-sample row">
@@ -22,11 +22,16 @@
                                 <label >Libelle</label>
                                 <input type="text" name="libelle" class="form-control form-control-sm" placeholder="Libelle service" required="required">
                             </div>
+
+                            <div class="form-group">
+                                <label >Prix Service</label>
+                                <input type="text" name="service_prix" class="form-control form-control-sm" placeholder="Prix Service" required="required">
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label ><Details></Details></label>
-                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="detail chambre" required="required">
+                                <input type="text"name="detail" class="form-control form-control-sm" placeholder="Detail du service" required="required">
                             </div>
                         </div>
                         <div class="col-md-12">

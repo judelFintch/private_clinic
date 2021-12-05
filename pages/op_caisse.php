@@ -5,7 +5,6 @@
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
 <?php $info_cli=select_by_id($_GET['code'])?>
-<div class="code_patient"> <?=$info_cli['patient_code']?></div>
 <?php
 $code=$_GET['code'];
 //a mettre dans un model a refactore
@@ -90,13 +89,16 @@ while($montant_preste=$info_prestation->fetch()){
         <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Client( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</h4>
+                  <h4 class="card-title">
+                    <span class="">
+                      <b>Client ( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</b></span></h4>
                   <p class="card-description">
-                    #CodeOp:Client( <?=$info_cli['patient_code']?>
-                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>
+                  #CodClient:Client( <?=$info_cli['patient_code']?>)
+                    #codeOp <span class="code_patient"><?=$info_cli['code_op']?></span><br>
+                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>)
                     <br>
-                    #Sexe:Client( <?=$info_cli['genre']?>
-                    #DateNaissance:Client( <?=$info_cli['situation']?> <br>
+                    #Sexe:Client( <?=$info_cli['genre']?>)
+                    ( <?=$info_cli['situation']?>) <br>
                     <b>Hospitalisation:</b>
                     <span class="badje">
                       Non Hospitaliser
@@ -111,8 +113,11 @@ while($montant_preste=$info_prestation->fetch()){
                 <div class="card-body">
                   <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> CDF) </h4>
                   <h4 class="card-title">Montant Prester(<?=$sum_prestation?> CDF) </h4>
+                  <h4 class="card-title">Montant Solde(<?=$sum_paiement-$sum_prestation?> CDF) </h4>
                   <p class="card-description">
-                    #CodeOp:Client( <?=$info_cli['patient_code']?>
+                    #CodeOp:Client( <span class="codeop_fact"><?=$info_cli['patient_code']?>)</span><br><br>
+    
+                   <button class="btn btn-danger btn-sm mr-2 dmd_facture" value="">DEMANDE FACTURE POUR CLOTURE LE SOINS</button>
                    
                     </span>
                   </p>
@@ -121,6 +126,23 @@ while($montant_preste=$info_prestation->fetch()){
               </div>
             </div>
         </div>
+        <div class="card dmd_facture_result"> 
+          <div class="col-lg-8">
+          <p class="alert alert-danger message_dmd">  Vous etes sur le points de demandez la facture finale pour le patient <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>
+           cliquez sur valider pour confirmer l'operation
+           <button class="btn btn-success fact_dmd">Valider</button>
+        </p>
+
+        <p class="alert alert-success dmd_reussi">  
+          Demande effectuee 
+        </p>
+
+        <p class="alert alert-danger dmd_echec">  
+          Impossible d'effectuer cette operation une Demande est deja emcours
+        </p>
+          </div>
+           </div>
+        <br>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
@@ -195,6 +217,34 @@ while($montant_preste=$info_prestation->fetch()){
 
                   </div>
  <script>
+$('.message_dmd').hide();
+$('.dmd_reussi').hide();
+$('.dmd_echec').hide();
+
+$('.dmd_facture').click(function(){
+  //affichage du message
+  $('.message_dmd').show();
+});
+
+$('.fact_dmd').click(function(){
+  //affichage du message
+  var code_patient=$('.code_patient').html();
+   $.post('../model/__dmd_facture.php',{code_patient:code_patient},function(creat_dmd){
+     if(creat_dmd==1){
+      $('.dmd_reussi').show();
+      $('.message_dmd').hide();
+     }
+     else{
+      $('.dmd_echec').show();
+      $('.message_dmd').hide();
+     }
+
+   });
+ 
+
+});
+
+
 $('.int_caisse').click(function(){
   $('.form_caisse').show();
   $('.int_caisse').hide();
@@ -218,7 +268,7 @@ $('.all_prestation').click(function(){
   var prestation=$('.acte').val();
   var code_patient=$('.code_patient').html();
   
-  $.post('../controlleur/__prestationController.php',{select_all:true,code_patient:code_patient},function(data){
+  $.post('../controlleur/__prestationController.php',{select_all_caisse:true,code_patient:code_patient},function(data){
     $('.result_insert').empty().html(data);
 
   });

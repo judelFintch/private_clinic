@@ -50,7 +50,7 @@
                                  if($_SESSION['level']==3 or $_SESSION['level']==2){echo '
                                  <a class="badge badge-warning" href="encodage.php?code='.$res['patient_code'].'">  Encoder</a>
                                  ';}
-                                 if($user==3){echo '
+                                 if($_SESSION['level']==3){echo '
                                  <a class="badge badge-info" href="op_caisse.php?code='.$res['patient_code'].'">  Caisse</a>
                                  ';}
                                  echo '

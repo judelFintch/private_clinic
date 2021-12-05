@@ -20,9 +20,9 @@
                           <tr>
                             <th>Id</th>
                             <th> Libelle </th>
+                            <th> Prix </th>
                             <th> Details</th>
                             <th> Action</th>
-                          
                           </tr>
                         </thead>
                         <tbody>
@@ -31,21 +31,19 @@
                   
                   while ($result = $select->fetch()){
                     ?>
-
-                
                           <tr>
                             <td><?=$result['id']?></td>
                             <td><?=$result ['libelle']?></td>
+                            <td><?=$result ['price']?> $</td>
                             <td><?=$result['detail']?></td>
-                            
                             <td><a href="updateService.php?id=<?=$result['id']?>" class="btn btn-warning">Editer</a></td>
                           </tr>
                              <?php
                     }
                   ?>
-                        </tbody>
-                      </table>
-                    </div>
-                    </div>
+              </tbody>
+            </table>
+          </div>
+          </div>
     <!-- content-wrapper ends -->
     <?php include('../partials/_footer.php')?>

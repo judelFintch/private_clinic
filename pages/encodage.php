@@ -5,7 +5,6 @@
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
 <?php $info_cli=select_by_id($_GET['code'])?>
-<div class="code_patient"><?=$info_cli['code_op']?></div>
 <style>
 .st-theme-default > .nav .nav-link.active {
     color: #3F3E91 !important;
@@ -96,11 +95,12 @@
                 <div class="card-body">
                   <h4 class="card-title">Client( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</h4>
                   <p class="card-description">
-                    #CodeOp:Client( <?=$info_cli['patient_code']?>
-                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>
+                    #CodClient:Client( <?=$info_cli['patient_code']?>)
+                    #codeOp <span class="code_patient"><?=$info_cli['code_op']?></span><br>
+                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>)
                     <br>
-                    #Sexe:Client( <?=$info_cli['genre']?>
-                    #Etat ( <?=$info_cli['situation']?> <br>
+                    #Sexe:Client( <?=$info_cli['genre']?>)
+                    ( <?=$info_cli['situation']?>) <br>
                     <b>Hospitalisation:</b>
                     <span class="badje">
                       Non Hospitaliser
@@ -167,7 +167,7 @@ $('.all_prestation').click(function(){
   var prestation=$('.acte').val();
   var code_patient=$('.code_patient').html();
   
-  $.post('../controlleur/__prestationController.php',{select_all:true,code_patient:code_patient},function(data){
+  $.post('../controlleur/__prestationController.php',{select_all_caisse:true,code_patient:code_patient},function(data){
     $('.result_insert').empty().html(data);
 
   });

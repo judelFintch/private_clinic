@@ -27,17 +27,12 @@
                   <div class="card-body">
                     
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Ajouter une prestation</h4>
-                        <div class="d-flex">
-                            <a href="./patient.html" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Retour</a>
-                        </div>
+                        <h4 class="card-title">Modifier une prestation</h4>
+                        
                     </div>
                     <form action = "../controlleur/PrestationController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
-                        <div class="form-group">
-                            <label >Id</label>
-                                <input type="text" name="id"  value="<?php echo $data['id']; ?>" class="form-control form-control-sm" placeholder="Ex : Katembue">
-                            </div>
+                                <input type="hidden" name="id"  value="<?php echo $data['id']; ?>" class="form-control form-control-sm" placeholder="Ex : Katembue">
                             <div class="form-group">
                                 <label >Libelle </label>
                                 <input type="text"name="libelleprestation"value="<?php echo $data['libelleprestation']; ?>" class="form-control form-control-sm" placeholder="Code Chambre">
