@@ -12,7 +12,13 @@ if(isset($_POST['savehospi'])){
     $note =$_POST['note'];
     $chambre =$_POST['chambre_id'];
     $lit =$_POST['lit_id'];
-    insertHospitalistion($patient, $medecintr, $motifhosp, $datehosp, $hosptby, $note, $chambre, $lit);
+    $opeartion=insertHospitalistion($patient, $medecintr, $motifhosp, $datehosp, $hosptby, $note, $chambre, $lit);
+     if($opeartion==true){
+        header("refresh: 0; ../pages/show_hospitalisation.php");
+     }
+     else{
+     }
+   
 }
 elseif (isset($_POST['updatehospi'])) {
     $patient= $_POST['patient'];

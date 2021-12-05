@@ -44,7 +44,7 @@ function getSingleRow()
                 <div class="card">
                   <div class="card-body">
         <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Liste medecin</h4>
+                        <h4 class="card-title">Suivis Hospitalisation</h4>
                         <div class="d-flex">
                             <a href="creat_hospitalisation.php" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
                         </div>
@@ -65,9 +65,7 @@ function getSingleRow()
                             <th>
                               Service 
                             </th>
-                            <th>
-                               Medecin traitant
-                            </th>
+                            
                             <th>
                                 Statut
                             </th>
@@ -87,7 +85,7 @@ function getSingleRow()
                             <td><?= getPatientName($result['patient'])  ?></td>
                             <td><?= $result['datehosp'] ?></td>
                             <td><?= getServiceName($result['serv_id']) ?></td>
-                            <td><?= getMedecinName($result['medecintr']) ?></td>
+                            
                             <td><?php
                             if ($result['statut_hosp'] == 0) {
                               ?>

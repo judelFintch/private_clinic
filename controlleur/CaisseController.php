@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once('../confg/Connexion.php');
 require_once('../model/TauxModel.php');
 require_once('../model/CaisseModel.php');

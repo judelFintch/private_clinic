@@ -3,10 +3,15 @@
 function insertHospitalistion($patient, $medecintr, $motifhosp, $datehosp, $hosptby, $note, $chambre, $lit)
 {
  global $bdd ;
+ $message=false;
  $insert=$bdd ->query("INSERT INTO hospitalisation(patient, medecintr, motifhosp, datehosp, serv_id, note, chambre, lit) VALUES ('$patient', '$medecintr', '$motifhosp', '$datehosp', '$hosptby', '$note', '$chambre', '$lit')") or die(print_r($bdd->error_info()));
  if($insert){
-     echo "Insertion reussi";
+     $message=true;
   }
+  else{
+      $message=false;
+  }
+  return $message;
 }
 
  function showHospitalisation(){
