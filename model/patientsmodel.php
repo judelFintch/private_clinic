@@ -1,4 +1,5 @@
 <?php
+
 function code_op(){
   global $bdd;
   $select=$bdd->query("SELECT id FROM code_op ORDER BY id DESC LIMIT 1") or die(print_r($bdd->error_info()));
@@ -14,22 +15,22 @@ function select_service_by_id($id){
   return $data;
 }
 
- function InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service){
+ function InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service,$taux){
      global $bdd ;
      $message=false;
      $code=code_op();
-    
-
+     //session_start();
     $data_service=select_service_by_id($service);
     $libelle=$data_service['libelle'];
     $id_act=$data_service['id'];
     $price=$data_service['price'];
+    $user_id=$_SESSION['id_user'];
 
      $insert=$bdd ->query("INSERT INTO patients VALUES ('','$nom','$postnom','$prenom','$datenaiss','$genre','','$situation','$tel','$email','$adresse','$patient_code','false','$code')") ;
       if($insert){
         $message=true;
         $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$patient_code','$code',now(),'','$libelle','$price','encours')");
-        $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code','$patient_code','$libelle','$price','false','','user','$service','2050',now())");
+        $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code','$patient_code','$libelle','$price','false','','$user_id','$service','$taux',now())");
         $bdd->query("INSERT INTO code_op VALUES('')");
       }
       else{

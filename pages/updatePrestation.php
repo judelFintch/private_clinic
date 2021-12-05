@@ -28,8 +28,8 @@
                     
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Modifier une prestation</h4>
-                        
                     </div>
+                    
                     <form action = "../controlleur/PrestationController.php" method = "post" class="forms-sample row">
                         <div class="col-md-6">
                                 <input type="hidden" name="id"  value="<?php echo $data['id']; ?>" class="form-control form-control-sm" placeholder="Ex : Katembue">
@@ -37,7 +37,6 @@
                                 <label >Libelle </label>
                                 <input type="text"name="libelleprestation"value="<?php echo $data['libelleprestation']; ?>" class="form-control form-control-sm" placeholder="Code Chambre">
                             </div>
-
                             <div class="form-group">
                                 <label >Prix</label>
                                 <input type="text" name="prix" value="<?php echo $data['prix']; ?>" class="form-control form-control-sm" placeholder="Prix chambre">

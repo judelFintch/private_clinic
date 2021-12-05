@@ -169,20 +169,17 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-user" aria-expanded="false" aria-controls="ui-user">
               <i class="icon-ribbon menu-icon"></i>
-              <span class="menu-title">Fcturation</span>
+              <span class="menu-title">Facturation</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-user">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="facture_en_attente.php">Facture en Attente </a></li>
                 <li class="nav-item"> <a class="nav-link" href="show_user.php">Facture Approuvee</a></li>
-                
-              
               </ul>
             </div>
           </li>
           <?php }?>
-
           <?php if($level==7) {?>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-user" aria-expanded="false" aria-controls="ui-user">

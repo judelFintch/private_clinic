@@ -19,6 +19,7 @@ if(isset($_POST['login']) and (isset($_POST['psswd']))){
 				$_SESSION['login'] = $resultat['login'];
 				$_SESSION['level']=$resultat['level'];
 				$_SESSION['user'] = $resultat['user_name'];
+				$_SESSION['id_user'] = $resultat['id'];
 		 	    header('Location:../index.php');
 			}
 		 		

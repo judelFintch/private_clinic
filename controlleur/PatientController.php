@@ -1,9 +1,12 @@
 <?php
 session_start();
 require_once('../model/patientsmodel.php');
+require_once('../model/TauxModel.php');
 require_once('../confg/Connexion.php');
 if(isset($_POST['btn_patient'])){
-    echo $patient_code=$_POST['patient'];
+    //recuperation du taux
+    $taux=select_taux();
+    $patient_code=$_POST['patient'];
     $nom = $_POST['nom'];
     $postnom = $_POST['postnom'];
     $prenom = $_POST['prenom'];
@@ -16,12 +19,12 @@ if(isset($_POST['btn_patient'])){
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
     $service=$_POST['serv_id'];
-    $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service);
+    $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service,$taux);
     if($creat_patient==1){
-        header("refresh: 0; ../index.php");
+       // header("refresh: 0; ../index.php");
        }
        else{
-          header("refresh: 0; ../index.php?operation=error");
+          //header("refresh: 0; ../index.php?operation=error");
        }
 }
 
