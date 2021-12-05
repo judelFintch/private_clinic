@@ -21,6 +21,8 @@ if(isset($_POST['prestation'])){
 
 }
 if(isset($_POST['selectService'])){
+session_start();
+     if($_SESSION['level']==3){
      $date=date('d-m-Y');
      $code_patient=$_POST['code_patient'];
      $data_op=select_by_op($code_patient);
@@ -69,6 +71,53 @@ if(isset($_POST['selectService'])){
                     echo utf8_encode($item);
 
      //return $data_op;
+}
+
+if($_SESSION['level']==2){
+     $date=date('d-m-Y');
+     $code_patient=$_POST['code_patient'];
+     $data_op=select_by_op($code_patient);
+     $item='';
+     $item .= "
+     <div class='table-responsive'>
+          <table class='table table-striped'>
+          <thead>
+          <tr>
+               <th>
+               #codeOp
+               </th>
+               <th>
+               Acte
+               </th>
+               <th>
+               Date
+               </th>
+              
+              
+               
+          </tr>
+          </thead>";
+          $tot_prest=0;
+               foreach ($data_op as $key) {
+                    $tot_prest+=$key['price'];
+                    $item .= "
+                    <tr>";
+                    $item .= "
+                    <td class='code'>".$key['code_op']."</td>
+                    <td>".$key['libelle']."</td>
+                    <td>".$key['date_op']."</td>
+                    
+                    
+                    ";
+                    }
+                    $item .= "</tr>
+                  
+                    </table>
+                    ";
+                    echo utf8_encode($item);
+
+     //return $data_op;
+}
     
 }
 

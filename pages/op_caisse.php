@@ -111,9 +111,9 @@ while($montant_preste=$info_prestation->fetch()){
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> CDF) </h4>
-                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?> CDF) </h4>
-                  <h4 class="card-title">Montant Solde(<?=$sum_paiement-$sum_prestation?> CDF) </h4>
+                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> $) </h4>
+                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?> $) </h4>
+                  <h4 class="card-title">Montant Solde(<?=$sum_paiement-$sum_prestation?> $) </h4>
                   <p class="card-description">
                     #CodeOp:Client( <span class="codeop_fact"><?=$info_cli['patient_code']?>)</span><br><br>
     
@@ -202,17 +202,16 @@ while($montant_preste=$info_prestation->fetch()){
                             </div>
                            
                         </div>
-                        <div class="col-md-6">             
-                            
-                            
+                        <div class="col-md-6">              
                         </div>
+
                         <div class="col-md-12">
                             <button name="btn_caisse" type="submit" class="btn btn-primary btn-sm mr-2">Enregistrer</button>
                             <button class="btn btn-light btn-sm">Annuler</button>
                         </div>
                     </form>
                   </div>
-                                </section>
+               </section>
                   <div class="result_insert"></div>
 
                   </div>

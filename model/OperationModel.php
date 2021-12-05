@@ -44,10 +44,8 @@ function insert_init_prestation($acte,$code_patient,$taux){
     //$code_op=code_op();
     session_start();
     $id_user=$_SESSION['id_user'];
-   
    // $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op',now(),'','$libelle','$price','encours')");
    $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code_patient','$new_code','$libelle','$price','false','','$id_user','$id_service','$taux',now())");
-    
         if($creat_mvmt){
             $message=true;
         }

@@ -1,25 +1,19 @@
 <?php 
 
-function Creat_caisse($patient,$devise,$date,$montant){
+function Creat_caisse($patient,$devise,$date,$montant,$taux){
  global $bdd;
-
+ $id_user=$_SESSION['id_user'];
  $patient=$bdd->query("SELECT * FROM patients WHERE id like('$patient')");
  $data_info=$patient->fetch();
  $nom_patient=$data_info['nom'].' -'.$data_info['postnom'];
-
  $code_patient=$data_info['patient_code'];
-  /*
- $code_op=$bdd->query("SELECT * FROM report_soins WHERE codepatient like('$code_patient')");
- $code_op_resultat=$code_op->fetch();
- var_dump($code_op_resultat);
- //$code_op=$code_op['codeconsultation'];*/
-
+ $code_op=$data_info['code_op'];
  if($devise=="CDF"){
-    $creat_caisse=$bdd->query("INSERT INTO caisse Values('','$nom_patient','$devise','$date','$montant','','','$code_patient')");
+    $creat_caisse=$bdd->query("INSERT INTO caisse Values('','$nom_patient','$devise','$date','$montant','','$code_op','$code_patient','$taux','$id_user')");
     
  }
  else{
-    $creat_caisse=$bdd->query("INSERT INTO caisse Values('','$nom_patient','$devise','$date',0,'$montant','','$code_patient')"); 
+    $creat_caisse=$bdd->query("INSERT INTO caisse Values('','$nom_patient','$devise','$date',0,'$montant','$code_op','$code_patient','$taux','$id_user')"); 
  }
  return true;
 }
