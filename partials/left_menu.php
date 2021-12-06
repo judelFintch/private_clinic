@@ -175,7 +175,7 @@
             <div class="collapse" id="ui-user">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="facture_en_attente.php">Facture en Attente </a></li>
-                <li class="nav-item"> <a class="nav-link" href="show_user.php">Facture Approuvee</a></li>
+                <li class="nav-item"> <a class="nav-link" href="facture_ok.php">Facture Approuvee</a></li>
               </ul>
             </div>
           </li>

@@ -6,12 +6,16 @@
 <?php include('../partials/left_menu.php')?>
 <?php $info_cli=select_by_id($_GET['code'])?>
 <?php
+$code_op=$info_cli['code_op'];
 $code=$_GET['code'];
 //a mettre dans un model a refactore
-$info_paiement=$bdd->query("SELECT montant_cdf,montant_usd FROM caisse WHERE code_patient like('$code')");
-$sum_paiement=0;
+$info_paiement=$bdd->query("SELECT montant_cdf,montant_usd FROM caisse WHERE code_op like('$code_op')");
+$sum_paiement_cdf=0;
+$sum_paiement_usd=0;
 while($montant=$info_paiement->fetch()){
-  $sum_paiement+=$montant['montant_cdf'];
+ $sum_paiement_cdf+=$montant['montant_cdf'];
+ $sum_paiement_usd+=$montant['montant_usd'];
+
 }
 
 $info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
@@ -111,14 +115,12 @@ while($montant_preste=$info_prestation->fetch()){
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement?> $) </h4>
-                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?> $) </h4>
-                  <h4 class="card-title">Montant Solde(<?=$sum_paiement-$sum_prestation?> $) </h4>
+                  <h4 class="card-title">Montant deja payer(<?=$sum_paiement_usd?> $) Equivalant CDF</h4>
+                  <h4 class="card-title">Montant Prester(<?=$sum_prestation?> $) Equivalant CDF</h4>
+                  <h4 class="card-title">Montant Solde(<?=$sum_paiement_usd-$sum_prestation?> $) Equivalant CDF</h4>
                   <p class="card-description">
-                    #CodeOp:Client( <span class="codeop_fact"><?=$info_cli['patient_code']?>)</span><br><br>
-    
+                    #CodeOp:Client( <span class="codeop_fact"><?=$info_cli['code_op']?>)</span><br><br>
                    <button class="btn btn-danger btn-sm mr-2 dmd_facture" value="">DEMANDE FACTURE POUR CLOTURE LE SOINS</button>
-                   
                     </span>
                   </p>
                  
@@ -193,7 +195,7 @@ while($montant_preste=$info_prestation->fetch()){
                                 <label >Devise</label>
                                 <select class="form-control form-control-sm"  name="devise">
                                     <option>USD</option>
-                                    <option>CDF</option>
+                                    
                                 </select>
                             </div>
                             <div class="form-group">

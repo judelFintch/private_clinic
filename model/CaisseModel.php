@@ -2,6 +2,7 @@
 
 function Creat_caisse($patient,$devise,$date,$montant,$taux){
  global $bdd;
+ session_start();
  $id_user=$_SESSION['id_user'];
  $patient=$bdd->query("SELECT * FROM patients WHERE id like('$patient')");
  $data_info=$patient->fetch();

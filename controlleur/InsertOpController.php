@@ -59,13 +59,13 @@ session_start();
                     <td class='code'>".$key['code_op']."</td>
                     <td>".$key['libelle']."</td>
                     <td>".$key['date_op']."</td>
-                    <td>".$key['price']." CDF</td>
+                    <td>".$key['price']." $</td>
                     <td>".$key['taux']." </td>
                     
                     ";
                     }
                     $item .= "</tr>
-                    <tr><td></td><td></td><td>Total :</td> <td>".$tot_prest." CDF</td></tr>
+                    <tr><td></td><td></td><td>Total :</td> <td>".$tot_prest." $</td></tr>
                     </table>
                     ";
                     echo utf8_encode($item);

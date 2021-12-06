@@ -1,4 +1,5 @@
 <?php include('../partials/app.php')?>
+<?php include('../confg/Connexion.php')?>
 <body>
 <?php include('../partials/header_menu.php')?>
 <?php include('../partials/left_menu.php')?>
@@ -9,28 +10,23 @@
               <div class="card position-relative">
                 <div class="card-body">
                     <h3>Facture en Attente</h3>
+                    <hr>
                     <div class="d-flex align-items-center justify-content-between">
-                        <h4 class="card-title">Liste Patients</h4>
                         <div class="d-flex">
-                            <a href="" class="btn btn-primary btn-sm"> <span class="icon icon"></span>Nouveau</a>
+                           
                         </div>
                 </div>
                     <?php
-                    $select=$bdd ->query("SELECT * FROM abonne") or die(print_r($bdd->error_info()));
+                    $select=$bdd ->query("SELECT * FROM Facturation WHERE status LIKE('0')") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>Id</th>
-                            <th>Nom</th>
-                            <th>Postnom</th>
-                            <th>Prenom</th>
-                            <th>Date</th>
-                            <th>Genre</th>
-                            <th>Matricule</th>
-                            <th>Nom entreprise</th>
-                            <th>Operation</th>
+                            <th>#Id</th>
+                            <th>#CodeOP</th>
+                            <th>Code Patient</th>
+                            <th>Date Operation</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -41,16 +37,11 @@
                     echo '
                           <tr>
                             <td>'.$count.'</td>
-                            <td>'.$res ['nom'].'</td>
-                            <td>'.$res['postnom'].'</td>
-                            <td>'.$res['presnom'].'</td>
-                            <td>'.$res['datenaiss'].'</td>
-                            <td>'.$res['genre'].'</td>
-                            <td>'.$res['matricule'].'</td>
-                            <td>'.$res['nomentrep'].'</td>
+                            <td>'.$res ['code_op'].'</td>
+                            <td>'.$res['code_patient'].'</td>
+                            <td>'.$res['date_op'].'</td>
                             <td>
-                                 <a href="updatePatient.php?id='.$res['id'].'">  Modifier</a>
-                                 <a href="updatePatient.php?id='.$res['id'].'">  Details</a>
+                                 <a class="badge badge-success" href="details_fact.php?code_op='.$res['code_op'].'&&code_p='.$res['code_patient'].'">  Details</a>
                             </td>
                             <td> </td>
                             <td> </td>
