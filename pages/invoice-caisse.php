@@ -16,15 +16,11 @@
 <?php include('../confg/Connexion.php')?>
 <?php include('../model/patientsmodel.php')?>
 <?php 
-$code_impr=$_GET['code_impr'];
+$code_impr=$_GET['op'];
 //info 
-$facture=$bdd->query("SELECT * FROM  facturation WHERE code_op like('$code_impr')");
-$info_fac=$facture->fetch();
-$select_codep=$bdd->query("SELECT DISTINCT code_patient FROM mouvement WHERE code_op like('$code_impr')");
-$code_patient=$select_codep->fetch();
- $info_cli=select_by_id($code_patient['code_patient']);
-
- $info_paiement=$bdd->query("SELECT montant_cdf,montant_usd FROM caisse WHERE code_op like('$code_impr')");
+ $info_cli=$bdd->query("SELECT * FROM patients WHERE code_op LIKE('$code_impr')");
+ $info_cli=$info_cli->fetch();
+$info_paiement=$bdd->query("SELECT montant_cdf,montant_usd FROM caisse WHERE code_op like('$code_impr')");
 $sum_paiement_cdf=0;
 $sum_paiement_usd=0;
 while($montant=$info_paiement->fetch()){
@@ -79,13 +75,7 @@ while($montant_preste=$info_prestation->fetch()){
         </address>
       </div>
       <!-- /.col -->
-      <div class="col-sm-4 invoice-col">
-        <b>Invoice #<?=$code_impr?></b><br>
-        <br>
-        <b>Order ID:</b><?=$info_fac['code_facture']?><br>
-        <b>Payment Due:</b> <?=$info_fac['date_op']?><br>
-        <b>Caisse:</b>
-      </div>
+     
       <!-- /.col -->
     </div>
     <!-- /.row -->
@@ -105,20 +95,20 @@ while($montant_preste=$info_prestation->fetch()){
           <tbody>
   
           <?php 
-              $prestaion=$bdd->query("SELECT * FROM mouvement WHERE code_op like('$code_impr')");
+              $prestaion=$bdd->query("SELECT * FROM caisse WHERE code_op like('$code_impr') ORDER BY id DESC LIMIT 1");
                     while($res=$prestaion->fetch()){
-                        $id=$res['id_service'];
+                        $id=$res['id'];
                     ?>
                         <tr>
                           <td>#<?=$res['code_op']?></td>
-                          <td><?=$res['libelle']?></td>
-                          <td class="text-success"> <?=$res['price']?> $ </i></td>
+                          <td><?=$res['montant_usd']?></td>
+                          <td class="text-success"> <?=$res['date']?>  </i></td>
                         </tr>
                         <?php }?>
                         <tr>
                           <td>#<?=$res['code_op']?></td>
                           <td><?=$res['libelle']?></td>
-                          <td class="text-danger"> <?=$sum_paiement_usd?> $</i></td>
+                          <td class="text-danger"> <?=$res['montant_usd']?> $</i></td>
                         </tr>
           
           </tbody>
@@ -136,13 +126,13 @@ while($montant_preste=$info_prestation->fetch()){
       </div>
       <!-- /.col -->
       <div class="col-6">
-        <p class="lead">Amount Due <?=$info_fac['date_op']?></p>
+        <p class="lead">Amount Due </p>
 
         <div class="table-responsive">
           <table class="table">
             <tr>
               <th style="width:50%">Subtotal:</th>
-              <td> $ <?=$sum_paiement_usd?></td>
+              <td> $ </td>
             </tr>
             <tr>
               <th>Tax (0.0%)</th>
@@ -151,7 +141,7 @@ while($montant_preste=$info_prestation->fetch()){
             
             <tr>
               <th>Total:</th>
-              <td>$ <?=$sum_paiement_usd?></td>
+              <td>$ </td>
             </tr>
           </table>
         </div>

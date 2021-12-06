@@ -96,19 +96,18 @@ while($montant_preste=$info_prestation->fetch()){
                   <h4 class="card-title">
                     <span class="">
                       <b>Client ( <?=$info_cli['nom']?> - <?=$info_cli['postnom']?>)</b></span></h4>
-                  <p class="card-description">
-                  #CodClient:Client( <?=$info_cli['patient_code']?>)
-                    #codeOp <span class="code_patient"><?=$info_cli['code_op']?></span><br>
-                    #DateNaissance:Client( <?=$info_cli['datenaiss']?>)
-                    <br>
-                    #Sexe:Client( <?=$info_cli['genre']?>)
-                    ( <?=$info_cli['situation']?>) <br>
-                    <b>Hospitalisation:</b>
-                    <span class="badje">
-                      Non Hospitaliser
-                    </span>
-                  </p>
-                 
+                        <p class="card-description">
+                        #CodClient:Client( <?=$info_cli['patient_code']?>)
+                          #codeOp <span class="code_patient"><?=$info_cli['code_op']?></span><br>
+                          #DateNaissance:Client( <?=$info_cli['datenaiss']?>)
+                          <br>
+                          #Sexe:Client( <?=$info_cli['genre']?>)
+                          ( <?=$info_cli['situation']?>) <br>
+                          <b>Hospitalisation:</b>
+                          <span class="badje">
+                            Non Hospitaliser
+                          </span>
+                        </p>
                 </div>
               </div>
             </div>
@@ -152,16 +151,12 @@ while($montant_preste=$info_prestation->fetch()){
                     <div class="d-flex align-items-center justify-content-between">
                         <h4 class="card-title">Operation Caisse</h4>
                         <div class="d-flex align-items-center">
-                            
                         </div>
                     </div>
                     <hr>
-                    
                     <div class="d-flex align-items-center mb-3 mt-2">
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
-                        
-  
-                        <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
+                    <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
                     </div>
                   <section class="form_caisse">
                     <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
@@ -176,7 +171,7 @@ while($montant_preste=$info_prestation->fetch()){
                                   <?php
                                   while ($patient = $patients->fetch()){
                                     ?>
-                                    <option value="<?= $patient['id'] ?>"><?= $patient['nom'] ." ".$patient['postnom']. " ".$patient['presnom'] ?> </option>
+                                    <option value="<?= $patient['code_op'] ?>"><?= $patient['nom'] ." ".$patient['postnom']. " ".$patient['presnom'] ?> </option>
                                     <?php
                                   }
                                   ?>

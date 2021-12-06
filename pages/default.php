@@ -18,7 +18,7 @@
 
                </div>
                   <?php
-                    $select=$bdd ->query("SELECT * FROM patients ORDER BY id desc") or die(print_r($bdd->error_info()));
+                    $select=$bdd ->query("SELECT * FROM patients WHERE status like('0') ORDER BY id desc") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
                     <table class="table table-striped">
