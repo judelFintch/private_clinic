@@ -26,15 +26,15 @@
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
-                                <input type="text"  name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient" >
+                                <input type="text" required  name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient" >
                             </div>
                             <div class="form-group">
                                 <label >Prénom</label>
-                                <input type="text"  name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient" >
+                                <input type="text" required name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient" >
                             </div>
                             <div class="form-group">
-                                <label>Date de naissance</label>
-                                <input type="date"  name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
+                                <label>Age ou date Naissance</label>
+                                <input type="text"  name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
@@ -62,13 +62,17 @@
                             </div>
 
                             <div class="form-group">
-                                <label >G-Mail</label>
-                                <input type="email" name="email" class="form-control form-control-sm" placeholder="Prenom du patient" >
+                               
+                                <input type="hidden" name="email" class="form-control form-control-sm" placeholder="Prenom du patient" >
                             </div>
 
                             <div class="form-group">
                                 <label >Adresse</label>
                                 <input type="adresse" name="adresse" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label >Date Entree</label>
+                                <input type="text" value="<?=date('d-m-Y')?>" name="date_entree" class="form-control form-control-sm" required="required">
                             </div>
                             
                             <div class="form-group">
@@ -80,7 +84,7 @@
                                   <?php
                                   while ($service = $services->fetch()){
                                     ?>
-                                    <option value="<?= $service['id'] ?>"><?= $service['libelle']  ?> </option>
+                                    <option value="<?= $service['id'] ?>"><?= $service['libelle']  ?> <?= $service['price']  ?> $ </option>
                                     <?php
                                   }
                                   ?>

@@ -19,7 +19,8 @@ if(isset($_POST['btn_patient'])){
     $email = $_POST['email'];
     $adresse = $_POST['adresse'];
     $service=$_POST['serv_id'];
-    $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service,$taux);
+    $date_entree=$_POST['date_entree'];
+    $creat_patient = InsertPatient($patient_code,$nom,$postnom,$prenom,$datenaiss,$genre,$situation,$tel,$email,$adresse,$service,$taux,$date_entree);
     if($creat_patient==1){
         header("refresh: 0; ../index.php");
        }
