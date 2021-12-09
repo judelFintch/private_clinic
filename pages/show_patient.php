@@ -49,6 +49,9 @@
                                  if($_SESSION['level']==3){echo '
                                  <a class="badge badge-info" href="op_caisse.php?code='.$res['patient_code'].'">  Caisse</a>
                                  ';}
+                                 if($_SESSION['level']==3 OR $_SESSION['level']==1  OR $_SESSION['level']==7){echo '
+                                  <a class="badge badge-danger" href="proformat.php?code='.$res['code_op'].'">  Proformat</a>
+                                  ';}
                                  echo '
                             </td>
                             <td> </td>
