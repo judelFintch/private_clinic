@@ -6,7 +6,7 @@ if(isset($_POST['acte'])){
      $date=date('d-m-Y');
      $acte=$_POST['acte'];
      $code_patient=$_POST['code_patient'];
-     $insert_op=insert_init_op($acte,$code_patient);
+     $insert_op=insert_init_op($acte,$code_patient,$qte);
      echo 1;
 
 }
@@ -16,7 +16,8 @@ if(isset($_POST['prestation'])){
      $date=date('d-m-Y');
      $prestation=$_POST['prestation'];
      $code_patient=$_POST['code_patient'];
-     $insert_op=insert_init_prestation($prestation,$code_patient,$taux);
+     $qte=$_POST['qte'];
+     $insert_op=insert_init_prestation($prestation,$code_patient,$taux,$qte);
      echo 1;
 
 }
@@ -52,7 +53,7 @@ session_start();
           </thead>";
           $tot_prest=0;
                foreach ($data_op as $key) {
-                    $tot_prest+=$key['price'];
+                    $tot_prest+=$key['price']*$key['qte'];
                     $item .= "
                     <tr>";
                     $item .= "
@@ -90,11 +91,15 @@ if($_SESSION['level']==2){
                Acte
                </th>
                <th>
+               qte
+               </th>
+               <th>
+               Service
+               </th>
+               <th>
                Date
                </th>
               
-              
-               
           </tr>
           </thead>";
           $tot_prest=0;
@@ -104,6 +109,8 @@ if($_SESSION['level']==2){
                     <tr>";
                     $item .= "
                     <td class='code'>".$key['code_op']."</td>
+                    <td>".$key['libelle']."</td>
+                    <td>".$key['qte']."</td>
                     <td>".$key['libelle']."</td>
                     <td>".$key['date_op']."</td>
                     

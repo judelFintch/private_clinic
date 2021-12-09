@@ -18,7 +18,7 @@ function insert_init_op($acte,$code_patient){
    
     $code_op=code_op();
     $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op',now(),'','$libelle','$price','encours')");
-    $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code_op','$code_patient','$price','false','','user','$libelle',now())");
+    $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code_op','$code_patient','$price','false','','user','$libelle','1',now())");
         if($creat_op){
             $message=true;
         }
@@ -28,7 +28,7 @@ function insert_init_op($acte,$code_patient){
         return $message;
 }
 
-function insert_init_prestation($acte,$code_patient,$taux){
+function insert_init_prestation($acte,$code_patient,$taux,$qte){
     global $bdd;
     $message=false;
     $date=date('d-m-Y');
@@ -45,7 +45,7 @@ function insert_init_prestation($acte,$code_patient,$taux){
     session_start();
     $id_user=$_SESSION['id_user'];
    // $creat_op=$bdd->query("INSERT INTO report_soins VALUES('','$code_patient','$code_op',now(),'','$libelle','$price','encours')");
-   $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code_patient','$new_code','$libelle','$price','false','','$id_user','$id_service','$taux',now())");
+   $creat_mvmt=$bdd->query("INSERT INTO mouvement VALUES('','$code_patient','$new_code','$libelle','$price','false','','$id_user','$id_service','$taux','$qte',now())");
         if($creat_mvmt){
             $message=true;
         }
@@ -75,7 +75,7 @@ function select_by_prestation_id($id){
 function select_by_op($code_patient){
     global $bdd;
     //a recuperer en fonction du cote operation
-    $data=$bdd->query("SELECT * FROM mouvement WHERE code_op like('$code_patient') ");
+    $data=$bdd->query("SELECT * FROM mouvement WHERE code_op like('$code_patient') ORDER BY id desc ");
     $data=$data->fetchAll();
     return $data;
 }

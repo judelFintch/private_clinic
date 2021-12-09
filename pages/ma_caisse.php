@@ -6,8 +6,9 @@
 <?php include('../partials/left_menu.php')?>
 
 <?php
+$date=date('Y-m-d');
 // a mettre dans un model a refactore
-$info_paiement=$bdd->query("SELECT * FROM caisse ");
+$info_paiement=$bdd->query("SELECT * FROM caisse WHERE date LIKE('$date') ");
 $sum_paiement_cdf=0;
 $sum_paiement_usd=0;
 while($montant=$info_paiement->fetch()){

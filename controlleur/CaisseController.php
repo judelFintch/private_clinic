@@ -9,6 +9,7 @@ if(isset($_POST['btn_caisse'])){
     $devise= $_POST['devise'];
     $date= $_POST['date'];
     $montant = $_POST['montant'];
+    
     $creat_caisse = Creat_caisse($patient, $devise, $date, $montant,$taux);
     header('refresh: 0; ../pages/invoice-caisse.php?op='.$patient.'');
 }

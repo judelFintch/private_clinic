@@ -20,7 +20,9 @@
           <hr>
         </div>
                     <?php
-                    $select=$bdd ->query("SELECT * FROM caisse ") or die(print_r($bdd->error_info()));
+                    $date=date('Y-m-d');
+
+                    $select=$bdd ->query("SELECT * FROM caisse WHERE date LIKE('$date')  ") or die(print_r($bdd->error_info()));
                      ?>
                     <div class="table-responsive">
                     <table class="table table-striped">

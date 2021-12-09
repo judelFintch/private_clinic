@@ -15,13 +15,12 @@ $sum_paiement_usd=0;
 while($montant=$info_paiement->fetch()){
  $sum_paiement_cdf+=$montant['montant_cdf'];
  $sum_paiement_usd+=$montant['montant_usd'];
-
 }
 
-$info_prestation=$bdd->query("SELECT price FROM mouvement WHERE code_patient like('$code')");
+$info_prestation=$bdd->query("SELECT price,qte FROM mouvement WHERE code_patient like('$code')");
 $sum_prestation=0;
 while($montant_preste=$info_prestation->fetch()){
-  $sum_prestation+=$montant_preste['price'];
+  $sum_prestation+=$montant_preste['price']*$montant_preste['qte'];
 }
 
 ?>
@@ -133,11 +132,9 @@ while($montant_preste=$info_prestation->fetch()){
            cliquez sur valider pour confirmer l'operation
            <button class="btn btn-success fact_dmd">Valider</button>
         </p>
-
         <p class="alert alert-success dmd_reussi">  
           Demande effectuee 
         </p>
-
         <p class="alert alert-danger dmd_echec">  
           Impossible d'effectuer cette operation une Demande est deja emcours
         </p>
@@ -158,6 +155,7 @@ while($montant_preste=$info_prestation->fetch()){
                     <button class="btn int_caisse btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Entree</button>
                     <button class="btn all_prestation btn-primary btn-sm mr-2"> <span class="icon-plus"></span> Suivis de prestations</button>
                     </div>
+
                   <section class="form_caisse">
                     <form class="forms-sample row" method="POST" action="../controlleur/CaisseController.php">
                         <div class="col-md-6">
@@ -234,10 +232,8 @@ $('.fact_dmd').click(function(){
       $('.dmd_echec').show();
       $('.message_dmd').hide();
      }
-
    });
  
-
 });
 
 

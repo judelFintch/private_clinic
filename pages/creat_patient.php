@@ -22,19 +22,19 @@
     
                             <div class="form-group">
                                 <label >Nom</label>
-                                <input type="text"  name="nom" class="form-control form-control-sm" placeholder="Nom du patient" required="required">
+                                <input type="text"  name="nom" class="form-control form-control-sm" placeholder="Nom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Post-Nom</label>
-                                <input type="text"  name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient" required="required">
+                                <input type="text"  name="postnom" class="form-control form-control-sm" placeholder="Post_Nom du patient" >
                             </div>
                             <div class="form-group">
                                 <label >Prénom</label>
-                                <input type="text"  name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
+                                <input type="text"  name="prenom" class="form-control form-control-sm" placeholder="Prenom du patient" >
                             </div>
                             <div class="form-group">
                                 <label>Date de naissance</label>
-                                <input type="date"  name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
+                                <input type="date"  name="datenaiss" class="form-control form-control-sm" placeholder="Prenom du patient">
                             </div>
                             <div class="form-group">
                                 <label >Genre</label>
@@ -63,7 +63,7 @@
 
                             <div class="form-group">
                                 <label >G-Mail</label>
-                                <input type="email" name="email" class="form-control form-control-sm" placeholder="Prenom du patient" required="required">
+                                <input type="email" name="email" class="form-control form-control-sm" placeholder="Prenom du patient" >
                             </div>
 
                             <div class="form-group">

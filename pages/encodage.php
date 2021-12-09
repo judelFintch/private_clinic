@@ -9,7 +9,6 @@
 .st-theme-default > .nav .nav-link.active {
     color: #3F3E91 !important;
     cursor: pointer;
-    
 }.st-theme-default > .nav .nav-link.active::after {
     background: #3F3E91 !important;
     transform: scale(1);
@@ -18,7 +17,6 @@
 {
     padding : 10px !important;
 }
-
 .modal-box {
   display: none;
   position: absolute;
@@ -106,7 +104,6 @@
                       Non Hospitaliser
                     </span>
                   </p>
-                 
                 </div>
               </div>
             </div>
@@ -128,7 +125,8 @@
 
                   <div class="form-group">
                     <div class="input-group">
-                      <input type="text" class="acte form-control"  id="autocomplete" placeholder="Actes Medical, Laboratoire, Nursing, Phamarcie, Radio" aria-label="Recipient's username">
+                      <input type="text" class="acte form-control" required  id="autocomplete" placeholder="Actes Medical, Laboratoire, Nursing, Phamarcie, Radio" aria-label="Recipient's username">
+                      <input type="number" class="qte form-control" value="1" required    aria-label="Recipient's username">                      
                       <div class="input-group-append">
                         <button class="btn btn-sm btn-primary insertOp" type="button">Valider</button>
                       </div>
@@ -151,8 +149,10 @@ $( "#autocomplete" ).autocomplete({
 });
 $('.insertOp').click(function(){
 var prestation=$('.acte').val();
+var qte =$('.qte').val();
+
 var code_patient=$('.code_patient').html();
-$.post('../controlleur/InsertOpController.php',{prestation:prestation,code_patient:code_patient},function(retourVerification){
+$.post('../controlleur/InsertOpController.php',{prestation:prestation,qte:qte,code_patient:code_patient},function(retourVerification){
       if(retourVerification==true){
         $.post('../controlleur/InsertOpController.php',{selectService:true,code_patient:code_patient},function(data){
           $('.result_insert').html(data);
